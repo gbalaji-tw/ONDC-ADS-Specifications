@@ -1,0 +1,232 @@
+summary: Return the catalog
+description: Return the catalog
+value:
+  context:
+    domain: ONDC:ADS10
+    location:
+      city:
+        code: std:080
+      country:
+        code: IND
+    action: on_search
+    version: 2.0.2
+    bap_id: buyerapp.com
+    bap_uri: https://buyerapp.com/grocery
+    bpp_id: sellerapp.com
+    bpp_uri: https://sellerapp.com/grocery
+    transaction_id: "9568beb3-265a-4730-be4e-c00ba2e5e30a"
+    message_id: 86fb6231-ea67-42d1-b1ef-e43f1719a44f
+    timestamp: '2023-01-08T22:00:30.000Z'
+    ttl: PT30S
+  message:
+    catalog:
+      fulfillments:
+      - id: '1'
+        type: Product group
+      payments:
+      - id: '1'
+        type: PRE-FULFILLMENT
+      - id: '2'
+        type: ON-FULFILLMENT
+      - id: '3'
+        type: POST-FULFILLMENT
+        collected_by: 'BPP'
+      descriptor:
+        name: ABC store
+        short_desc: Online eCommerce Store
+        long_desc: Online eCommerce Store
+        images:
+        - url: https://abc.com/images/1-shop-img
+      providers:
+      - id: P1
+        descriptor:
+          name: <<Organisation_name>>
+          code: P001
+          short_desc: <<desc>>
+          long_desc: <<desc>>
+          additional_desc:
+            url: chat link
+            content_type: text/html
+          images:
+          - url: https://abc.com/images/1-shop-img
+        rating: '4.4'
+        ttl: P1D
+        locations:
+        - id: L1
+          city:
+            code: std:080
+            name: Bengaluru
+          state:
+            code: KA
+          country:
+            code: IND
+        creds:
+        - id: ESG-12345678
+          type: License
+          desc: Export License No. ESG-12345678
+          url: https://abcd.cdn.com/images/license-img
+        tags:
+        - descriptor:
+            code: serviceability
+          list:
+          - descriptor:
+              code: location
+            value: L1
+          - descriptor:
+              code: category
+            value: RET10-1042
+          - descriptor:
+              code: type
+            value: '12'
+          - descriptor:
+              code: val
+            value: SGP
+          - descriptor:
+              code: unit
+            value: country
+        - descriptor:
+            code: seller_terms
+          list:
+          - descriptor:
+              code: gst_credit_invoice
+            value: Y
+        - descriptor:
+            code: seller_id
+          list:
+          - descriptor:
+              code: seller_id_code
+            value: gst
+          - descriptor:
+              code: seller_id_no
+            value: xxxxxxxxxxxxxxx
+        - descriptor:
+            code: FSSAI_LICENSE_NO
+          list:
+          - descriptor:
+              code: BRAND_OWNER
+            value: '12345678901234'
+          - descriptor:
+              code: OTHER
+            value: '12345678901234'
+          - descriptor:
+              code: IMPORTER
+            value: '12345678901234'
+        - descriptor:
+            code: target_audience
+          list:
+          - descriptor:
+              code: age_range
+            value: '24-40'
+          - descriptor:
+              code: Interest
+            value: 'consumer electronics'
+        - descriptor:
+            code: acceptance_criteria
+          list:
+          - descriptor:
+              code: allowed_policies
+            value: 'ONDC Seller nodes & seller apps only'
+          - descriptor:
+              code: domain
+            value: 'retail'
+          - descriptor:
+              code: Categories
+            value: 'Fashion and Apparel only'  
+          - descriptor:
+              code: resolution_mode
+            value: 'Bidding | Contracts'
+        items:
+        - id: <<Ad product>>
+          parent_item_id: <<<<product group>>
+          descriptor:
+            name: banner Ad
+            code: banner Ad
+            short_desc: Home page banner
+            long_desc: Home page banner
+            media:
+            - mimetype: jpeg | video
+          price:
+            currency: INR
+            value: '300.00'
+            offered_value: '250.00'
+            maximum_value: '350.00'
+          quantity:
+            unitized:
+              measure:
+                unit: cpm | cpc
+                value: '10'
+            available:
+              measure:
+                unit: cpm | cpc
+                value: '10'
+              count: 20
+          category_ids:
+            description:
+            type:
+            items:
+          fulfillment_ids:
+            description:
+            type:
+            items:
+          location_ids:
+            description:
+            type:
+            items:
+          payment_ids:
+            description:
+            type:
+            items:
+          add_ons:
+            type:
+            items:
+          tags:
+            - descriptor:
+              code: ad_specifications
+              list:
+              - descriptor:
+                  code: ad_type
+                  value: <<ad type unit>>
+              - descriptor:
+                  code: ad_size
+                  value: <<type>>
+              - descriptor:
+                  code: ad_format
+                  value: <<type>>
+              - descriptor:
+                  code: ad_position
+                  value: <<type>>    
+        categories:
+         - id: <<product_group_l4>>
+           parent_category_id: <<L3>> 
+           tags:
+            - descriptor:
+              code: allowed_categories
+              list:
+              - descriptor:
+                  code: product_category
+                  value: 'Electronics'
+              - descriptor:
+                  code: product_sub_category
+                  value: 'laptops'
+            - descriptor:
+              code: target_audience
+              list:
+              - descriptor:
+                  code: age_range
+                value: '24-40'
+              - descriptor:
+                  code: Interest
+                value: 'consumer electronics'
+            - descriptor:
+              code: acceptance_criteria
+              list:
+              - descriptor:
+                  code: allowed_categories
+                value: '24-40'
+              - descriptor:
+                  code: allowed_domain
+                value: 'consumer electronics'
+
+
+
+              
