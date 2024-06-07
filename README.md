@@ -1,2 +1,2 @@
-# ONDC-SRV-Specifications
+# ONDC-ADS-Specifications
 Services specs
