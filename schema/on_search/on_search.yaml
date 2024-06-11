@@ -134,7 +134,16 @@ value:
             value: 'Fashion and Apparel only'  
           - descriptor:
               code: resolution_mode
-            value: 'Bidding | Contracts'
+            value: 'Fixed fee | Bid | Time and material'
+          - descriptor:
+              code: target_audience
+              list:
+              - descriptor:
+                  code: age_range
+                value: '24-40'
+              - descriptor:
+                  code: Interest
+                value: 'consumer electronics'
         items:
         - id: <<Ad product>>
           parent_item_id: <<<<product group>>
@@ -153,51 +162,47 @@ value:
           quantity:
             unitized:
               measure:
-                unit: cpm | cpc
-                value: '10'
+                unit: cpm 
+                value: '1'
             available:
               measure:
                 unit: cpm | cpc
                 value: '10'
               count: 20
-          category_ids:
-            description:
-            type:
-            items:
-          fulfillment_ids:
-            description:
-            type:
-            items:
-          location_ids:
-            description:
-            type:
-            items:
-          payment_ids:
-            description:
-            type:
-            items:
-          add_ons:
-            type:
-            items:
           tags:
             - descriptor:
               code: ad_specifications
               list:
               - descriptor:
-                  code: ad_type
-                  value: <<ad type unit>>
-              - descriptor:
                   code: ad_size
-                  value: <<type>>
+                  value: <<970x250>>
+              - descriptor:
+                  code: max_k_weight_in_kb
+                  value: <<250>>
               - descriptor:
                   code: ad_format
-                  value: <<type>>
+                  value: <<JPG | PNG>>
               - descriptor:
-                  code: ad_position
-                  value: <<type>>    
+                  code: sub_load_in_kb
+                  value: <<200>>    
+            - descriptor:
+              code: ad_placement
+              list:
+              - descriptor:
+                  code: position
+                  value: <<Home page | Checkout Page>>
+              - descriptor:
+                  code: location
+                  value: <<city |area>>
+              - descriptor:
+                  code: location_url
+                  value: <<location url>>
+            - descriptor:
+              code: ad_type
+                  value: <<Billboard | smartphone>>
         categories:
-         - id: <<product_group_l4>>
-           parent_category_id: <<L3>> 
+         - id: <<L3>>
+           parent_category_id: <<L2>> 
            tags:
             - descriptor:
               code: allowed_categories
@@ -209,23 +214,34 @@ value:
                   code: product_sub_category
                   value: 'laptops'
             - descriptor:
-              code: target_audience
-              list:
-              - descriptor:
-                  code: age_range
-                value: '24-40'
-              - descriptor:
-                  code: Interest
-                value: 'consumer electronics'
+              code: allowed_domains
+              value: '<<Retail | Insurance | Agri>>'
+        fulfillments:
+         - id: 
+           type: <<L4>> 
+           state: <<Order_placed, creative, to_be submitted, ad_live, ad_closed>>
+           tags:
             - descriptor:
-              code: acceptance_criteria
+              code: location
               list:
               - descriptor:
-                  code: allowed_categories
-                value: '24-40'
+                  code: location_url
+                  value: ''
               - descriptor:
-                  code: allowed_domain
-                value: 'consumer electronics'
+                  code: lat
+                  value: ''
+              - descriptor:
+                  code: long
+                  value: ''
+        payments:
+         - id: 
+           collected_by:: <<BAP | BPP>> 
+           state: <<PAID | NOT_PAID>>
+           type: 'PRE-ORDER, PRE-FULFILLMENT, ON-FULFILLMENT, POST-FULFILLMENT'
+
+
+
+
 
 
 
