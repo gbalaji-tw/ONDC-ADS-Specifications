@@ -1,0 +1,7 @@
+search:
+  examples:
+    - $ref: "./search/search_by_city.yaml"
+    - $ref: "./search/search_by_category.yaml"
+on_search:
+  examples:
+    - $ref: "./on_search/on_search.yaml"

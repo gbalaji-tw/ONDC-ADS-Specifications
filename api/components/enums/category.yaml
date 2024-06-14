@@ -1,0 +1,27 @@
+category_ids:
+  - code: Digital
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Broadcast
+    description: Broadcast
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: OOH
+    description: OOH
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Print
+    description: Print
+    reference: <PR/Issue/Discussion Links md format text>
+product_group_ids:
+  - Code: RETAIL-APP
+    description: "Retail app"
+    reference: "Reference for Retail app"
+  - Code: RETAILER-WEBSITE
+    description: "Retailer website"
+    reference: "Reference for Retailer website"
+  - Code: RETAILER-IN-STORE-KIOSK
+    description: "Retailer in-store kiosk"
+    reference: "Reference for Retailer in-store kiosk"
+ad_product_ids:
+  - code: Display-ADS
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>

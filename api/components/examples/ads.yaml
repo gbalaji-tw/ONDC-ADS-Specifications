@@ -1,0 +1,7 @@
+Ads:
+  summary: Ads on Network
+  description: >-
+    This elaborates the model implementations for buying Ad Products over the network.
+    The booking majorly happens in four phases of order processing flow, i.e. Discovery of available services and service providers based on serviceability, order, fulfillment and post-fulfillment.
+  example_set:
+    $ref: "./ads/index.yaml"

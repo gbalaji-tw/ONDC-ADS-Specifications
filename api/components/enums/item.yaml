@@ -1,0 +1,56 @@
+tags:
+  ad_specifications:
+    ad_format:
+      - code: JPG
+        description: JPEG encoding
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: PNG-8
+        description: PNG-8 encoding
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: GIF
+        description: GIF encoding
+        reference: <PR/Issue/Discussion Links md format text>
+  ad_placement:
+    position:
+      - code: Homepage
+        description: Homepage
+        reference: <PR/Issue/Discussion Links md format text>
+    location:
+      - code: PLP
+        description: Product listing page
+        reference: <PR/Issue/Discussion Links md format text>
+    location_url:
+      - code: PDP
+        description: Product description page
+        reference: <PR/Issue/Discussion Links md format text>
+  ad_type:
+      - code: Display-Ads
+        description: Display-Ads
+        reference: <PR/Issue/Discussion Links md format text>
+price:
+  unit:
+      - code: CPC
+        description: Cost per click
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: CPM
+        description: Cost per million impressions
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: CPA
+        description: Cost per action
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: CPCV
+        description: CPCV
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: CPL
+        description: CPL
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: Per-week
+        description: Per-week
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: Per-day
+        description: Per-day
+        reference: <PR/Issue/Discussion Links md format text>
+
+
+
+

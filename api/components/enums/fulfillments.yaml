@@ -1,0 +1,23 @@
+fulfillments:
+  type:
+    - code: ONLINE
+      description: ONLINE
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: OFFLINE
+      description: OFFLINE
+      reference: <PR/Issue/Discussion Links md format text>
+  state:
+    descriptor:
+      code:
+      - code: CREATED
+        description: The initial state of the fulfillment.
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: CREATIVE_GENERATION
+        description: The service provider is on the way.
+        reference: <PR/Issue/Discussion Links md format text>  
+      - code: AD_LIVE
+        description: The service provider has reached the location.
+        reference: <PR/Issue/Discussion Links md format text>
+      - code: Completed
+        description: The service has been completed.
+        reference: <PR/Issue/Discussion Links md format text>

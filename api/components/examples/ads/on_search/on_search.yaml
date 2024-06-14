@@ -22,7 +22,7 @@ value:
     catalog:
       fulfillments:
       - id: '1'
-        type: Product group
+        type: ONLINE
       payments:
       - id: '1'
         type: PRE-FULFILLMENT
@@ -199,7 +199,7 @@ value:
                   value: <<location url>>
             - descriptor:
               code: ad_type
-                  value: <<Billboard | smartphone>>
+              value: <<Billboard | smartphone>>
         categories:
          - id: <<L3>>
            parent_category_id: <<L2>> 

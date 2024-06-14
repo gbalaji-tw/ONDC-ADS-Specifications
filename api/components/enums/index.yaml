@@ -1,0 +1,39 @@
+search:
+  context: &context
+    domain: 
+      $ref: "./context.yaml#/domain"
+  message:
+    intent:
+      item:
+        category:
+          id:
+            $ref: "./category.yaml#/category_ids"
+      fulfillments: &fulfillments
+        type: 
+          $ref: "./fulfillments.yaml#/fulfillments/type"
+on_search:
+  context: &context
+    domain: 
+      $ref: "./context.yaml#/domain"
+  message:
+    catalog:
+      providers:
+        tags:
+          $ref: "./provider.yaml#/tags"
+        items:
+          tags:
+            $ref: "./items.yaml#/tags"
+          price:
+            quantity:
+              unitized:
+                measure:
+                  unit: "./items.yaml#/price/unit"
+        fulfillments: *fulfillment
+        payments: *payment
+      offers:
+        $ref: "./offers.yaml#/offers"
+      fulfillments: &fulfillments
+        type: 
+          $ref: "./fulfillments.yaml#/fulfillments/type"
+      payments:
+        $ref: "./payment.yaml#/payment"
