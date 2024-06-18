@@ -7,17 +7,17 @@ function getStringAfterEquals(inputString) {
     return "";
   }
 }
+var api_key = "api-key";
 
 async function readBuildFile(branchName) {
   if (!branchName) return;
-  https://github.com/gbalaji-tw/ONDC-ADS-Specifications.git
-  const url = `https://api.github.com/repos/ONDC-Official/ONDC-RET-Specifications/contents/ui/build.js?ref=${branchName}`;
+  const url = `https://api.github.com/repos/gbalaji-tw/ONDC-ADS-Specifications/contents/ui/build.js?ref=${branchName}`;
   const features = await getFeatures(branchName)
  
   try {
     const response = await fetch(url, {
       headers: {
-        Authorization: "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",
+        Authorization: {api_key},
       },
     });
     const formattedResponse = await response?.json();
@@ -25,9 +25,6 @@ async function readBuildFile(branchName) {
     if(formattedResponse?.download_url){
       setTimeout(async ()=>{
         const rawResponse = await fetch(formattedResponse.download_url, {
-          // headers: {
-          //   Authorization: "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",
-          // },
         });
         const formattedrawResponse = await rawResponse?.text();
         build_spec = JSON.parse(getStringAfterEquals(formattedrawResponse));
@@ -35,14 +32,10 @@ async function readBuildFile(branchName) {
         onFirstLoad(build_spec,features);
       },1200)
     }
-   
-    // let splitedText = atob(formattedResponse?.content);
-    // build_spec = JSON.parse(getStringAfterEquals(splitedText));
-    // onFirstLoad(build_spec);
+
     
   } catch (error) {
     console.log("Error fetching contract", error?.message || error);
-    //alert('Something went wrong, Please try again later')
   }
 }
 
@@ -50,7 +43,7 @@ async function fetchRequest(url){
   try{
     const response = await fetch(url, {
       headers: {
-        Authorization: "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",
+        Authorization: {api_key},
       },
     });
     return await response?.json();
@@ -61,8 +54,8 @@ async function fetchRequest(url){
 
 async function loadContracts() {
   //fetch branches & tags from repo
-  const BRANCHES_URL= "https://api.github.com/repos/ONDC-Official/ONDC-RET-Specifications/branches";
-  const TAGS_URL= "https://api.github.com/repos/ONDC-Official/ONDC-RET-Specifications/tags";
+  const BRANCHES_URL= "https://api.github.com/repos/gbalaji-tw/ONDC-ADS-Specifications/branches";
+  const TAGS_URL= "https://api.github.com/repos/gbalaji-tw/ONDC-ADS-Specifications/tags";
                   
   let response1, response2;
   response1 = await fetchRequest(BRANCHES_URL)
