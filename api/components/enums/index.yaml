@@ -8,7 +8,7 @@ search:
         category:
           id:
             $ref: "./category.yaml#/category_ids"
-      fulfillments: &fulfillments
+      fulfillment: &fulfillment
         type: 
           $ref: "./fulfillments.yaml#/fulfillments/type"
 on_search:
@@ -29,10 +29,9 @@ on_search:
                 measure:
                   unit: "./items.yaml#/price/unit"
         fulfillments: *fulfillment
-        payments: *payment
       offers:
         $ref: "./offers.yaml#/offers"
-      fulfillments: &fulfillments
+      fulfillments: &fulfillment
         type: 
           $ref: "./fulfillments.yaml#/fulfillments/type"
       payments:
