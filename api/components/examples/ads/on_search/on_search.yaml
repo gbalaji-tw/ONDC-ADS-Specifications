@@ -32,15 +32,15 @@ value:
         type: POST-FULFILLMENT
         collected_by: 'BPP'
       descriptor:
-        name: ABC store
-        short_desc: Online eCommerce Store
-        long_desc: Online eCommerce Store
+        name: ABC app
+        short_desc: Online eCommerce app
+        long_desc: Online eCommerce app
         images:
         - url: https://abc.com/images/1-shop-img
       providers:
       - id: P1
         descriptor:
-          name: <<Organisation_name>>
+          name: 'ABC.com'
           code: P001
           short_desc: <<desc>>
           long_desc: <<desc>>
@@ -73,17 +73,8 @@ value:
               code: location
             value: L1
           - descriptor:
-              code: category
-            value: RET10-1042
-          - descriptor:
               code: type
-            value: '12'
-          - descriptor:
-              code: val
-            value: SGP
-          - descriptor:
-              code: unit
-            value: country
+            value: 12
         - descriptor:
             code: seller_terms
           list:
@@ -116,10 +107,13 @@ value:
           list:
           - descriptor:
               code: age_range
-            value: '24-40'
+            value: '18-30'
           - descriptor:
-              code: Interest
-            value: 'consumer electronics'
+              code: interest
+            value: 'Consumer-Electronics'
+          - descriptor:
+              code: marital_status
+            value: 'Single'
         - descriptor:
             code: acceptance_criteria
           list:
@@ -127,26 +121,11 @@ value:
               code: allowed_policies
             value: 'ONDC Seller nodes & seller apps only'
           - descriptor:
-              code: domain
-            value: 'retail'
-          - descriptor:
-              code: Categories
-            value: 'Fashion and Apparel only'  
-          - descriptor:
               code: resolution_mode
-            value: 'Fixed fee | Bid | Time and material'
-          - descriptor:
-              code: target_audience
-              list:
-              - descriptor:
-                  code: age_range
-                value: '24-40'
-              - descriptor:
-                  code: Interest
-                value: 'consumer electronics'
+            value: 'Fixed fee'
         items:
-        - id: <<Ad product>>
-          parent_item_id: <<<<product group>>
+        - id: Display-ADS
+          parent_item_id: RETAIL-APP
           descriptor:
             name: banner Ad
             code: banner Ad
@@ -162,11 +141,11 @@ value:
           quantity:
             unitized:
               measure:
-                unit: cpm 
+                unit: CPM 
                 value: '1'
             available:
               measure:
-                unit: cpm | cpc
+                unit: CPM
                 value: '10'
               count: 20
           tags:
@@ -175,22 +154,22 @@ value:
               list:
               - descriptor:
                   code: ad_size
-                  value: <<970x250>>
+                  value: '970x250'
               - descriptor:
                   code: max_k_weight_in_kb
-                  value: <<250>>
+                  value: '250kb'
               - descriptor:
                   code: ad_format
-                  value: <<JPG | PNG>>
+                  value: JPG
               - descriptor:
                   code: sub_load_in_kb
-                  value: <<200>>    
+                  value: '200kb'
             - descriptor:
               code: ad_placement
               list:
               - descriptor:
                   code: position
-                  value: <<Home page | Checkout Page>>
+                  value: Homepage
               - descriptor:
                   code: location
                   value: <<city |area>>
@@ -199,27 +178,24 @@ value:
                   value: <<location url>>
             - descriptor:
               code: ad_type
-              value: <<Billboard | smartphone>>
+              value: Display-ADS
         categories:
-         - id: <<L3>>
-           parent_category_id: <<L2>> 
+         - id: 'Commerce properties'
+           parent_category_id: 'Digital' 
            tags:
             - descriptor:
               code: allowed_categories
               list:
               - descriptor:
                   code: product_category
-                  value: 'Electronics'
-              - descriptor:
-                  code: product_sub_category
-                  value: 'laptops'
+                  value: C200
             - descriptor:
               code: allowed_domains
-              value: '<<Retail | Insurance | Agri>>'
+              value: D100
         fulfillments:
          - id: 
-           type: <<L4>> 
-           state: <<Order_placed, creative, to_be submitted, ad_live, ad_closed>>
+           type: ONLINE
+           state: CREATED
            tags:
             - descriptor:
               code: location
@@ -235,9 +211,9 @@ value:
                   value: ''
         payments:
          - id: 
-           collected_by:: <<BAP | BPP>> 
-           state: <<PAID | NOT_PAID>>
-           type: 'PRE-ORDER, PRE-FULFILLMENT, ON-FULFILLMENT, POST-FULFILLMENT'
+           collected_by: BAP
+           state: NOT_PAID
+           type: ON-FULFILLMENT
 
 
 

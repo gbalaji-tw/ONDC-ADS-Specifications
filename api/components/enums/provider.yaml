@@ -14,10 +14,12 @@ tags:
         description: Geojson
         reference: <PR/Issue/Discussion Links md format text>
   target_audience:
-    demographic:
       marital_status:
-        - code: 18-30
-          description: Age range between 18-30
+        - code: Single
+          description: Single
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: Married
+          description: Married
           reference: <PR/Issue/Discussion Links md format text>
       age_range: 
         - code: 18-30
