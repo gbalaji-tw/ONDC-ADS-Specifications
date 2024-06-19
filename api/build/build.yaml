@@ -3069,8 +3069,10 @@ x-flows:
         description: Search intent sent by the buyer based on the category
         reference: if any
         example: &ref_4
-          summary: Search by Category
-          description: Search By Category
+          summary: Search by Category.
+          description: >-
+            Search By Category. Category can be an L2 from taxonomy examples
+            include OOH,Digital,Print,Broadcast.
           value:
             context:
               domain: ONDC:ADS10
@@ -3090,7 +3092,7 @@ x-flows:
             message:
               intent:
                 category:
-                  id: Digital <<L2 Category>>
+                  id: Digital
                 tags:
                   - descriptor:
                       code: buyer_id
