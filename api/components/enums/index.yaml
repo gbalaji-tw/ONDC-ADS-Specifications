@@ -47,6 +47,8 @@ on_search:
           parent_category_id: &category_ids
             type:
               $ref: "./category.yaml#/categories/category_ids"
+          tags:
+            $ref: "./category.yaml#/categories/tags"
       offers:
         $ref: "./offers.yaml#/offers"
       fulfillments: &fulfillment

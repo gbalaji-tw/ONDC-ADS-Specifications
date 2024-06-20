@@ -2746,6 +2746,22 @@ x-enum:
               type: *ref_2
             parent_category_id:
               type: *ref_3
+            tags:
+              allowed_categories:
+                product_category:
+                  - code: C200
+                    description: Electronics
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: C201
+                    description: Home appliances
+                    reference: <PR/Issue/Discussion Links md format text>
+                allowed_domains:
+                  - code: D100
+                    description: Retail
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: D101
+                    description: Insurance
+                    reference: <PR/Issue/Discussion Links md format text>
         offers:
           descriptor:
             code:
