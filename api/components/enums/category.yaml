@@ -1,60 +1,61 @@
-category_ids:
-  - code: Digital
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: Broadcast
-    description: Broadcast
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: OOH
-    description: OOH
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: Print
-    description: Print
-    reference: <PR/Issue/Discussion Links md format text>
-product_group_ids:
-  - Code: App
-    description: "Retail app"
-    reference: "Reference for Retail app"
-  - Code: Website
-    description: "Retailer website"
-    reference: "Reference for Retailer website"
-  - Code: Kiosk
-    description: "Retailer in-store kiosk"
-    reference: "Reference for Retailer in-store kiosk"
-ad_product_ids:
-  - code: Display-Ads
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: Native-Ads
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: Emoji-Ads
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: Document-Ads
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: 360-Degree-Image
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-  - code: 360-Degree-Video
-    description: Digital
-    reference: <PR/Issue/Discussion Links md format text>
-tags:
-  allowed_categories:
-    product_category:
-      - code: C200
-        description: Electronics
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: C201
-        description: Home appliances
-        reference: <PR/Issue/Discussion Links md format text>
-    allowed_domains:
-      - code: D100
-        description: Retail
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: D101
-        description: Insurance
-        reference: <PR/Issue/Discussion Links md format text>
+categories:
+  category_ids:
+    - code: Digital
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: Broadcast
+      description: Broadcast
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: OOH
+      description: OOH
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: Print
+      description: Print
+      reference: <PR/Issue/Discussion Links md format text>
+  product_group_ids:
+    - Code: App
+      description: "Retail app"
+      reference: "Reference for Retail app"
+    - Code: Website
+      description: "Retailer website"
+      reference: "Reference for Retailer website"
+    - Code: Kiosk
+      description: "Retailer in-store kiosk"
+      reference: "Reference for Retailer in-store kiosk"
+  ad_product_ids:
+    - code: Display-Ads
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: Native-Ads
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: Emoji-Ads
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: Document-Ads
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: 360-Degree-Image
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+    - code: 360-Degree-Video
+      description: Digital
+      reference: <PR/Issue/Discussion Links md format text>
+  tags:
+    allowed_categories:
+      product_category:
+        - code: C200
+          description: Electronics
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: C201
+          description: Home appliances
+          reference: <PR/Issue/Discussion Links md format text>
+      allowed_domains:
+        - code: D100
+          description: Retail
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: D101
+          description: Insurance
+          reference: <PR/Issue/Discussion Links md format text>
 
 
