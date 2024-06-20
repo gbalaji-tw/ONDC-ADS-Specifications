@@ -21,6 +21,10 @@ on_search:
         tags:
           $ref: "./provider.yaml#/tags"
         items:
+          descriptor:
+            code: &ad_product_ids
+              type:
+                $ref: "./category.yaml#/ad_product_ids"
           tags:
             $ref: "./items.yaml#/tags"
           price:
@@ -28,7 +32,21 @@ on_search:
               unitized:
                 measure:
                   unit: "./items.yaml#/price/unit"
-        fulfillments: *fulfillment
+          fulfillment_ids: &fulfillment
+            $ref: "./fulfillments.yaml#/fulfillments/type"
+          category_ids: &product_group_ids
+            $ref: "./category.yaml#/product_group_ids"
+          payment_ids: &payments
+            $ref: "./payment.yaml#/payment/type"
+        fulfillments: &fulfillment
+            $ref: "./fulfillments.yaml#/fulfillments/type"
+        categories: 
+          id: &product_group_ids
+            type:
+              $ref: "./category.yaml#/product_group_ids"
+          parent_category_id: &category_ids
+            type:
+              $ref: "./category.yaml#/category_ids"
       offers:
         $ref: "./offers.yaml#/offers"
       fulfillments: &fulfillment

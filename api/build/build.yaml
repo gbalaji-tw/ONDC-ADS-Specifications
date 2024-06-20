@@ -2585,7 +2585,7 @@ x-enum:
       intent:
         item:
           category:
-            id:
+            id: &ref_3
               - code: Digital
                 description: Digital
                 reference: <PR/Issue/Discussion Links md format text>
@@ -2598,8 +2598,8 @@ x-enum:
               - code: Print
                 description: Print
                 reference: <PR/Issue/Discussion Links md format text>
-        fulfillment: &ref_1
-          type: &ref_2
+        fulfillment:
+          type: &ref_1
             - code: ONLINE
               description: ONLINE
               reference: <PR/Issue/Discussion Links md format text>
@@ -2662,6 +2662,27 @@ x-enum:
                   description: Time-material
                   reference: <PR/Issue/Discussion Links md format text>
           items:
+            descriptor:
+              code:
+                type:
+                  - code: Display-Ads
+                    description: Digital
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Native-Ads
+                    description: Digital
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Emoji-Ads
+                    description: Digital
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Document-Ads
+                    description: Digital
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: 360-Degree-Image
+                    description: Digital
+                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: 360-Degree-Video
+                    description: Digital
+                    reference: <PR/Issue/Discussion Links md format text>
             tags:
               ad_specifications:
                 ad_format:
@@ -2696,7 +2717,35 @@ x-enum:
                 unitized:
                   measure:
                     unit: ./items.yaml#/price/unit
+            fulfillment_ids: *ref_1
+            category_ids: &ref_2
+              - Code: App
+                description: Retail app
+                reference: Reference for Retail app
+              - Code: Website
+                description: Retailer website
+                reference: Reference for Retailer website
+              - Code: Kiosk
+                description: Retailer in-store kiosk
+                reference: Reference for Retailer in-store kiosk
+            payment_ids: &ref_4
+              - code: ON-FULFILLMENT
+                description: Payment will be done on delivery.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: PRE-FULFILLMENT
+                description: >-
+                  Prepaid payment, i.e payment will be done during order
+                  confirmation.
+                reference: <PR/Issue/Discussion Links md format text>
+              - code: POST-FULFILLMENT
+                description: Payment will be done after the delivery.
+                reference: <PR/Issue/Discussion Links md format text>
           fulfillments: *ref_1
+          categories:
+            id:
+              type: *ref_2
+            parent_category_id:
+              type: *ref_3
         offers:
           descriptor:
             code:
@@ -2710,32 +2759,10 @@ x-enum:
                   Flat discount amount applied to the cart value, and may be
                   based on minimum cart value).
                 reference: <PR/Issue/Discussion Links md format text>
-              - code: BuyXGetY
-                description: >-
-                  For every "X" item count in the cart, total of "Y" items will
-                  be offered (i.e. "Y" - "X" additional items), at 0 additional
-                  value.
-                reference: <PR/Issue/Discussion Links md format text>
-              - code: Freebie
-                description: >-
-                  for a minimum order value, 1 or more free item(s) will be
-                  offered at 0 value.
-                reference: <PR/Issue/Discussion Links md format text>
         fulfillments:
-          type: *ref_2
+          type: *ref_1
         payments:
-          type:
-            - code: ON-FULFILLMENT
-              description: Payment will be done on delivery.
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: PRE-FULFILLMENT
-              description: >-
-                Prepaid payment, i.e payment will be done during order
-                confirmation.
-              reference: <PR/Issue/Discussion Links md format text>
-            - code: POST-FULFILLMENT
-              description: Payment will be done after the delivery.
-              reference: <PR/Issue/Discussion Links md format text>
+          type: *ref_4
           collected_by:
             - code: BAP
               description: Collected by BAP
@@ -2762,7 +2789,7 @@ x-tags:
       - code: BUYER_ID
         description: Description about the tags
         reference: <PR/Issue/Discussion Links md format text>
-        list: &ref_3
+        list: &ref_5
           - code: BUYER_ID_CODE
             description: Description about the tags
             reference: <PR/Issue/Discussion Links md format text>
@@ -3007,7 +3034,7 @@ x-tags:
       - code: BUYER_ID
         description: Description about the tags
         reference: <PR/Issue/Discussion Links md format text>
-        list: *ref_3
+        list: *ref_5
       - code: COMM_CHANNEL
         description: Description about the tags
         reference: <PR/Issue/Discussion Links md format text>
@@ -3070,7 +3097,7 @@ x-flows:
         api: search
         description: Search intent sent by the buyer based on the category
         reference: if any
-        example: &ref_4
+        example: &ref_6
           summary: Search by Category.
           description: >-
             Search By Category. Category can be an L2 from taxonomy examples
@@ -3109,7 +3136,7 @@ x-flows:
         api: on_search
         description: Catalog provided by the Seller App
         reference: if any
-        example: &ref_5
+        example: &ref_7
           summary: Return the catalog
           description: Return the catalog
           value:
@@ -3236,11 +3263,11 @@ x-flows:
                               code: resolution_mode
                             value: Fixed fee
                     items:
-                      - id: Display-ADS
-                        parent_item_id: RETAIL-APP
+                      - id: I1
+                        parent_item_id: PI1
                         descriptor:
-                          name: banner Ad
-                          code: banner Ad
+                          name: Display ads
+                          code: Display Ads
                           short_desc: Home page banner
                           long_desc: Home page banner
                           media:
@@ -3291,6 +3318,27 @@ x-flows:
                           - descriptor: null
                             code: ad_type
                             value: Display-ADS
+                        category_ids:
+                          - App
+                        fulfillment_ids:
+                          - '1'
+                        location_ids:
+                          - L1
+                        payment_ids:
+                          - '2'
+                        add-ons:
+                          - id: ADDON01
+                            descriptor:
+                              name: creative generation
+                              short_desc: image generation
+                              long_desc: Campaign Image generation
+                              images:
+                                - url: https://abc.com/images/208.png
+                            price:
+                              currency: INR
+                              value: '170.0'
+                              offered_value: '100.0'
+                              maximum_value: '170.0'
                     categories:
                       - id: Commerce properties
                         parent_category_id: Digital
@@ -3367,10 +3415,10 @@ x-examples:
                       - descriptor:
                           code: buyer_id_no
                         value: xxxxxxxxxxxxxxx
-          - *ref_4
+          - *ref_6
       on_search:
         examples:
-          - *ref_5
+          - *ref_7
       select:
         examples:
           - summary: Get quote for specific ad Product
@@ -3458,37 +3506,93 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '8000'
+                      value: '5295'
                     breakup:
-                      - '@ondc/org/item_id': I1
-                        '@ondc/org/item_quantity':
-                          count: 10
-                        title: Display Ads
-                        '@ondc/org/title_type': item
+                      - title: Ads
                         price:
                           currency: INR
                           value: '5000'
                         item:
+                          id: PI1
                           quantity:
-                            available:
-                              count: '200'
-                            maximum:
-                              count: '20'
+                            selected:
+                              count: '10'
                           price:
                             currency: INR
                             value: '500'
-                      - '@ondc/org/item_id': I2
-                        title: Tax
-                        '@ondc/org/title_type': tax
+                        tags:
+                          - descriptor:
+                              code: title
+                            list:
+                              - descriptor:
+                                  code: type
+                                value: Display Ads
+                      - title: tax
+                        price:
+                          currency: INR
+                          value: '100'
+                        item:
+                          id: I2
+                        tags:
+                          - descriptor:
+                              code: title
+                            list:
+                              - descriptor:
+                                  code: type
+                                value: tax
+                      - title: offer
+                        price:
+                          currency: INR
+                          value: '-1000.00'
+                        item:
+                          id: PI1
+                        tags:
+                          - descriptor:
+                              code: TITLE
+                            list:
+                              - descriptor:
+                                  code: TYPE
+                                value: offer
+                          - code: BENEFIT
+                            list:
+                              - code: VALUE_TYPE
+                                value: percent
+                              - code: VALUE
+                                value: '60'
+                              - code: VALUE_CAP
+                                value: '-1000.00'
+                          - code: META
+                            list:
+                              - code: ADDITIVE
+                                value: 'no'
+                              - code: AUTO
+                                value: 'yes'
+                      - title: add-ons
                         price:
                           currency: INR
                           value: '1000'
-                      - '@ondc/org/item_id': I3
-                        title: Addons
-                        '@ondc/org/title_type': addons
+                        item:
+                          id: I3
+                        tags:
+                          - descriptor:
+                              code: title
+                            list:
+                              - descriptor:
+                                  code: type
+                                value: Creative Genenration
+                      - title: add-ons tax
                         price:
                           currency: INR
-                          value: '2000'
+                          value: '50'
+                        item:
+                          id: I3
+                        tags:
+                          - descriptor:
+                              code: title
+                            list:
+                              - descriptor:
+                                  code: type
+                                value: tax
                     ttl: P1D
 x-attributes:
   B2B:

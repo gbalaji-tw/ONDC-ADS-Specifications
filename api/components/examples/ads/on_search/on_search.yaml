@@ -124,11 +124,11 @@ value:
               code: resolution_mode
             value: 'Fixed fee'
         items:
-        - id: Display-ADS
-          parent_item_id: RETAIL-APP
+        - id: I1
+          parent_item_id: PI1
           descriptor:
-            name: banner Ad
-            code: banner Ad
+            name: Display ads
+            code: 'Display Ads'
             short_desc: Home page banner
             long_desc: Home page banner
             media:
@@ -179,6 +179,27 @@ value:
             - descriptor:
               code: ad_type
               value: Display-ADS
+          category_ids:
+            - App
+          fulfillment_ids:    
+            - '1'
+          location_ids:    
+            - L1
+          payment_ids:
+            - '2' 
+          add-ons:
+          - id: 'ADDON01'
+            descriptor:
+              name: creative generation
+              short_desc: image generation
+              long_desc: Campaign Image generation
+              images:
+              - url: https://abc.com/images/208.png
+            price:
+              currency: INR
+              value: '170.0'
+              offered_value: '100.0'
+              maximum_value: '170.0'
         categories:
          - id: 'Commerce properties'
            parent_category_id: 'Digital' 
@@ -214,11 +235,3 @@ value:
            collected_by: BAP
            state: NOT_PAID
            type: ON-FULFILLMENT
-
-
-
-
-
-
-
-              
