@@ -2719,13 +2719,13 @@ x-enum:
                     unit: ./items.yaml#/price/unit
             fulfillment_ids: *ref_1
             category_ids: &ref_2
-              - Code: App
+              - code: App
                 description: Retail app
                 reference: Reference for Retail app
-              - Code: Website
+              - code: Website
                 description: Retailer website
                 reference: Reference for Retailer website
-              - Code: Kiosk
+              - code: Kiosk
                 description: Retailer in-store kiosk
                 reference: Reference for Retailer in-store kiosk
             payment_ids: &ref_4
