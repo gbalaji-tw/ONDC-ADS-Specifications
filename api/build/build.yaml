@@ -3371,6 +3371,125 @@ x-examples:
       on_search:
         examples:
           - *ref_5
+      select:
+        examples:
+          - summary: Get quote for specific ad Product
+            description: Get quote for specific item with Buyer and Delivery terms
+            value:
+              context:
+                domain: ONDC:ADS10
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                action: select
+                version: 2.0.1
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/grocery
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/grocery
+                transaction_id: T1
+                message_id: M1
+                timestamp: '2023-01-08T22:00:30.000Z'
+                ttl: PT30S
+              message:
+                order:
+                  provider:
+                    id: P1
+                    locations:
+                      - id: L1
+                  items:
+                    - id: Display-ADS
+                      location_ids:
+                        - L1
+                      quantity:
+                        selected:
+                          count: 10
+                      add-ons:
+                        - id: '78787723'
+                  fulfillments:
+                    - id: 1
+                    - type: ONLINE
+                  payments:
+                    - type: ON-FULFILLMENT
+                  tags:
+                    - descriptor:
+                        code: buyer_id
+                      list:
+                        - descriptor:
+                            code: buyer_id_code
+                          value: gst
+                        - descriptor:
+                            code: buyer_id_no
+                          value: xxxxxxxxxxxxxxx
+      on_select:
+        examples:
+          - summary: Send quote and breakup
+            description: Send quote and breakup for items selected in select call.
+            value:
+              context:
+                domain: ONDC:ADS10
+                location:
+                  city:
+                    code: std:080
+                  country:
+                    code: IND
+                action: on_select
+                version: 2.0.1
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/grocery
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/grocery
+                transaction_id: T1
+                message_id: M1
+                timestamp: '2023-01-08T22:00:30.000Z'
+                ttl: PT30S
+              message:
+                order:
+                  provider:
+                    id: ABC.com
+                  items:
+                    - fulfillment_ids:
+                        - ONLINE
+                      id: I1
+                  fulfillments:
+                    - id: ONLINE
+                  quote:
+                    price:
+                      currency: INR
+                      value: '8000'
+                    breakup:
+                      - '@ondc/org/item_id': I1
+                        '@ondc/org/item_quantity':
+                          count: 10
+                        title: Display Ads
+                        '@ondc/org/title_type': item
+                        price:
+                          currency: INR
+                          value: '5000'
+                        item:
+                          quantity:
+                            available:
+                              count: '200'
+                            maximum:
+                              count: '20'
+                          price:
+                            currency: INR
+                            value: '500'
+                      - '@ondc/org/item_id': I2
+                        title: Tax
+                        '@ondc/org/title_type': tax
+                        price:
+                          currency: INR
+                          value: '1000'
+                      - '@ondc/org/item_id': I3
+                        title: Addons
+                        '@ondc/org/title_type': addons
+                        price:
+                          currency: INR
+                          value: '2000'
+                    ttl: P1D
 x-attributes:
   B2B:
     attribute_set:
