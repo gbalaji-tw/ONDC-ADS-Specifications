@@ -5,3 +5,9 @@ search:
 on_search:
   examples:
     - $ref: ./on_search/on_search.yaml
+select:
+  examples:
+    - $ref: ./select/select.yaml
+on_select:
+  examples:
+    - $ref: ./on_select/on_select.yaml
