@@ -13,13 +13,13 @@ categories:
       description: Print
       reference: <PR/Issue/Discussion Links md format text>
   product_group_ids:
-    - Code: App
+    - code: App
       description: "Retail app"
       reference: "Reference for Retail app"
-    - Code: Website
+    - code: Website
       description: "Retailer website"
       reference: "Reference for Retailer website"
-    - Code: Kiosk
+    - code: Kiosk
       description: "Retailer in-store kiosk"
       reference: "Reference for Retailer in-store kiosk"
   ad_product_ids:
