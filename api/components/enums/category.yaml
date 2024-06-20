@@ -12,17 +12,32 @@ category_ids:
     description: Print
     reference: <PR/Issue/Discussion Links md format text>
 product_group_ids:
-  - Code: RETAIL-APP
+  - Code: App
     description: "Retail app"
     reference: "Reference for Retail app"
-  - Code: RETAILER-WEBSITE
+  - Code: Website
     description: "Retailer website"
     reference: "Reference for Retailer website"
-  - Code: RETAILER-IN-STORE-KIOSK
+  - Code: Kiosk
     description: "Retailer in-store kiosk"
     reference: "Reference for Retailer in-store kiosk"
 ad_product_ids:
-  - code: Display-ADS
+  - code: Display-Ads
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Native-Ads
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Emoji-Ads
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: Document-Ads
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: 360-Degree-Image
+    description: Digital
+    reference: <PR/Issue/Discussion Links md format text>
+  - code: 360-Degree-Video
     description: Digital
     reference: <PR/Issue/Discussion Links md format text>
 tags:
