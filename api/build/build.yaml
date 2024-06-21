@@ -3303,6 +3303,10 @@ x-flows:
                               unit: CPM
                               value: '10'
                             count: 20
+                        time:
+                          range:
+                            start: '2024-07-01T00:00:00.000Z'
+                            end: '2024-07-31T00:00:00.000Z'
                         tags:
                           - descriptor: null
                             code: ad_specifications
@@ -3334,11 +3338,6 @@ x-flows:
                           - descriptor: null
                             code: ad_type
                             value: Display-ADS
-                          - descriptor: null
-                            code: availability
-                            range:
-                              start: '2024-07-01T00:00:00.000Z'
-                              end: '2024-07-31T00:00:00.000Z'
                         category_ids:
                           - App
                         fulfillment_ids:
