@@ -3,44 +3,44 @@ message:
   order:
     parent: true
     items:
-        parent: true
-        id:
-          description: item id i.e. the id of the selected service or customization
-          required: required
-          usage: "I2"
-          reference: if any
-        parent_item_id:
-          description: parent item id of the selected service or customization
-          required: required for customizations
-          usage: "PI1"
-          reference: if any
-        location_ids:
-          description: location id of the selected service provider
-          required: required
-          usage: "L1"
-          reference: if any
-        category_ids:
-          description: category ids of the selected service
-          required: required
-          usage: "C1"
-          reference: if any
-        quantity:
-          selected:
-            count:
-              description: number of items selected e.g. number of sofas to be cleaned
-              required: required
-              usage: "1"
-              reference: if any
-        tags:
-          description: identifier tag for customizations
-          required: required for customizations
-          usage: "-"
-          reference: if any
-        fulfillment_ids:
-          description: fulfillment id of the service mapped to the id provided in fulfillments array
-          required: required
-          usage: "F1"
-          reference: if any
+      parent: true
+      id:
+        description: item id i.e. the id of the selected service or customization
+        required: required
+        usage: "I2"
+        reference: if any
+      parent_item_id:
+        description: parent item id of the selected service or customization
+        required: required for customizations
+        usage: "PI1"
+        reference: if any
+      location_ids:
+        description: location id of the selected service provider
+        required: required
+        usage: "L1"
+        reference: if any
+      category_ids:
+        description: category ids of the selected service
+        required: required
+        usage: "C1"
+        reference: if any
+      quantity:
+        selected:
+          count:
+            description: number of items selected e.g. number of sofas to be cleaned
+            required: required
+            usage: "1"
+            reference: if any
+      tags:
+        description: identifier tag for customizations
+        required: required for customizations
+        usage: "-"
+        reference: if any
+      fulfillment_ids:
+        description: fulfillment id of the service mapped to the id provided in fulfillments array
+        required: required
+        usage: "F1"
+        reference: if any
     billing:
       parent: true
       billing:
@@ -92,7 +92,7 @@ message:
         required: optional
         usage: "L1"
         reference: if any
-    fulfillments:    
+    fulfillments:
     quote:
       parent: true
       price:
@@ -118,12 +118,12 @@ message:
           reference: if any
     payments:
       parent: true
-      id: 
+      id:
         description: payment id
         required: required
         usage: "P1"
         reference: if any
-      type: 
+      type:
         description: selected payment mode by which buyer would like to pay, enum - 'PRE-FULFILLMENT',"ON-FULFILLMENT","POST-FULFILLMENT"
         required: required
         usage: "ON-FULFILLMENT"
@@ -165,4 +165,3 @@ message:
           usage: "-"
           reference: if any
           required: required
-      
