@@ -3804,14 +3804,14 @@ x-attributes:
                   required: optional
                   description: Human readable id
                   reference: if any
-                  usage: Ad-Product
+                  usage: Display Ads
                 parent_item_id:
                   description: >-
                     if variant grouping defined for provider above, this matches
                     id for variant_group definition; if not defined or id is
                     invalid, buyer NPs may choose to display as normal SKU item
                   required: mandatory
-                  usage: <Product Group>
+                  usage: App
                   reference: if any
                 descriptor.code:
                   description: >-
@@ -3822,9 +3822,7 @@ x-attributes:
                   usage: 2
                   reference: if any
                 quantity.unitized.measure.unit:
-                  description: >-
-                    enum - "CPC", "CPM", "CPA"
-                    (https://github.com/ONDC-Official/protocol-network-extension/blob/main/enums/retail/grocery/RET10-UOM.json)
+                  description: enum - "CPC", "CPM", "CPA"
                   required: mandatory
                   usage: unit
                   reference: if any
@@ -3839,6 +3837,16 @@ x-attributes:
                     default value
                   required: mandatory
                   usage: '3'
+                  reference: if any
+                time.range.start:
+                  description: Start time from when the item is available
+                  required: mandatory
+                  usage: yyyy-mm-ddTHH:MM:SS
+                  reference: if any
+                time.range.end:
+                  description: End time from when the item is available
+                  required: mandatory
+                  usage: yyyy-mm-ddTHH:MM:SS
                   reference: if any
               offers:
                 description: offer definition as per the template defined above

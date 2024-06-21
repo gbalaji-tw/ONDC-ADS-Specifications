@@ -124,7 +124,7 @@ value:
               code: resolution_mode
             value: 'Fixed fee'
         items:
-        - id: I1
+        - id: 'I1'
           parent_item_id: PI1
           descriptor:
             name: Display ads
