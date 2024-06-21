@@ -16,4 +16,4 @@ init:
     - $ref: ./init/init.yaml
 on_init:
   examples:
-    - $ref: ./on_init/on_init.yaml       
+    - $ref: ./on_init/on_init.yaml
