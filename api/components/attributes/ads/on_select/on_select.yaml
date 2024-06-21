@@ -1,0 +1,40 @@
+message:
+  parent: true
+  order:
+    parent: true
+    fulfillments:
+      parent: true
+      id:
+        description: ONLINE or OFFLINE
+        required: required
+        usage: ONLINE
+        reference: if any
+    quote:
+      parent: true
+      price:
+        currency:
+          description: total price quoted from seller NP
+          required: required
+          usage: "INR"
+          reference: if any
+        value:
+          description: total price quoted from seller NP
+          required: required
+          usage: "1000"
+          reference: if any
+      breakup:
+        title:
+          description: type of charge - can be customized
+          required: required
+          usage: "Item price"
+          reference: if any
+        item:
+          description: item id or fulfillment id based on type of charge
+          required: required
+          usage: "I1"
+          reference: if any
+        price:
+          description: Price for the item
+          required: required
+          usage: "100"
+          reference: if any

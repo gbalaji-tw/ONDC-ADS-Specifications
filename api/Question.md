@@ -34,3 +34,9 @@ Offers?
 days/weeks? - use start date
 item - tags - start_date, end_date.
 pricing based on promise sorted by seller conditions
+
+          time:
+            label: validity
+            range:
+              start: '2022-12-24T00:00:00.000Z'
+              end: '2022-12-31T00:00:00.000Z'

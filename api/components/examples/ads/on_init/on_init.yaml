@@ -1,0 +1,170 @@
+summary: Respond to RFQ
+description: Respond to RFQ
+value:
+  context:
+    domain: ONDC:RET10
+    location:
+      city:
+        code: std:080
+      country:
+        code: IND
+    action: on_init
+    version: 2.0.1
+    bap_id: buyerapp.com
+    bap_uri: https://buyerapp.com/grocery
+    bpp_id: sellerapp.com
+    bpp_uri: https://sellerapp.com/grocery
+    transaction_id: T1
+    message_id: M1
+    timestamp: '2023-01-08T22:00:30.000Z'
+    ttl: PT30S
+  message:
+    order:
+      provider:
+        id: P1
+      provider_location:
+        id: L1
+      items:
+      - id: I1
+        fulfillment_ids:
+        - F1
+        quantity:
+          selected:
+            count: 200
+        add-ons:
+        - id: '78787723'
+        tags:
+        - descriptor:
+            code: BUYER_TERMS
+          list:
+          - descriptor:
+              code: ITEM_REQ
+            value: free text on Item Customization
+          - descriptor:
+              code: PACKAGING_REQ
+            value: free text on packaging Customization
+      billing:
+        name: ONDC buyer
+        address: 22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001
+        state:
+          name: Karnataka
+        city:
+          name: Bengaluru
+        tax_id: XXXXXXXXXXXXXXX
+        email: nobody@nomail.com
+        phone: '9886098860'
+      fulfillments:
+      - id: F1
+        type: ONLINE
+        tracking: false
+      quote:
+        price:
+          currency: INR
+          value: '5295'
+        breakup:
+          - title: Ads
+            price:
+              currency: INR
+              value: '5000'
+            item:
+              id: PI1
+              quantity:
+                selected:
+                  count: '10'
+              price:
+                currency: INR
+                value: '500'
+            tags:
+              - descriptor:
+                  code: title
+                list:
+                  - descriptor:
+                      code: type
+                    value: Display Ads
+          - title: tax
+            price:
+              currency: INR
+              value: '100'
+            item:
+              id: I2
+            tags:
+              - descriptor:
+                  code: title
+                list:
+                  - descriptor:
+                      code: type
+                    value: tax
+          - title: offer
+            price:
+              currency: INR
+              value: '-1000.00'
+            item:
+              id: PI1
+            tags:
+              - descriptor:
+                  code: TITLE
+                list:
+                  - descriptor:
+                      code: TYPE
+                    value: offer
+              - code: BENEFIT
+                list:
+                  - code: VALUE_TYPE
+                    value: percent
+                  - code: VALUE
+                    value: '60'
+                  - code: VALUE_CAP
+                    value: '-1000.00'
+              - code: META
+                list:
+                  - code: ADDITIVE
+                    value: 'no'
+                  - code: AUTO
+                    value: 'yes'
+          - title: add-ons
+            price:
+              currency: INR
+              value: '1000'
+            item:
+              id: I3
+            tags:
+              - descriptor:
+                  code: title
+                list:
+                  - descriptor:
+                      code: type
+                    value: 'Creative Genenration'
+          - title: add-ons tax
+            price:
+              currency: INR
+              value: '50'
+            item:
+              id: I3
+            tags:
+              - descriptor:
+                  code: title
+                list:
+                  - descriptor:
+                      code: type
+                    value: tax
+        ttl: P1D
+      payments:
+        - settlement_counterparty: buyer-app
+          settlement_phase: sale-amount
+          settlement_type: upi
+          beneficiary_name: xxxxx
+          upi_address: gft@oksbi
+          settlement_bank_account_no: XXXXXXXXXX
+          settlement_ifsc_code: XXXXXXXXX
+          bank_name: xxxx
+          branch_name: xxxx
+      tags:
+      - descriptor:
+          code: buyer_id
+        list:
+        - descriptor:
+            code: buyer_id_code
+          value: gst
+        - descriptor:
+            code: buyer_id_no
+          value: xxxxxxxxxxxxxxx
