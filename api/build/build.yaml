@@ -4367,25 +4367,31 @@ x-attributes:
             quote:
               parent: true
               price:
-                description: total price quoted from seller NP
-                required: required
-                usage: '-'
-                reference: if any
+                currency:
+                  description: total price quoted from seller NP
+                  required: required
+                  usage: INR
+                  reference: if any
+                value:
+                  description: total price quoted from seller NP
+                  required: required
+                  usage: '1000'
+                  reference: if any
               breakup:
-                '@ondc/org/title_type':
-                  description: type of charge - item,packing,discount,tax,misc,delivery
-                  required: required
-                  usage: delivery
-                  reference: if any
-                '@ondc/org/item_id':
-                  description: item id or fulfillment id based on type of charge
-                  required: required
-                  usage: F1
-                  reference: if any
                 title:
                   description: type of charge - can be customized
                   required: required
-                  usage: Packing charges
+                  usage: Item price
+                  reference: if any
+                item:
+                  description: item id or fulfillment id based on type of charge
+                  required: required
+                  usage: I1
+                  reference: if any
+                price:
+                  description: Price for the item
+                  required: required
+                  usage: '100'
                   reference: if any
             payments:
               parent: true
