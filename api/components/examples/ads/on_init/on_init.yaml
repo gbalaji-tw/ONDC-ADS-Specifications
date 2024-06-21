@@ -149,15 +149,45 @@ value:
                     value: tax
         ttl: P1D
       payments:
-        - settlement_counterparty: buyer-app
-          settlement_phase: sale-amount
-          settlement_type: upi
-          beneficiary_name: xxxxx
-          upi_address: gft@oksbi
-          settlement_bank_account_no: XXXXXXXXXX
-          settlement_ifsc_code: XXXXXXXXX
-          bank_name: xxxx
-          branch_name: xxxx
+      - id: P1
+        collected_by: BAP
+        params:
+          amount: '5000'
+          currency: INR
+          bank_account_number: xxxxxxxx
+          virtual_payment_address: xxx@xxxx
+        type: ON-FULFILLMENT
+        tags:
+        - descriptor:
+            code: Settlement_Details
+          list:
+          - descriptor:
+              code: Counterparty
+            value: BPP
+          - descriptor:
+              code: Mode
+            value: UPI
+          - descriptor:
+              code: Beneficiary_Name
+            value: xxxxx
+          - descriptor:
+              code: Bank_Account_No
+            value: xxxxx
+          - descriptor:
+              code: Ifsc_Code
+            value: xxxxxxx
+          - descriptor:
+              code: UPI_Address
+            value: xxxxxxx
+        - descriptor:
+            code: Buyer_Finder_Fee
+          list:
+          - descriptor:
+              code: Buyer_Finder_Fee_Type
+            value: percentage
+          - descriptor:
+              code: Buyer_Finder_Fee_Amount
+            value: '3'
       tags:
       - descriptor:
           code: buyer_id

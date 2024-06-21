@@ -2,6 +2,97 @@ message:
   parent: true
   order:
     parent: true
+    items:
+        parent: true
+        id:
+          description: item id i.e. the id of the selected service or customization
+          required: required
+          usage: "I2"
+          reference: if any
+        parent_item_id:
+          description: parent item id of the selected service or customization
+          required: required for customizations
+          usage: "PI1"
+          reference: if any
+        location_ids:
+          description: location id of the selected service provider
+          required: required
+          usage: "L1"
+          reference: if any
+        category_ids:
+          description: category ids of the selected service
+          required: required
+          usage: "C1"
+          reference: if any
+        quantity:
+          selected:
+            count:
+              description: number of items selected e.g. number of sofas to be cleaned
+              required: required
+              usage: "1"
+              reference: if any
+        tags:
+          description: identifier tag for customizations
+          required: required for customizations
+          usage: "-"
+          reference: if any
+        fulfillment_ids:
+          description: fulfillment id of the service mapped to the id provided in fulfillments array
+          required: required
+          usage: "F1"
+          reference: if any
+    billing:
+      parent: true
+      billing:
+        description: billing details of the marketplace ( service provider ) for invoicing;
+        required: required
+        usage: "-"
+        reference: if any
+      phone:
+        required: required
+        description: Describes the phone information of an entity
+        reference: if any
+        usage: "9886098860"
+      email:
+        required: optional
+        description: Email address of the contact
+        reference: if any
+        usage: nobody@nomail.com
+      name:
+        required: required
+        description: Describes a person name as any individual
+        reference: if any
+        usage: ONDC buyer
+      tax_id:
+        required: required
+        description: Describes tax id
+        reference: if any
+        usage: 22AAAAA0000A1Z5
+      state:
+        name:
+          required: required
+          description: Describes the state information of an entity
+          reference: if any
+          usage: Karnataka
+      city:
+        name:
+          required: required
+          description: Describes the city information of an entity
+          reference: if any
+          usage: Bengaluru
+    provider:
+      id:
+        description: id of the provider chosen for the service
+        required: required
+        usage: "P1"
+        reference: if any
+    locations:
+      id:
+        description: mandatory only if provider.locations was returned in /on_search
+        required: optional
+        usage: "L1"
+        reference: if any
+    fulfillments:    
     quote:
       parent: true
       price:
@@ -27,18 +118,51 @@ message:
           reference: if any
     payments:
       parent: true
-      "@ondc/org/buyer_app_finder_fee_type":
-        description: buyer app finder fee type - percent,amount
+      id: 
+        description: payment id
         required: required
-        usage: "percent"
+        usage: "P1"
         reference: if any
-      "@ondc/org/buyer_app_finder_fee_amount":
-        description: amount of buyer app finder fee (either in percent or actual amount)
+      type: 
+        description: selected payment mode by which buyer would like to pay, enum - 'PRE-FULFILLMENT',"ON-FULFILLMENT","POST-FULFILLMENT"
         required: required
-        usage: "3"
+        usage: "ON-FULFILLMENT"
         reference: if any
-      "@ondc/org/settlement_details":
-        description: Details of counter party for settling the money
+      collected_by:
+        description: Indicates who is collecting the payment (BAP,BPP)
+        usage: "BAP"
+        reference: if any
         required: required
-        usage: "-"
-        reference: if any
+      params:
+        amount:
+          description: amount as per the quote total value
+          required: required
+          usage: "6000"
+          reference: if any
+        currency:
+          description: currency in which to receive the amount
+          required: required
+          usage: "INR"
+          reference: if any
+        bank_account_number:
+          description: service provider bank account number
+          required: required
+          usage: "001404845678"
+          reference: if any
+        virtual_payment_address:
+          description: service provider payment link address
+          required: required
+          usage: "-"
+          reference: if any
+      tags:
+        Settlement_Details:
+          description: tags for settlment details provided to counter party collecting the payment for settlement
+          usage: "-"
+          reference: if any
+          required: optional
+        Buyer_Finder_Fee:
+          description: tags for buyer finder fee type and amount
+          usage: "-"
+          reference: if any
+          required: required
+      
