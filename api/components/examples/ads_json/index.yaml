@@ -11,3 +11,9 @@ select:
 on_select:
   examples:
     - $ref: ./on_select/on_select.yaml
+init:
+  examples:
+    - $ref: ./init/init.yaml
+on_init:
+  examples:
+    - $ref: ./on_init/on_init.yaml    
