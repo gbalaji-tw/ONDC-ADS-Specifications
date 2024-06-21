@@ -316,6 +316,14 @@
                     "descriptor": null,
                     "code": "ad_type",
                     "value": "Display-ADS"
+                  },
+                  {
+                    "descriptor": null,
+                    "code": "availability",
+                    "range": {
+                      "start": "2024-07-01T00:00:00.000Z",
+                      "end": "2024-07-31T00:00:00.000Z"
+                    }
                   }
                 ],
                 "category_ids": [

@@ -179,6 +179,11 @@ value:
             - descriptor:
               code: ad_type
               value: Display-ADS
+            - descriptor:
+              code: availability
+              range:
+                start: '2024-07-01T00:00:00.000Z'
+                end: '2024-07-31T00:00:00.000Z'
           category_ids:
             - App
           fulfillment_ids:    
