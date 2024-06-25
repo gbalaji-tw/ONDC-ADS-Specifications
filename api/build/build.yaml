@@ -2646,6 +2646,12 @@ x-enum:
                 - code: Consumer-Electronics
                   description: All electronics
                   reference: <PR/Issue/Discussion Links md format text>
+                - code: Fashion
+                  description: All Fashion and apperls
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Sports
+                  description: All sports
+                  reference: <PR/Issue/Discussion Links md format text>
             acceptance_criteria:
               allowed_policies:
                 - code: ONDC Seller nodes & seller apps only
@@ -2685,7 +2691,7 @@ x-enum:
                     reference: <PR/Issue/Discussion Links md format text>
             tags:
               ad_specifications:
-                ad_format:
+                format:
                   - code: JPG
                     description: JPEG encoding
                     reference: <PR/Issue/Discussion Links md format text>
@@ -3127,7 +3133,7 @@ x-flows:
                 country:
                   code: IND
               action: search
-              version: 1.0.0
+              version: 2.0.0
               bap_id: buyerapp.com
               bap_uri: https://buyerapp.com
               transaction_id: 9568beb3-265a-4730-be4e-c00ba2e5e30a
@@ -3140,7 +3146,16 @@ x-flows:
                   id: Digital
                 tags:
                   - descriptor:
-                      code: buyer_id
+                      code: bap_terms
+                    list:
+                      - descriptor:
+                          code: finder_fee_type
+                        value: percent
+                      - descriptor:
+                          code: finder_fee_amount
+                        value: '10'
+                  - descriptor:
+                      code: buyer_details
                     list:
                       - descriptor:
                           code: buyer_id_code
@@ -3164,7 +3179,7 @@ x-flows:
                 country:
                   code: IND
               action: on_search
-              version: 2.0.2
+              version: 2.0.0
               bap_id: buyerapp.com
               bap_uri: https://buyerapp.com/grocery
               bpp_id: sellerapp.com
@@ -3178,6 +3193,8 @@ x-flows:
                 fulfillments:
                   - id: '1'
                     type: ONLINE
+                  - id: '2'
+                    type: OFFLINE
                 payments:
                   - id: '1'
                     type: PRE-FULFILLMENT
@@ -3185,7 +3202,6 @@ x-flows:
                     type: ON-FULFILLMENT
                   - id: '3'
                     type: POST-FULFILLMENT
-                    collected_by: BPP
                 descriptor:
                   name: ABC app
                   short_desc: Online eCommerce app
@@ -3208,6 +3224,8 @@ x-flows:
                     ttl: P1D
                     locations:
                       - id: L1
+                        gps: 12.967555,77.749666
+                        address: Jayanagar 4th Block
                         city:
                           code: std:080
                           name: Bengaluru
@@ -3228,6 +3246,20 @@ x-flows:
                               code: location
                             value: L1
                           - descriptor:
+                              code: category
+                            value: SRV11-*
+                          - descriptor:
+                              code: val
+                            value: >-
+                              {"type": "FeatureCollection", "features":
+                              [{"type": "Feature", "properties": {}, "geometry":
+                              {"coordinates": [[[77.175571, 28.675927],
+                              [77.128737, 28.600972], [77.446934, 28.545325],
+                              [77.175571, 28.675927]]], "type": "Polygon"}}]}
+                          - descriptor:
+                              code: unit
+                            value: geojson
+                          - descriptor:
                               code: type
                             value: 12
                       - descriptor:
@@ -3237,7 +3269,7 @@ x-flows:
                               code: gst_credit_invoice
                             value: 'Y'
                       - descriptor:
-                          code: seller_id
+                          code: seller_details
                         list:
                           - descriptor:
                               code: seller_id_code
@@ -3287,12 +3319,12 @@ x-flows:
                           short_desc: Home page banner
                           long_desc: Home page banner
                           media:
-                            - mimetype: jpeg | video
+                            - mimetype: video/mp4
+                              url: video_url
                         price:
                           currency: INR
                           value: '300.00'
                           offered_value: '250.00'
-                          maximum_value: '350.00'
                         quantity:
                           unitized:
                             measure:
@@ -3312,17 +3344,21 @@ x-flows:
                             code: ad_specifications
                             list:
                               - descriptor:
-                                  code: ad_size
+                                  code: size
                                   value: 970x250
                               - descriptor:
                                   code: max_k_weight_in_kb
-                                  value: 250kb
+                                  value: 250
+                                  unit: KB
                               - descriptor:
-                                  code: ad_format
-                                  value: JPG
+                                  code: format
+                                  media:
+                                    - mimetype: JPG
+                                      url: image_url
                               - descriptor:
                                   code: sub_load_in_kb
-                                  value: 200kb
+                                  value: 200
+                                  unit: KB
                           - descriptor: null
                             code: ad_placement
                             list:
@@ -3375,7 +3411,6 @@ x-flows:
                     fulfillments:
                       - id: null
                         type: ONLINE
-                        state: CREATED
                         tags:
                           - descriptor: null
                             code: location
@@ -3389,11 +3424,6 @@ x-flows:
                               - descriptor:
                                   code: long
                                   value: ''
-                    payments:
-                      - id: null
-                        collected_by: BAP
-                        state: NOT_PAID
-                        type: ON-FULFILLMENT
 x-examples:
   Ads:
     summary: Ads on Network
@@ -3416,7 +3446,7 @@ x-examples:
                   country:
                     code: IND
                 action: search
-                version: 1.0.0
+                version: 2.0.0
                 bap_id: buyerapp.com
                 bap_uri: https://buyerapp.com
                 transaction_id: 9568beb3-265a-4730-be4e-c00ba2e5e30a
@@ -3427,7 +3457,16 @@ x-examples:
                 intent: null
                 tags:
                   - descriptor:
-                      code: buyer_id
+                      code: bap_terms
+                    list:
+                      - descriptor:
+                          code: finder_fee_type
+                        value: percent
+                      - descriptor:
+                          code: finder_fee_amount
+                        value: '10'
+                  - descriptor:
+                      code: buyer_details
                     list:
                       - descriptor:
                           code: buyer_id_code

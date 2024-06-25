@@ -32,6 +32,12 @@ tags:
         - code: Consumer-Electronics
           description: All electronics
           reference: <PR/Issue/Discussion Links md format text>
+        - code: Fashion
+          description: All Fashion and apperls
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: Sports
+          description: All sports
+          reference: <PR/Issue/Discussion Links md format text>
   acceptance_criteria:
     allowed_policies:
      - code: ONDC Seller nodes & seller apps only

@@ -13,7 +13,7 @@
         }
       },
       "action": "on_search",
-      "version": "2.0.2",
+      "version": "2.0.0",
       "bap_id": "buyerapp.com",
       "bap_uri": "https://buyerapp.com/grocery",
       "bpp_id": "sellerapp.com",
@@ -29,6 +29,10 @@
           {
             "id": "1",
             "type": "ONLINE"
+          },
+          {
+            "id": "2",
+            "type": "OFFLINE"
           }
         ],
         "payments": [
@@ -42,8 +46,7 @@
           },
           {
             "id": "3",
-            "type": "POST-FULFILLMENT",
-            "collected_by": "BPP"
+            "type": "POST-FULFILLMENT"
           }
         ],
         "descriptor": {
@@ -79,6 +82,8 @@
             "locations": [
               {
                 "id": "L1",
+                "gps": "12.967555,77.749666",
+                "address": "Jayanagar 4th Block",
                 "city": {
                   "code": "std:080",
                   "name": "Bengaluru"
@@ -113,6 +118,24 @@
                   },
                   {
                     "descriptor": {
+                      "code": "category"
+                    },
+                    "value": "SRV11-*"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "val"
+                    },
+                    "value": "{\"type\": \"FeatureCollection\", \"features\": [{\"type\": \"Feature\", \"properties\": {}, \"geometry\": {\"coordinates\": [[[77.175571, 28.675927], [77.128737, 28.600972], [77.446934, 28.545325], [77.175571, 28.675927]]], \"type\": \"Polygon\"}}]}"
+                  },
+                  {
+                    "descriptor": {
+                      "code": "unit"
+                    },
+                    "value": "geojson"
+                  },
+                  {
+                    "descriptor": {
                       "code": "type"
                     },
                     "value": 12
@@ -134,7 +157,7 @@
               },
               {
                 "descriptor": {
-                  "code": "seller_id"
+                  "code": "seller_details"
                 },
                 "list": [
                   {
@@ -232,15 +255,15 @@
                   "long_desc": "Home page banner",
                   "media": [
                     {
-                      "mimetype": "jpeg | video"
+                      "mimetype": "video/mp4",
+                      "url": "video_url"
                     }
                   ]
                 },
                 "price": {
                   "currency": "INR",
                   "value": "300.00",
-                  "offered_value": "250.00",
-                  "maximum_value": "350.00"
+                  "offered_value": "250.00"
                 },
                 "quantity": {
                   "unitized": {
@@ -270,26 +293,33 @@
                     "list": [
                       {
                         "descriptor": {
-                          "code": "ad_size",
+                          "code": "size",
                           "value": "970x250"
                         }
                       },
                       {
                         "descriptor": {
                           "code": "max_k_weight_in_kb",
-                          "value": "250kb"
+                          "value": 250,
+                          "unit": "KB"
                         }
                       },
                       {
                         "descriptor": {
-                          "code": "ad_format",
-                          "value": "JPG"
+                          "code": "format",
+                          "media": [
+                            {
+                              "mimetype": "JPG",
+                              "url": "image_url"
+                            }
+                          ]
                         }
                       },
                       {
                         "descriptor": {
                           "code": "sub_load_in_kb",
-                          "value": "200kb"
+                          "value": 200,
+                          "unit": "KB"
                         }
                       }
                     ]
@@ -388,7 +418,6 @@
               {
                 "id": null,
                 "type": "ONLINE",
-                "state": "CREATED",
                 "tags": [
                   {
                     "descriptor": null,
@@ -415,14 +444,6 @@
                     ]
                   }
                 ]
-              }
-            ],
-            "payments": [
-              {
-                "id": null,
-                "collected_by": "BAP",
-                "state": "NOT_PAID",
-                "type": "ON-FULFILLMENT"
               }
             ]
           }
