@@ -135,9 +135,6 @@ value:
           - descriptor:
               code: allowed_policies
             value: 'ONDC Seller nodes & seller apps only'
-          - descriptor:
-              code: resolution_mode
-            value: 'Fixed fee'
         items:
         - id: 'I1'
           parent_item_id: PI1
@@ -178,16 +175,17 @@ value:
                   code: max_k_weight
                   value: 250
               - descriptor:
+                  code: sub_load
+                  value: 200
+              - descriptor:
                   code: file_size_unit
                   value: KB
               - descriptor:
                   code: format
                   list:
                   - descriptor:
-                      mimetype: image/jpeg
-              - descriptor:
-                  code: sub_load
-                  value: 200
+                      code: mimetype
+                      value: image/jpeg
             - descriptor:
               code: ad_placement
               list:
@@ -203,6 +201,9 @@ value:
             - descriptor:
               code: ad_type
               value: Display-ADS
+            - descriptor:
+              code: availability
+              value: Static
           category_ids:
             - App
           fulfillment_ids:    

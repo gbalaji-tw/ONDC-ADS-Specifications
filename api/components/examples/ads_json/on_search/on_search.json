@@ -234,12 +234,6 @@
                       "code": "allowed_policies"
                     },
                     "value": "ONDC Seller nodes & seller apps only"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "resolution_mode"
-                    },
-                    "value": "Fixed fee"
                   }
                 ]
               }
@@ -299,27 +293,33 @@
                       },
                       {
                         "descriptor": {
-                          "code": "max_k_weight_in_kb",
-                          "value": 250,
-                          "unit": "KB"
+                          "code": "max_k_weight",
+                          "value": 250
+                        }
+                      },
+                      {
+                        "descriptor": {
+                          "code": "sub_load",
+                          "value": 200
+                        }
+                      },
+                      {
+                        "descriptor": {
+                          "code": "file_size_unit",
+                          "value": "KB"
                         }
                       },
                       {
                         "descriptor": {
                           "code": "format",
-                          "media": [
+                          "list": [
                             {
-                              "mimetype": "JPG",
-                              "url": "image_url"
+                              "descriptor": {
+                                "code": "mimetype",
+                                "value": "image/jpeg"
+                              }
                             }
                           ]
-                        }
-                      },
-                      {
-                        "descriptor": {
-                          "code": "sub_load_in_kb",
-                          "value": 200,
-                          "unit": "KB"
                         }
                       }
                     ]
@@ -352,6 +352,11 @@
                     "descriptor": null,
                     "code": "ad_type",
                     "value": "Display-ADS"
+                  },
+                  {
+                    "descriptor": null,
+                    "code": "availability",
+                    "value": "Static"
                   }
                 ],
                 "category_ids": [

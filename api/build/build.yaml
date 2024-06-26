@@ -2692,8 +2692,10 @@ x-enum:
             tags:
               ad_specifications:
                 format:
-                  - mimetype: image/jpeg
-                  - mimetype: image/png
+                  - code: image/png
+                    description: Image in PNG format
+                  - code: image/jpeg
+                    description: Image in jpeg format
                 file_size_unit:
                   - code: KB
                     description: File size  unit in KB
@@ -2716,6 +2718,11 @@ x-enum:
                 - code: Display-Ads
                   description: Display-Ads
                   reference: <PR/Issue/Discussion Links md format text>
+              availability:
+                - code: Static
+                  description: Ad slot is available for fixed window and for 1 ad
+                - code: Dynamic
+                  description: Ad slot is available for fixed window and for multiple ads.
             price:
               quantity:
                 unitized:
@@ -3305,9 +3312,6 @@ x-flows:
                           - descriptor:
                               code: allowed_policies
                             value: ONDC Seller nodes & seller apps only
-                          - descriptor:
-                              code: resolution_mode
-                            value: Fixed fee
                     items:
                       - id: I1
                         parent_item_id: PI1
@@ -3348,16 +3352,17 @@ x-flows:
                                   code: max_k_weight
                                   value: 250
                               - descriptor:
+                                  code: sub_load
+                                  value: 200
+                              - descriptor:
                                   code: file_size_unit
                                   value: KB
                               - descriptor:
                                   code: format
                                   list:
                                     - descriptor:
-                                        mimetype: image/jpeg
-                              - descriptor:
-                                  code: sub_load
-                                  value: 200
+                                        code: mimetype
+                                        value: image/jpeg
                           - descriptor: null
                             code: ad_placement
                             list:
@@ -3373,6 +3378,9 @@ x-flows:
                           - descriptor: null
                             code: ad_type
                             value: Display-ADS
+                          - descriptor: null
+                            code: availability
+                            value: Static
                         category_ids:
                           - App
                         fulfillment_ids:

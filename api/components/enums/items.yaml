@@ -1,8 +1,10 @@
 tags:
   ad_specifications:
     format:
-      - mimetype: image/jpeg
-      - mimetype: image/png
+      - code: image/png
+        description: Image in PNG format
+      - code: image/jpeg
+        description: Image in jpeg format
     file_size_unit:
       - code: KB
         description: File size  unit in KB
@@ -25,9 +27,12 @@ tags:
       - code: Display-Ads
         description: Display-Ads
         reference: <PR/Issue/Discussion Links md format text>
+  availability:
+      - code: Static
+        description: Ad slot is available for fixed window and for 1 ad 
+      - code: Dynamic
+        description: Ad slot is available for fixed window and for multiple ads.
     
-
-
 price:
   unit:
       - code: CPC
