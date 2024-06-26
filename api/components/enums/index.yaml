@@ -31,7 +31,8 @@ on_search:
             quantity:
               unitized:
                 measure:
-                  unit: "./items.yaml#/price/quantity/unitized/measure/unit"
+                  unit: &unit
+                    $ref: "./items.yaml#/price/quantity/unitized/measure/unit"
           fulfillment_ids: &fulfillment
             $ref: "./fulfillments.yaml#/fulfillments/type"
           category_ids: &product_group_ids

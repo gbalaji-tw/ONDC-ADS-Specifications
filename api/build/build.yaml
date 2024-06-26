@@ -2717,7 +2717,28 @@ x-enum:
               quantity:
                 unitized:
                   measure:
-                    unit: ./items.yaml#/price/quantity/unitized/measure/unit
+                    unit:
+                      - code: CPC
+                        description: Cost per click
+                        reference: <PR/Issue/Discussion Links md format text>
+                      - code: CPM
+                        description: Cost per million impressions
+                        reference: <PR/Issue/Discussion Links md format text>
+                      - code: CPA
+                        description: Cost per action
+                        reference: <PR/Issue/Discussion Links md format text>
+                      - code: CPCV
+                        description: CPCV
+                        reference: <PR/Issue/Discussion Links md format text>
+                      - code: CPL
+                        description: CPL
+                        reference: <PR/Issue/Discussion Links md format text>
+                      - code: Per-week
+                        description: Per-week
+                        reference: <PR/Issue/Discussion Links md format text>
+                      - code: Per-day
+                        description: Per-day
+                        reference: <PR/Issue/Discussion Links md format text>
             fulfillment_ids: *ref_1
             category_ids: &ref_2
               - code: App
