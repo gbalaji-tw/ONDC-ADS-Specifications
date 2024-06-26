@@ -175,18 +175,19 @@ value:
                   code: size
                   value: '970x250'
               - descriptor:
-                  code: max_k_weight_in_kb
+                  code: max_k_weight
                   value: 250
-                  unit: KB
+              - descriptor:
+                  code: file_size_unit
+                  value: KB
               - descriptor:
                   code: format
-                  media:
-                    - mimetype: JPG
-                      url: image_url
+                  list:
+                  - descriptor:
+                      mimetype: image/jpeg
               - descriptor:
-                  code: sub_load_in_kb
+                  code: sub_load
                   value: 200
-                  unit: KB
             - descriptor:
               code: ad_placement
               list:

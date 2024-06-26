@@ -1,15 +1,13 @@
 tags:
   ad_specifications:
     format:
-      - code: JPG
-        description: JPEG encoding
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: PNG-8
-        description: PNG-8 encoding
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: GIF
-        description: GIF encoding
-        reference: <PR/Issue/Discussion Links md format text>
+      - mimetype: image/jpeg
+      - mimetype: image/png
+    file_size_unit:
+      - code: KB
+        description: File size  unit in KB
+      - code: MB
+        description: File size  unit in KB
   ad_placement:
     position:
       - code: Homepage
@@ -27,6 +25,8 @@ tags:
       - code: Display-Ads
         description: Display-Ads
         reference: <PR/Issue/Discussion Links md format text>
+    
+
 
 price:
   unit:
