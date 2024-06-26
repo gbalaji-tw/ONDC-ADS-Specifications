@@ -212,15 +212,9 @@
                   },
                   {
                     "descriptor": {
-                      "code": "interest"
+                      "code": "gender"
                     },
-                    "value": "Consumer-Electronics"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "marital_status"
-                    },
-                    "value": "Single"
+                    "value": "Male"
                   }
                 ]
               },

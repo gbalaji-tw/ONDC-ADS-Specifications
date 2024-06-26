@@ -14,30 +14,51 @@ tags:
         description: Geojson
         reference: <PR/Issue/Discussion Links md format text>
   target_audience:
-      marital_status:
-        - code: Single
-          description: Single
-          reference: <PR/Issue/Discussion Links md format text>
-        - code: Married
-          description: Married
-          reference: <PR/Issue/Discussion Links md format text>
+      gender:
+        - code: Male
+          description: male
+        - code: Female
+          description: female
       age_range: 
-        - code: 18-30
-          description: Age range between 18-30
+        - code: 18-20
+          description: Age range between 18-20
           reference: <PR/Issue/Discussion Links md format text>
-        - code: 30-45
-          description: Age range between 30-45
+        - code: 21-24
+          description: Age range between 21-24
           reference: <PR/Issue/Discussion Links md format text>
-      interest:      
-        - code: Consumer-Electronics
-          description: All electronics
+        - code: 25-29
+          description: Age range between 25-29
           reference: <PR/Issue/Discussion Links md format text>
-        - code: Fashion
-          description: All Fashion and apperls
+        - code: 30-34
+          description: Age range between 30-34
           reference: <PR/Issue/Discussion Links md format text>
-        - code: Sports
-          description: All sports
+        - code: 35-39
+          description: Age range between 35-39
           reference: <PR/Issue/Discussion Links md format text>
+        - code: 40-44
+          description: Age range between 40-44
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: 45-49
+          description: Age range between 45-49
+          reference: <PR/Issue/Discussion Links md format text>
+        - code: 50-54
+          description: Age range between 50-54
+          reference: <PR/Issue/Discussion Links md format text>                                                            
+        - code: 55-59
+          description: Age range between 55-59
+          reference: <PR/Issue/Discussion Links md format text>                                                            
+        - code: 60-64
+          description: Age range between 60-64
+          reference: <PR/Issue/Discussion Links md format text>                                                            
+        - code: 66-69
+          description: Age range between 66-69
+          reference: <PR/Issue/Discussion Links md format text>                                                            
+        - code: 70-74
+          description: Age range between 70-74
+          reference: <PR/Issue/Discussion Links md format text>                                                            
+        - code: 75
+          description: Age range between 75
+          reference: <PR/Issue/Discussion Links md format text>                                                            
   acceptance_criteria:
     allowed_policies:
      - code: ONDC Seller nodes & seller apps only

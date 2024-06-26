@@ -74,6 +74,4 @@ Misc:
 In the API documentation, tags are defined within ENUMS              
 
 ** - In category_ids, it should be the code that comes, not the actual ID.
-**- Do we need to mention fulfillments.tags? What is the need?
-** - Not sure on acceptance_criteria, need to discuss on this 
 ** - target_audience.age_range should be standardized range, and can be comma-separated, like 0-13,13-18,19-59,60+ as we're using in others

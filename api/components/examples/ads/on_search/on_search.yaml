@@ -124,11 +124,8 @@ value:
               code: age_range
             value: '18-30'
           - descriptor:
-              code: interest
-            value: 'Consumer-Electronics'
-          - descriptor:
-              code: marital_status
-            value: 'Single'
+              code: gender
+            value: Male
         - descriptor:
             code: acceptance_criteria
           list:
