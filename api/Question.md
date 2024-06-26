@@ -63,18 +63,16 @@ ADS Based Feedback
 * - Is there a need for message.catalog.providers.items.price.maximum_value?
 * - What does message.catalog.providers.items.time signify?
 ** - In ad_specifications, we can only keep SIZE instead of ad_size, FORMAT instead of ad_format. Format should be MIMETYPE.
-** - In ad_specifications, we can keep value as only numbers and unit of AD_SIZE_UNIT as KB, MB, GB.
-** - In ad_placement, what will be the value of location and location_url?
+* - In ad_specifications, we can keep value as only numbers and unit of AD_SIZE_UNIT as KB, MB, GB.
+* - In ad_placement, what will be the value of location and location_url?
 ** - In category_ids, it should be the code that comes, not the actual ID.
 *- There's no need to mention fulfillments.state in the catalog.
-**- Do we need to mention fulfillments.tags? What is the need?
+*- Do we need to mention fulfillments.tags? What is the need?
 *- I don't think we need to provide provider.payments here?
 
 Misc:
 In the API documentation, tags are defined within ENUMS              
 
-** - In ad_specifications, we can keep value as only numbers and unit of AD_SIZE_UNIT as KB, MB, GB.
-** - In ad_placement, what will be the value of location and location_url?
 ** - In category_ids, it should be the code that comes, not the actual ID.
 **- Do we need to mention fulfillments.tags? What is the need?
 ** - Not sure on acceptance_criteria, need to discuss on this 

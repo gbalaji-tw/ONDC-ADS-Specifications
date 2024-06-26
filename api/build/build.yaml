@@ -2717,7 +2717,7 @@ x-enum:
               quantity:
                 unitized:
                   measure:
-                    unit: ./items.yaml#/price/unit
+                    unit: ./items.yaml#/price/quantity/unitized/measure/unit
             fulfillment_ids: *ref_1
             category_ids: &ref_2
               - code: App
