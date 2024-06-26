@@ -2657,16 +2657,6 @@ x-enum:
                 - code: ONDC Seller nodes & seller apps only
                   description: ONDC Seller nodes & seller apps only
                   reference: <PR/Issue/Discussion Links md format text>
-              resolution_mode:
-                - code: Fixed-Fee
-                  description: Fixed-Fee
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Bid-Based
-                  description: Bid-Based
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: Time-material
-                  description: Time-material
-                  reference: <PR/Issue/Discussion Links md format text>
           items:
             descriptor:
               code:

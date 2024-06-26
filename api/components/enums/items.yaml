@@ -32,31 +32,33 @@ tags:
         description: Ad slot is available for fixed window and for 1 ad 
       - code: Dynamic
         description: Ad slot is available for fixed window and for multiple ads.
-    
 price:
-  unit:
-      - code: CPC
-        description: Cost per click
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: CPM
-        description: Cost per million impressions
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: CPA
-        description: Cost per action
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: CPCV
-        description: CPCV
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: CPL
-        description: CPL
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: Per-week
-        description: Per-week
-        reference: <PR/Issue/Discussion Links md format text>
-      - code: Per-day
-        description: Per-day
-        reference: <PR/Issue/Discussion Links md format text>
-
+  quantity:
+    unitized:
+      measure:
+        unit:
+          - code: CPC
+            description: Cost per click
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: CPM
+            description: Cost per million impressions
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: CPA
+            description: Cost per action
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: CPCV
+            description: CPCV
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: CPL
+            description: CPL
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: Per-week
+            description: Per-week
+            reference: <PR/Issue/Discussion Links md format text>
+          - code: Per-day
+            description: Per-day
+            reference: <PR/Issue/Discussion Links md format text>
+          
 
 
 
