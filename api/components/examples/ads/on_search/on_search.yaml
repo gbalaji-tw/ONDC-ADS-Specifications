@@ -122,7 +122,7 @@ value:
           list:
           - descriptor:
               code: age_range
-            value: '18-30'
+            value: '18-30, 30-45'
           - descriptor:
               code: gender
             value: Male
@@ -202,7 +202,7 @@ value:
               code: availability
               value: Static
           category_ids:
-            - App
+            - ADS-10-01-01
           fulfillment_ids:    
             - '1'
           location_ids:    
@@ -223,18 +223,16 @@ value:
               offered_value: '100.0'
               maximum_value: '170.0'
         categories:
-         - id: 'Commerce properties'
-           parent_category_id: 'Digital' 
-           tags:
-            - descriptor:
-              code: allowed_categories
-              list:
-              - descriptor:
-                  code: product_category
-                  value: C200
-            - descriptor:
-              code: allowed_domains
-              value: D100
+         - id: 'ADS-10-01-01'
+           parent_category_id: 'ADS-10-01' 
+         - id: 'ADS-10-01-02'
+           parent_category_id: 'ADS-10-01' 
+         - id: 'ADS-10-01-03'
+           parent_category_id: 'ADS-10-01' 
+         - id: 'ADS-10-01-04'
+           parent_category_id: 'ADS-10-01' 
+         - id: 'ADS-10-01-04'
+           parent_category_id: 'ADS-10-01' 
         fulfillments:
          - id: 
            type: ONLINE

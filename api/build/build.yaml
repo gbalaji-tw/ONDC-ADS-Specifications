@@ -2633,46 +2633,6 @@ x-enum:
                   description: male
                 - code: Female
                   description: female
-              age_range:
-                - code: 18-20
-                  description: Age range between 18-20
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 21-24
-                  description: Age range between 21-24
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 25-29
-                  description: Age range between 25-29
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 30-34
-                  description: Age range between 30-34
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 35-39
-                  description: Age range between 35-39
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 40-44
-                  description: Age range between 40-44
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 45-49
-                  description: Age range between 45-49
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 50-54
-                  description: Age range between 50-54
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 55-59
-                  description: Age range between 55-59
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 60-64
-                  description: Age range between 60-64
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 66-69
-                  description: Age range between 66-69
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 70-74
-                  description: Age range between 70-74
-                  reference: <PR/Issue/Discussion Links md format text>
-                - code: 75
-                  description: Age range between 75
-                  reference: <PR/Issue/Discussion Links md format text>
             acceptance_criteria:
               allowed_policies:
                 - code: ONDC Seller nodes & seller apps only
@@ -3331,7 +3291,7 @@ x-flows:
                         list:
                           - descriptor:
                               code: age_range
-                            value: 18-30
+                            value: 18-30, 30-45
                           - descriptor:
                               code: gender
                             value: Male
@@ -3411,7 +3371,7 @@ x-flows:
                             code: availability
                             value: Static
                         category_ids:
-                          - App
+                          - ADS-10-01-01
                         fulfillment_ids:
                           - '1'
                         location_ids:
@@ -3432,18 +3392,16 @@ x-flows:
                               offered_value: '100.0'
                               maximum_value: '170.0'
                     categories:
-                      - id: Commerce properties
-                        parent_category_id: Digital
-                        tags:
-                          - descriptor: null
-                            code: allowed_categories
-                            list:
-                              - descriptor:
-                                  code: product_category
-                                  value: C200
-                          - descriptor: null
-                            code: allowed_domains
-                            value: D100
+                      - id: ADS-10-01-01
+                        parent_category_id: ADS-10-01
+                      - id: ADS-10-01-02
+                        parent_category_id: ADS-10-01
+                      - id: ADS-10-01-03
+                        parent_category_id: ADS-10-01
+                      - id: ADS-10-01-04
+                        parent_category_id: ADS-10-01
+                      - id: ADS-10-01-04
+                        parent_category_id: ADS-10-01
                     fulfillments:
                       - id: null
                         type: ONLINE
