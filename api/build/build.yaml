@@ -2628,11 +2628,55 @@ x-enum:
                   description: Geojson
                   reference: <PR/Issue/Discussion Links md format text>
             target_audience:
+              age_range:
+                - code: 18-20
+                  description: Age range between 18-20
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 21-24
+                  description: Age range between 21-24
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 25-29
+                  description: Age range between 25-29
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 30-34
+                  description: Age range between 30-34
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 35-39
+                  description: Age range between 35-39
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 40-44
+                  description: Age range between 40-44
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 45-49
+                  description: Age range between 45-49
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 50-54
+                  description: Age range between 50-54
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 55-59
+                  description: Age range between 55-59
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 60-64
+                  description: Age range between 60-64
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 66-69
+                  description: Age range between 66-69
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 70-74
+                  description: Age range between 70-74
+                  reference: <PR/Issue/Discussion Links md format text>
+                - code: 75+
+                  description: Age range between 75
+                  reference: <PR/Issue/Discussion Links md format text>
               gender:
                 - code: Male
                   description: male
                 - code: Female
                   description: female
+                - code: Other Gender
+                  description: Other Gender
+                - code: Unknown Gender
+                  description: Unknown Gender
             acceptance_criteria:
               allowed_policies:
                 - code: ONDC Seller nodes & seller apps only
@@ -3244,7 +3288,7 @@ x-flows:
                             value: L1
                           - descriptor:
                               code: category
-                            value: SRV11-*
+                            value: ADS10
                           - descriptor:
                               code: val
                             value: >-
@@ -3286,24 +3330,14 @@ x-flows:
                           - descriptor:
                               code: IMPORTER
                             value: '12345678901234'
-                      - descriptor:
-                          code: target_audience
+                      - code: target_audience
                         list:
-                          - descriptor:
-                              code: age_range
-                            value: 18-30, 30-45
-                          - descriptor:
-                              code: gender
+                          - code: age_range
+                            value: 18-30
+                          - code: gender
                             value: Male
-                      - descriptor:
-                          code: acceptance_criteria
-                        list:
-                          - descriptor:
-                              code: allowed_policies
-                            value: ONDC Seller nodes & seller apps only
                     items:
                       - id: I1
-                        parent_item_id: PI1
                         descriptor:
                           name: Display ads
                           code: Display Ads
@@ -3314,8 +3348,9 @@ x-flows:
                               url: video_url
                         price:
                           currency: INR
-                          value: '300.00'
-                          offered_value: '250.00'
+                          value: '500.00'
+                          offered_value: '500.00'
+                          maximum_value: '500.00'
                         quantity:
                           unitized:
                             measure:
@@ -3325,50 +3360,36 @@ x-flows:
                             measure:
                               unit: CPM
                               value: '10'
-                            count: 20
                         time:
                           range:
                             start: '2024-07-01T00:00:00.000Z'
                             end: '2024-07-31T00:00:00.000Z'
                         tags:
-                          - descriptor: null
-                            code: ad_specifications
+                          - code: ad_specifications
                             list:
-                              - descriptor:
-                                  code: size
-                                  value: 970x250
-                              - descriptor:
-                                  code: max_k_weight
-                                  value: 250
-                              - descriptor:
-                                  code: sub_load
-                                  value: 200
-                              - descriptor:
-                                  code: file_size_unit
-                                  value: KB
-                              - descriptor:
-                                  code: format
-                                  list:
-                                    - descriptor:
-                                        code: mimetype
-                                        value: image/jpeg
-                          - descriptor: null
-                            code: ad_placement
+                              - code: size
+                                value: 970x250
+                              - code: max_k_weight
+                                value: 250
+                              - code: sub_load
+                                value: 200
+                              - code: file_size_unit
+                                value: KB
+                              - code: format
+                                list:
+                                  - code: mimetype
+                                    value: image/jpeg
+                          - code: ad_placement
                             list:
-                              - descriptor:
-                                  code: position
-                                  value: Homepage
-                              - descriptor:
-                                  code: location
-                                  value: <<city |area>>
-                              - descriptor:
-                                  code: location_url
-                                  value: <<location url>>
-                          - descriptor: null
-                            code: ad_type
+                              - code: position
+                                value: Homepage
+                              - code: location
+                                value: <<city |area>>
+                              - code: location_url
+                                value: <<location url>>
+                          - code: ad_type
                             value: Display-ADS
-                          - descriptor: null
-                            code: availability
+                          - code: availability
                             value: Static
                         category_ids:
                           - ADS-10-01-01
@@ -3388,9 +3409,9 @@ x-flows:
                                 - url: https://abc.com/images/208.png
                             price:
                               currency: INR
-                              value: '170.0'
-                              offered_value: '100.0'
-                              maximum_value: '170.0'
+                              value: '1000.0'
+                              offered_value: '1000.0'
+                              maximum_value: '1000.0'
                     categories:
                       - id: ADS-10-01-01
                         parent_category_id: ADS-10-01
@@ -3402,22 +3423,6 @@ x-flows:
                         parent_category_id: ADS-10-01
                       - id: ADS-10-01-04
                         parent_category_id: ADS-10-01
-                    fulfillments:
-                      - id: null
-                        type: ONLINE
-                        tags:
-                          - descriptor: null
-                            code: location
-                            list:
-                              - descriptor:
-                                  code: location_url
-                                  value: ''
-                              - descriptor:
-                                  code: lat
-                                  value: ''
-                              - descriptor:
-                                  code: long
-                                  value: ''
 x-examples:
   Ads:
     summary: Ads on Network
@@ -3485,7 +3490,7 @@ x-examples:
                   country:
                     code: IND
                 action: select
-                version: 2.0.1
+                version: 2.0.0
                 bap_id: buyerapp.com
                 bap_uri: https://buyerapp.com/grocery
                 bpp_id: sellerapp.com
@@ -3501,16 +3506,15 @@ x-examples:
                     locations:
                       - id: L1
                   items:
-                    - id: Display-ADS
+                    - id: I1
                       location_ids:
                         - L1
                       quantity:
                         selected:
                           count: 10
                       add-ons:
-                        - id: '78787723'
+                        - id: ADDON01
                   fulfillments:
-                    - id: 1
                     - type: ONLINE
                   payments:
                     - type: ON-FULFILLMENT
@@ -3537,7 +3541,7 @@ x-examples:
                   country:
                     code: IND
                 action: on_select
-                version: 2.0.1
+                version: 2.0.0
                 bap_id: buyerapp.com
                 bap_uri: https://buyerapp.com/grocery
                 bpp_id: sellerapp.com
@@ -3549,103 +3553,49 @@ x-examples:
               message:
                 order:
                   provider:
-                    id: ABC.com
+                    id: P1
                   items:
-                    - fulfillment_ids:
-                        - ONLINE
-                      id: I1
+                    - id: I1
+                      fulfillment_ids:
+                        - F1
+                      location_ids:
+                        - L1
+                      quantity:
+                        selected:
+                          count: 10
+                      add-ons:
+                        - id: ADDON01
                   fulfillments:
-                    - id: ONLINE
+                    - id: F1
+                      type: ONLINE
                   quote:
                     price:
                       currency: INR
-                      value: '5295'
+                      value: '6500'
                     breakup:
-                      - title: Ads
+                      - title: Display ads
                         price:
                           currency: INR
                           value: '5000'
                         item:
-                          id: PI1
+                          id: I1
                           quantity:
                             selected:
                               count: '10'
                           price:
                             currency: INR
                             value: '500'
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: Display Ads
                       - title: tax
                         price:
                           currency: INR
-                          value: '100'
+                          value: '500'
                         item:
-                          id: I2
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: tax
-                      - title: offer
-                        price:
-                          currency: INR
-                          value: '-1000.00'
-                        item:
-                          id: PI1
-                        tags:
-                          - descriptor:
-                              code: TITLE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: offer
-                          - code: BENEFIT
-                            list:
-                              - code: VALUE_TYPE
-                                value: percent
-                              - code: VALUE
-                                value: '60'
-                              - code: VALUE_CAP
-                                value: '-1000.00'
-                          - code: META
-                            list:
-                              - code: ADDITIVE
-                                value: 'no'
-                              - code: AUTO
-                                value: 'yes'
-                      - title: add-ons
+                          id: I1
+                      - title: creative generation
+                        id: ADDON01
                         price:
                           currency: INR
                           value: '1000'
-                        item:
-                          id: I3
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: Creative Genenration
-                      - title: add-ons tax
-                        price:
-                          currency: INR
-                          value: '50'
-                        item:
-                          id: I3
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: tax
                     ttl: P1D
       init:
         examples:
@@ -3660,7 +3610,7 @@ x-examples:
                   country:
                     code: IND
                 action: init
-                version: 2.0.1
+                version: 2.0.0
                 bap_id: buyerapp.com
                 bap_uri: https://buyerapp.com/grocery
                 bpp_id: sellerapp.com
@@ -3732,7 +3682,7 @@ x-examples:
                   country:
                     code: IND
                 action: on_init
-                version: 2.0.1
+                version: 2.0.0
                 bap_id: buyerapp.com
                 bap_uri: https://buyerapp.com/grocery
                 bpp_id: sellerapp.com
@@ -3753,9 +3703,9 @@ x-examples:
                         - F1
                       quantity:
                         selected:
-                          count: 200
+                          count: 10
                       add-ons:
-                        - id: '78787723'
+                        - id: ADDON01
                       tags:
                         - descriptor:
                             code: BUYER_TERMS
@@ -3785,99 +3735,37 @@ x-examples:
                   quote:
                     price:
                       currency: INR
-                      value: '5295'
+                      value: '6500'
                     breakup:
-                      - title: Ads
+                      - title: Display ads
                         price:
                           currency: INR
                           value: '5000'
                         item:
-                          id: PI1
+                          id: I1
                           quantity:
                             selected:
                               count: '10'
                           price:
                             currency: INR
                             value: '500'
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: Display Ads
                       - title: tax
                         price:
                           currency: INR
-                          value: '100'
+                          value: '500'
                         item:
-                          id: I2
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: tax
-                      - title: offer
-                        price:
-                          currency: INR
-                          value: '-1000.00'
-                        item:
-                          id: PI1
-                        tags:
-                          - descriptor:
-                              code: TITLE
-                            list:
-                              - descriptor:
-                                  code: TYPE
-                                value: offer
-                          - code: BENEFIT
-                            list:
-                              - code: VALUE_TYPE
-                                value: percent
-                              - code: VALUE
-                                value: '60'
-                              - code: VALUE_CAP
-                                value: '-1000.00'
-                          - code: META
-                            list:
-                              - code: ADDITIVE
-                                value: 'no'
-                              - code: AUTO
-                                value: 'yes'
-                      - title: add-ons
+                          id: I1
+                      - title: creative generation
+                        id: ADDON01
                         price:
                           currency: INR
                           value: '1000'
-                        item:
-                          id: I3
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: Creative Genenration
-                      - title: add-ons tax
-                        price:
-                          currency: INR
-                          value: '50'
-                        item:
-                          id: I3
-                        tags:
-                          - descriptor:
-                              code: title
-                            list:
-                              - descriptor:
-                                  code: type
-                                value: tax
                     ttl: P1D
                   payments:
                     - id: P1
                       collected_by: BAP
                       params:
-                        amount: '5000'
+                        amount: '6500'
                         currency: INR
                         bank_account_number: xxxxxxxx
                         virtual_payment_address: xxx@xxxx

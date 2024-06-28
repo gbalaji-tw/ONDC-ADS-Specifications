@@ -77,7 +77,7 @@ value:
             value: L1
           - descriptor:
               code: category
-            value: SRV11-*
+            value: ADS10
           - descriptor:
               code: val
             value: '{"type": "FeatureCollection", "features": [{"type": "Feature", "properties":
@@ -117,24 +117,14 @@ value:
           - descriptor:
               code: IMPORTER
             value: '12345678901234'
-        - descriptor:
-            code: target_audience
+        - code: target_audience
           list:
-          - descriptor:
-              code: age_range
-            value: '18-30, 30-45'
-          - descriptor:
-              code: gender
+          - code: age_range
+            value: 18-30
+          - code: gender
             value: Male
-        - descriptor:
-            code: acceptance_criteria
-          list:
-          - descriptor:
-              code: allowed_policies
-            value: 'ONDC Seller nodes & seller apps only'
         items:
         - id: 'I1'
-          parent_item_id: PI1
           descriptor:
             name: Display ads
             code: 'Display Ads'
@@ -145,8 +135,9 @@ value:
               url: video_url
           price:
             currency: INR
-            value: '300.00'
-            offered_value: '250.00'
+            value: '500.00'
+            offered_value: '500.00'
+            maximum_value: '500.00'
           quantity:
             unitized:
               measure:
@@ -156,50 +147,36 @@ value:
               measure:
                 unit: CPM
                 value: '10'
-              count: 20
           time:
             range:
               start: '2024-07-01T00:00:00.000Z'
               end: '2024-07-31T00:00:00.000Z'
           tags:
-            - descriptor:
-              code: ad_specifications
+            - code: 'ad_specifications'
               list:
-              - descriptor:
-                  code: size
-                  value: '970x250'
-              - descriptor:
-                  code: max_k_weight
-                  value: 250
-              - descriptor:
-                  code: sub_load
-                  value: 200
-              - descriptor:
-                  code: file_size_unit
-                  value: KB
-              - descriptor:
-                  code: format
-                  list:
-                  - descriptor:
-                      code: mimetype
-                      value: image/jpeg
-            - descriptor:
-              code: ad_placement
+              - code: size
+                value: '970x250'
+              - code: max_k_weight
+                value: 250
+              - code: sub_load
+                value: 200
+              - code: file_size_unit
+                value: KB
+              - code: format
+                list:
+                  - code: mimetype
+                    value: image/jpeg
+            - code: 'ad_placement'
               list:
-              - descriptor:
-                  code: position
-                  value: Homepage
-              - descriptor:
-                  code: location
-                  value: <<city |area>>
-              - descriptor:
-                  code: location_url
-                  value: <<location url>>
-            - descriptor:
-              code: ad_type
+              - code: position
+                value: Homepage
+              - code: location
+                value: <<city |area>>
+              - code: location_url
+                value: <<location url>>
+            - code: ad_type
               value: Display-ADS
-            - descriptor:
-              code: availability
+            - code: availability
               value: Static
           category_ids:
             - ADS-10-01-01
@@ -219,9 +196,9 @@ value:
               - url: https://abc.com/images/208.png
             price:
               currency: INR
-              value: '170.0'
-              offered_value: '100.0'
-              maximum_value: '170.0'
+              value: '1000.0'
+              offered_value: '1000.0'
+              maximum_value: '1000.0'
         categories:
          - id: 'ADS-10-01-01'
            parent_category_id: 'ADS-10-01' 
@@ -232,20 +209,4 @@ value:
          - id: 'ADS-10-01-04'
            parent_category_id: 'ADS-10-01' 
          - id: 'ADS-10-01-04'
-           parent_category_id: 'ADS-10-01' 
-        fulfillments:
-         - id: 
-           type: ONLINE
-           tags:
-            - descriptor:
-              code: location
-              list:
-              - descriptor:
-                  code: location_url
-                  value: ''
-              - descriptor:
-                  code: lat
-                  value: ''
-              - descriptor:
-                  code: long
-                  value: ''
+           parent_category_id: 'ADS-10-01'

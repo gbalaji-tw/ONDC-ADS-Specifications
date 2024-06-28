@@ -13,7 +13,7 @@
         }
       },
       "action": "select",
-      "version": "2.0.1",
+      "version": "2.0.0",
       "bap_id": "buyerapp.com",
       "bap_uri": "https://buyerapp.com/grocery",
       "bpp_id": "sellerapp.com",
@@ -35,7 +35,7 @@
         },
         "items": [
           {
-            "id": "Display-ADS",
+            "id": "I1",
             "location_ids": [
               "L1"
             ],
@@ -46,15 +46,12 @@
             },
             "add-ons": [
               {
-                "id": "78787723"
+                "id": "ADDON01"
               }
             ]
           }
         ],
         "fulfillments": [
-          {
-            "id": 1
-          },
           {
             "type": "ONLINE"
           }

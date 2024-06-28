@@ -120,7 +120,7 @@
                     "descriptor": {
                       "code": "category"
                     },
-                    "value": "SRV11-*"
+                    "value": "ADS10"
                   },
                   {
                     "descriptor": {
@@ -200,34 +200,15 @@
                 ]
               },
               {
-                "descriptor": {
-                  "code": "target_audience"
-                },
+                "code": "target_audience",
                 "list": [
                   {
-                    "descriptor": {
-                      "code": "age_range"
-                    },
+                    "code": "age_range",
                     "value": "18-30"
                   },
                   {
-                    "descriptor": {
-                      "code": "gender"
-                    },
+                    "code": "gender",
                     "value": "Male"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "acceptance_criteria"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "allowed_policies"
-                    },
-                    "value": "ONDC Seller nodes & seller apps only"
                   }
                 ]
               }
@@ -235,7 +216,6 @@
             "items": [
               {
                 "id": "I1",
-                "parent_item_id": "PI1",
                 "descriptor": {
                   "name": "Display ads",
                   "code": "Display Ads",
@@ -250,8 +230,9 @@
                 },
                 "price": {
                   "currency": "INR",
-                  "value": "300.00",
-                  "offered_value": "250.00"
+                  "value": "500.00",
+                  "offered_value": "500.00",
+                  "maximum_value": "500.00"
                 },
                 "quantity": {
                   "unitized": {
@@ -264,8 +245,7 @@
                     "measure": {
                       "unit": "CPM",
                       "value": "10"
-                    },
-                    "count": 20
+                    }
                   }
                 },
                 "time": {
@@ -276,85 +256,63 @@
                 },
                 "tags": [
                   {
-                    "descriptor": null,
                     "code": "ad_specifications",
                     "list": [
                       {
-                        "descriptor": {
-                          "code": "size",
-                          "value": "970x250"
-                        }
+                        "code": "size",
+                        "value": "970x250"
                       },
                       {
-                        "descriptor": {
-                          "code": "max_k_weight",
-                          "value": 250
-                        }
+                        "code": "max_k_weight",
+                        "value": 250
                       },
                       {
-                        "descriptor": {
-                          "code": "sub_load",
-                          "value": 200
-                        }
+                        "code": "sub_load",
+                        "value": 200
                       },
                       {
-                        "descriptor": {
-                          "code": "file_size_unit",
-                          "value": "KB"
-                        }
+                        "code": "file_size_unit",
+                        "value": "KB"
                       },
                       {
-                        "descriptor": {
-                          "code": "format",
-                          "list": [
-                            {
-                              "descriptor": {
-                                "code": "mimetype",
-                                "value": "image/jpeg"
-                              }
-                            }
-                          ]
-                        }
+                        "code": "format",
+                        "list": [
+                          {
+                            "code": "mimetype",
+                            "value": "image/jpeg"
+                          }
+                        ]
                       }
                     ]
                   },
                   {
-                    "descriptor": null,
                     "code": "ad_placement",
                     "list": [
                       {
-                        "descriptor": {
-                          "code": "position",
-                          "value": "Homepage"
-                        }
+                        "code": "position",
+                        "value": "Homepage"
                       },
                       {
-                        "descriptor": {
-                          "code": "location",
-                          "value": "<<city |area>>"
-                        }
+                        "code": "location",
+                        "value": "<<city |area>>"
                       },
                       {
-                        "descriptor": {
-                          "code": "location_url",
-                          "value": "<<location url>>"
-                        }
+                        "code": "location_url",
+                        "value": "<<location url>>"
                       }
                     ]
                   },
                   {
-                    "descriptor": null,
                     "code": "ad_type",
                     "value": "Display-ADS"
                   },
                   {
-                    "descriptor": null,
                     "code": "availability",
                     "value": "Static"
                   }
                 ],
                 "category_ids": [
-                  "App"
+                  "ADS-10-01-01"
                 ],
                 "fulfillment_ids": [
                   "1"
@@ -380,9 +338,9 @@
                     },
                     "price": {
                       "currency": "INR",
-                      "value": "170.0",
-                      "offered_value": "100.0",
-                      "maximum_value": "170.0"
+                      "value": "1000.0",
+                      "offered_value": "1000.0",
+                      "maximum_value": "1000.0"
                     }
                   }
                 ]
@@ -390,59 +348,24 @@
             ],
             "categories": [
               {
-                "id": "Commerce properties",
-                "parent_category_id": "Digital",
-                "tags": [
-                  {
-                    "descriptor": null,
-                    "code": "allowed_categories",
-                    "list": [
-                      {
-                        "descriptor": {
-                          "code": "product_category",
-                          "value": "C200"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "descriptor": null,
-                    "code": "allowed_domains",
-                    "value": "D100"
-                  }
-                ]
-              }
-            ],
-            "fulfillments": [
+                "id": "ADS-10-01-01",
+                "parent_category_id": "ADS-10-01"
+              },
               {
-                "id": null,
-                "type": "ONLINE",
-                "tags": [
-                  {
-                    "descriptor": null,
-                    "code": "location",
-                    "list": [
-                      {
-                        "descriptor": {
-                          "code": "location_url",
-                          "value": ""
-                        }
-                      },
-                      {
-                        "descriptor": {
-                          "code": "lat",
-                          "value": ""
-                        }
-                      },
-                      {
-                        "descriptor": {
-                          "code": "long",
-                          "value": ""
-                        }
-                      }
-                    ]
-                  }
-                ]
+                "id": "ADS-10-01-02",
+                "parent_category_id": "ADS-10-01"
+              },
+              {
+                "id": "ADS-10-01-03",
+                "parent_category_id": "ADS-10-01"
+              },
+              {
+                "id": "ADS-10-01-04",
+                "parent_category_id": "ADS-10-01"
+              },
+              {
+                "id": "ADS-10-01-04",
+                "parent_category_id": "ADS-10-01"
               }
             ]
           }

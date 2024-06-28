@@ -9,7 +9,7 @@ value:
       country:
         code: IND
     action: select
-    version: 2.0.1
+    version: 2.0.0
     bap_id: buyerapp.com
     bap_uri: https://buyerapp.com/grocery
     bpp_id: sellerapp.com
@@ -25,16 +25,15 @@ value:
         locations:
         - id: L1
       items:
-      - id: Display-ADS
+      - id: I1
         location_ids:
         - L1
         quantity:
           selected:
             count: 10
         add-ons:
-        - id: '78787723'
+        - id: 'ADDON01'
       fulfillments:
-        - id: 1
         - type: 'ONLINE'
       payments:
       - type: ON-FULFILLMENT

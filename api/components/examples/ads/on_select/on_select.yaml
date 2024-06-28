@@ -9,7 +9,7 @@ value:
       country:
         code: IND
     action: on_select
-    version: 2.0.1
+    version: 2.0.0
     bap_id: buyerapp.com
     bap_uri: https://buyerapp.com/grocery
     bpp_id: sellerapp.com
@@ -21,101 +21,47 @@ value:
   message:
     order:
       provider:
-        id: ABC.com
+        id: P1
       items:
-      - fulfillment_ids:
-        - ONLINE
-        id: I1
+      - id: I1
+        fulfillment_ids:
+          - F1
+        location_ids:
+          - L1
+        quantity:
+          selected:
+            count: 10
+        add-ons:
+          - id: 'ADDON01'    
       fulfillments:
-      - id: ONLINE
+      - id: F1 
+        type: ONLINE
       quote:
         price:
           currency: INR
-          value: '5295'
+          value: '6500'
         breakup:
-          - title: Ads
+          - title: 'Display ads'
             price:
               currency: INR
               value: '5000'
             item:
-              id: PI1
+              id: I1
               quantity:
                 selected:
                   count: '10'
               price:
                 currency: INR
                 value: '500'
-            tags:
-              - descriptor:
-                  code: title
-                list:
-                  - descriptor:
-                      code: type
-                    value: Display Ads
           - title: tax
             price:
               currency: INR
-              value: '100'
+              value: '500'
             item:
-              id: I2
-            tags:
-              - descriptor:
-                  code: title
-                list:
-                  - descriptor:
-                      code: type
-                    value: tax
-          - title: offer
-            price:
-              currency: INR
-              value: '-1000.00'
-            item:
-              id: PI1
-            tags:
-              - descriptor:
-                  code: TITLE
-                list:
-                  - descriptor:
-                      code: TYPE
-                    value: offer
-              - code: BENEFIT
-                list:
-                  - code: VALUE_TYPE
-                    value: percent
-                  - code: VALUE
-                    value: '60'
-                  - code: VALUE_CAP
-                    value: '-1000.00'
-              - code: META
-                list:
-                  - code: ADDITIVE
-                    value: 'no'
-                  - code: AUTO
-                    value: 'yes'
-          - title: add-ons
+              id: I1
+          - title: 'creative generation'
+            id: 'ADDON01'
             price:
               currency: INR
               value: '1000'
-            item:
-              id: I3
-            tags:
-              - descriptor:
-                  code: title
-                list:
-                  - descriptor:
-                      code: type
-                    value: 'Creative Genenration'
-          - title: add-ons tax
-            price:
-              currency: INR
-              value: '50'
-            item:
-              id: I3
-            tags:
-              - descriptor:
-                  code: title
-                list:
-                  - descriptor:
-                      code: type
-                    value: tax
         ttl: P1D
