@@ -3230,7 +3230,7 @@ x-flows:
                       - descriptor:
                           code: buyer_id_no
                         value: xxxxxxxxx
-      - summary: Returns item/ catalog
+      - summary: Returns the catalog specific to the search intent
         api: on_search
         description: Catalog provided by the Seller App
         reference: if any
@@ -3442,6 +3442,352 @@ x-flows:
                               value: '1000.0'
                               offered_value: '1000.0'
                               maximum_value: '1000.0'
+      - summary: Buyer adds the service to cart
+        api: select
+        description: Buyer adds the service to cart
+        reference: if any
+        example: &ref_8
+          summary: Get quote for specific ad Product
+          description: Get quote for specific item with Buyer and Delivery terms
+          value:
+            context:
+              domain: ONDC:ADS10
+              location:
+                city:
+                  code: std:080
+                country:
+                  code: IND
+              action: select
+              version: 2.0.0
+              bap_id: buyerapp.com
+              bap_uri: https://buyerapp.com/grocery
+              bpp_id: sellerapp.com
+              bpp_uri: https://sellerapp.com/grocery
+              transaction_id: T1
+              message_id: M1
+              timestamp: '2023-01-08T22:00:30.000Z'
+              ttl: PT30S
+            message:
+              order:
+                provider:
+                  id: P1
+                  locations:
+                    - id: L1
+                items:
+                  - id: I1
+                    location_ids:
+                      - L1
+                    quantity:
+                      selected:
+                        count: 10
+                    add-ons:
+                      - id: ADDON01
+                fulfillments:
+                  - type: ONLINE
+                payments:
+                  - type: ON-FULFILLMENT
+                tags:
+                  - descriptor:
+                      code: buyer_id
+                    list:
+                      - descriptor:
+                          code: buyer_id_code
+                        value: gst
+                      - descriptor:
+                          code: buyer_id_no
+                        value: xxxxxxxxxxxxxxx
+      - summary: Seller confirms and returns the quote
+        api: on_select
+        description: Seller confirms and returns the quote
+        reference: if any
+        example: &ref_9
+          summary: Send quote and breakup
+          description: Send quote and breakup for items selected in select call.
+          value:
+            context:
+              domain: ONDC:ADS10
+              location:
+                city:
+                  code: std:080
+                country:
+                  code: IND
+              action: on_select
+              version: 2.0.0
+              bap_id: buyerapp.com
+              bap_uri: https://buyerapp.com/grocery
+              bpp_id: sellerapp.com
+              bpp_uri: https://sellerapp.com/grocery
+              transaction_id: T1
+              message_id: M1
+              timestamp: '2023-01-08T22:00:30.000Z'
+              ttl: PT30S
+            message:
+              order:
+                provider:
+                  id: P1
+                items:
+                  - id: I1
+                    fulfillment_ids:
+                      - F1
+                    location_ids:
+                      - L1
+                    quantity:
+                      selected:
+                        count: 10
+                    add-ons:
+                      - id: ADDON01
+                fulfillments:
+                  - id: F1
+                    type: ONLINE
+                quote:
+                  price:
+                    currency: INR
+                    value: '6500'
+                  breakup:
+                    - title: Display ads
+                      price:
+                        currency: INR
+                        value: '5000'
+                      item:
+                        id: I1
+                        quantity:
+                          selected:
+                            count: '10'
+                        price:
+                          currency: INR
+                          value: '500'
+                    - title: tax
+                      price:
+                        currency: INR
+                        value: '500'
+                      item:
+                        id: I1
+                    - title: creative generation
+                      id: ADDON01
+                      price:
+                        currency: INR
+                        value: '1000'
+                  ttl: P1D
+      - summary: Buyer initialises the order and provides billing details
+        api: init
+        description: Buyer initialises the order and provides billing details
+        reference: if any
+        example: &ref_10
+          summary: Send buyer and delivery terms for RFQ
+          description: Send buyer and delivery terms for RFQ
+          value:
+            context:
+              domain: ONDC:ADS10
+              location:
+                city:
+                  code: std:080
+                country:
+                  code: IND
+              action: init
+              version: 2.0.0
+              bap_id: buyerapp.com
+              bap_uri: https://buyerapp.com/grocery
+              bpp_id: sellerapp.com
+              bpp_uri: https://sellerapp.com/grocery
+              transaction_id: T1
+              message_id: M1
+              timestamp: '2023-01-08T22:00:30.000Z'
+              ttl: PT30S
+            message:
+              order:
+                provider:
+                  id: P1
+                  locations:
+                    - id: L1
+                  ttl: P1D
+                items:
+                  - id: I1
+                    fulfillment_ids:
+                      - F1
+                    quantity:
+                      selected:
+                        count: 10
+                    add-ons:
+                      - id: ADDON01
+                    tags:
+                      - descriptor:
+                          code: BUYER_TERMS
+                        list:
+                          - descriptor:
+                              code: ITEM_REQ
+                            value: free text on Item Customization
+                billing:
+                  name: ONDC buyer
+                  address: >-
+                    22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar,
+                    Bengaluru, Karnataka 560001
+                  state:
+                    name: Karnataka
+                  city:
+                    name: Bengaluru
+                  tax_id: XXXXXXXXXXXXXXX
+                  email: nobody@nomail.com
+                  phone: '9886098860'
+                fulfillments:
+                  - id: F1
+                    type: ONLINE
+                payments:
+                  - type: ON-FULFILLMENT
+                tags:
+                  - descriptor:
+                      code: buyer_id
+                    list:
+                      - descriptor:
+                          code: buyer_id_code
+                        value: gst
+                      - descriptor:
+                          code: buyer_id_no
+                        value: xxxxxxxxxxxxxxx
+      - summary: Seller provides the final quotation and creates the draft contract
+        api: on_init
+        description: Seller provides the final quotation and creates the draft contract
+        reference: if any
+        example: &ref_11
+          summary: Respond to RFQ
+          description: Respond to RFQ
+          value:
+            context:
+              domain: ONDC:RET10
+              location:
+                city:
+                  code: std:080
+                country:
+                  code: IND
+              action: on_init
+              version: 2.0.0
+              bap_id: buyerapp.com
+              bap_uri: https://buyerapp.com/grocery
+              bpp_id: sellerapp.com
+              bpp_uri: https://sellerapp.com/grocery
+              transaction_id: T1
+              message_id: M1
+              timestamp: '2023-01-08T22:00:30.000Z'
+              ttl: PT30S
+            message:
+              order:
+                provider:
+                  id: P1
+                provider_location:
+                  id: L1
+                items:
+                  - id: I1
+                    fulfillment_ids:
+                      - F1
+                    quantity:
+                      selected:
+                        count: 10
+                    add-ons:
+                      - id: ADDON01
+                    tags:
+                      - descriptor:
+                          code: BUYER_TERMS
+                        list:
+                          - descriptor:
+                              code: ITEM_REQ
+                            value: free text on Item Customization
+                          - descriptor:
+                              code: PACKAGING_REQ
+                            value: free text on packaging Customization
+                billing:
+                  name: ONDC buyer
+                  address: >-
+                    22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar,
+                    Bengaluru, Karnataka 560001
+                  state:
+                    name: Karnataka
+                  city:
+                    name: Bengaluru
+                  tax_id: XXXXXXXXXXXXXXX
+                  email: nobody@nomail.com
+                  phone: '9886098860'
+                fulfillments:
+                  - id: F1
+                    type: ONLINE
+                    tracking: false
+                quote:
+                  price:
+                    currency: INR
+                    value: '6500'
+                  breakup:
+                    - title: Display ads
+                      price:
+                        currency: INR
+                        value: '5000'
+                      item:
+                        id: I1
+                        quantity:
+                          selected:
+                            count: '10'
+                        price:
+                          currency: INR
+                          value: '500'
+                    - title: tax
+                      price:
+                        currency: INR
+                        value: '500'
+                      item:
+                        id: I1
+                    - title: creative generation
+                      id: ADDON01
+                      price:
+                        currency: INR
+                        value: '1000'
+                  ttl: P1D
+                payments:
+                  - id: P1
+                    collected_by: BAP
+                    params:
+                      amount: '6500'
+                      currency: INR
+                      bank_account_number: xxxxxxxx
+                      virtual_payment_address: xxx@xxxx
+                    type: ON-FULFILLMENT
+                    tags:
+                      - descriptor:
+                          code: Settlement_Details
+                        list:
+                          - descriptor:
+                              code: Counterparty
+                            value: BPP
+                          - descriptor:
+                              code: Mode
+                            value: UPI
+                          - descriptor:
+                              code: Beneficiary_Name
+                            value: xxxxx
+                          - descriptor:
+                              code: Bank_Account_No
+                            value: xxxxx
+                          - descriptor:
+                              code: Ifsc_Code
+                            value: xxxxxxx
+                          - descriptor:
+                              code: UPI_Address
+                            value: xxxxxxx
+                      - descriptor:
+                          code: Buyer_Finder_Fee
+                        list:
+                          - descriptor:
+                              code: Buyer_Finder_Fee_Type
+                            value: percentage
+                          - descriptor:
+                              code: Buyer_Finder_Fee_Amount
+                            value: '3'
+                tags:
+                  - descriptor:
+                      code: buyer_id
+                    list:
+                      - descriptor:
+                          code: buyer_id_code
+                        value: gst
+                      - descriptor:
+                          code: buyer_id_no
+                        value: xxxxxxxxxxxxxxx
 x-examples:
   Ads:
     summary: Ads on Network
@@ -3498,338 +3844,16 @@ x-examples:
           - *ref_7
       select:
         examples:
-          - summary: Get quote for specific ad Product
-            description: Get quote for specific item with Buyer and Delivery terms
-            value:
-              context:
-                domain: ONDC:ADS10
-                location:
-                  city:
-                    code: std:080
-                  country:
-                    code: IND
-                action: select
-                version: 2.0.0
-                bap_id: buyerapp.com
-                bap_uri: https://buyerapp.com/grocery
-                bpp_id: sellerapp.com
-                bpp_uri: https://sellerapp.com/grocery
-                transaction_id: T1
-                message_id: M1
-                timestamp: '2023-01-08T22:00:30.000Z'
-                ttl: PT30S
-              message:
-                order:
-                  provider:
-                    id: P1
-                    locations:
-                      - id: L1
-                  items:
-                    - id: I1
-                      location_ids:
-                        - L1
-                      quantity:
-                        selected:
-                          count: 10
-                      add-ons:
-                        - id: ADDON01
-                  fulfillments:
-                    - type: ONLINE
-                  payments:
-                    - type: ON-FULFILLMENT
-                  tags:
-                    - descriptor:
-                        code: buyer_id
-                      list:
-                        - descriptor:
-                            code: buyer_id_code
-                          value: gst
-                        - descriptor:
-                            code: buyer_id_no
-                          value: xxxxxxxxxxxxxxx
+          - *ref_8
       on_select:
         examples:
-          - summary: Send quote and breakup
-            description: Send quote and breakup for items selected in select call.
-            value:
-              context:
-                domain: ONDC:ADS10
-                location:
-                  city:
-                    code: std:080
-                  country:
-                    code: IND
-                action: on_select
-                version: 2.0.0
-                bap_id: buyerapp.com
-                bap_uri: https://buyerapp.com/grocery
-                bpp_id: sellerapp.com
-                bpp_uri: https://sellerapp.com/grocery
-                transaction_id: T1
-                message_id: M1
-                timestamp: '2023-01-08T22:00:30.000Z'
-                ttl: PT30S
-              message:
-                order:
-                  provider:
-                    id: P1
-                  items:
-                    - id: I1
-                      fulfillment_ids:
-                        - F1
-                      location_ids:
-                        - L1
-                      quantity:
-                        selected:
-                          count: 10
-                      add-ons:
-                        - id: ADDON01
-                  fulfillments:
-                    - id: F1
-                      type: ONLINE
-                  quote:
-                    price:
-                      currency: INR
-                      value: '6500'
-                    breakup:
-                      - title: Display ads
-                        price:
-                          currency: INR
-                          value: '5000'
-                        item:
-                          id: I1
-                          quantity:
-                            selected:
-                              count: '10'
-                          price:
-                            currency: INR
-                            value: '500'
-                      - title: tax
-                        price:
-                          currency: INR
-                          value: '500'
-                        item:
-                          id: I1
-                      - title: creative generation
-                        id: ADDON01
-                        price:
-                          currency: INR
-                          value: '1000'
-                    ttl: P1D
+          - *ref_9
       init:
         examples:
-          - summary: Send buyer and delivery terms for RFQ
-            description: Send buyer and delivery terms for RFQ
-            value:
-              context:
-                domain: ONDC:ADS10
-                location:
-                  city:
-                    code: std:080
-                  country:
-                    code: IND
-                action: init
-                version: 2.0.0
-                bap_id: buyerapp.com
-                bap_uri: https://buyerapp.com/grocery
-                bpp_id: sellerapp.com
-                bpp_uri: https://sellerapp.com/grocery
-                transaction_id: T1
-                message_id: M1
-                timestamp: '2023-01-08T22:00:30.000Z'
-                ttl: PT30S
-              message:
-                order:
-                  provider:
-                    id: P1
-                    locations:
-                      - id: L1
-                    ttl: P1D
-                  items:
-                    - id: I1
-                      fulfillment_ids:
-                        - F1
-                      quantity:
-                        selected:
-                          count: 10
-                      add-ons:
-                        - id: ADDON01
-                      tags:
-                        - descriptor:
-                            code: BUYER_TERMS
-                          list:
-                            - descriptor:
-                                code: ITEM_REQ
-                              value: free text on Item Customization
-                  billing:
-                    name: ONDC buyer
-                    address: >-
-                      22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar,
-                      Bengaluru, Karnataka 560001
-                    state:
-                      name: Karnataka
-                    city:
-                      name: Bengaluru
-                    tax_id: XXXXXXXXXXXXXXX
-                    email: nobody@nomail.com
-                    phone: '9886098860'
-                  fulfillments:
-                    - id: F1
-                      type: ONLINE
-                  payments:
-                    - type: ON-FULFILLMENT
-                  tags:
-                    - descriptor:
-                        code: buyer_id
-                      list:
-                        - descriptor:
-                            code: buyer_id_code
-                          value: gst
-                        - descriptor:
-                            code: buyer_id_no
-                          value: xxxxxxxxxxxxxxx
+          - *ref_10
       on_init:
         examples:
-          - summary: Respond to RFQ
-            description: Respond to RFQ
-            value:
-              context:
-                domain: ONDC:RET10
-                location:
-                  city:
-                    code: std:080
-                  country:
-                    code: IND
-                action: on_init
-                version: 2.0.0
-                bap_id: buyerapp.com
-                bap_uri: https://buyerapp.com/grocery
-                bpp_id: sellerapp.com
-                bpp_uri: https://sellerapp.com/grocery
-                transaction_id: T1
-                message_id: M1
-                timestamp: '2023-01-08T22:00:30.000Z'
-                ttl: PT30S
-              message:
-                order:
-                  provider:
-                    id: P1
-                  provider_location:
-                    id: L1
-                  items:
-                    - id: I1
-                      fulfillment_ids:
-                        - F1
-                      quantity:
-                        selected:
-                          count: 10
-                      add-ons:
-                        - id: ADDON01
-                      tags:
-                        - descriptor:
-                            code: BUYER_TERMS
-                          list:
-                            - descriptor:
-                                code: ITEM_REQ
-                              value: free text on Item Customization
-                            - descriptor:
-                                code: PACKAGING_REQ
-                              value: free text on packaging Customization
-                  billing:
-                    name: ONDC buyer
-                    address: >-
-                      22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar,
-                      Bengaluru, Karnataka 560001
-                    state:
-                      name: Karnataka
-                    city:
-                      name: Bengaluru
-                    tax_id: XXXXXXXXXXXXXXX
-                    email: nobody@nomail.com
-                    phone: '9886098860'
-                  fulfillments:
-                    - id: F1
-                      type: ONLINE
-                      tracking: false
-                  quote:
-                    price:
-                      currency: INR
-                      value: '6500'
-                    breakup:
-                      - title: Display ads
-                        price:
-                          currency: INR
-                          value: '5000'
-                        item:
-                          id: I1
-                          quantity:
-                            selected:
-                              count: '10'
-                          price:
-                            currency: INR
-                            value: '500'
-                      - title: tax
-                        price:
-                          currency: INR
-                          value: '500'
-                        item:
-                          id: I1
-                      - title: creative generation
-                        id: ADDON01
-                        price:
-                          currency: INR
-                          value: '1000'
-                    ttl: P1D
-                  payments:
-                    - id: P1
-                      collected_by: BAP
-                      params:
-                        amount: '6500'
-                        currency: INR
-                        bank_account_number: xxxxxxxx
-                        virtual_payment_address: xxx@xxxx
-                      type: ON-FULFILLMENT
-                      tags:
-                        - descriptor:
-                            code: Settlement_Details
-                          list:
-                            - descriptor:
-                                code: Counterparty
-                              value: BPP
-                            - descriptor:
-                                code: Mode
-                              value: UPI
-                            - descriptor:
-                                code: Beneficiary_Name
-                              value: xxxxx
-                            - descriptor:
-                                code: Bank_Account_No
-                              value: xxxxx
-                            - descriptor:
-                                code: Ifsc_Code
-                              value: xxxxxxx
-                            - descriptor:
-                                code: UPI_Address
-                              value: xxxxxxx
-                        - descriptor:
-                            code: Buyer_Finder_Fee
-                          list:
-                            - descriptor:
-                                code: Buyer_Finder_Fee_Type
-                              value: percentage
-                            - descriptor:
-                                code: Buyer_Finder_Fee_Amount
-                              value: '3'
-                  tags:
-                    - descriptor:
-                        code: buyer_id
-                      list:
-                        - descriptor:
-                            code: buyer_id_code
-                          value: gst
-                        - descriptor:
-                            code: buyer_id_no
-                          value: xxxxxxxxxxxxxxx
+          - *ref_11
 x-attributes:
   B2B:
     attribute_set:

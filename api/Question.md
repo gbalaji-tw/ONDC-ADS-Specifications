@@ -196,8 +196,7 @@ Chemicals
 
 
 
-seleler accepts buyer terms.
-
-selle terms - on_it
-
-seller confirms buyer terms - on_confirm
+1. Update Target audience
+2. Update Flow UI
+3. Update BPP Terms
+4. Checking to ONDC repo.

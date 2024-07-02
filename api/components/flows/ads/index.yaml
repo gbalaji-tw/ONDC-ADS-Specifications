@@ -8,9 +8,33 @@ steps:
     reference: if any
     example:
       $ref: "../../examples/ads/search/search_by_category.yaml"
-  - summary: Returns item/ catalog
+  - summary: Returns the catalog specific to the search intent
     api: on_search
     description: Catalog provided by the Seller App 
     reference: if any
     example:
       $ref: "../../examples/ads/on_search/on_search.yaml"
+  - summary: Buyer adds the service to cart
+    api: select
+    description: Buyer adds the service to cart
+    reference: if any
+    example:
+      $ref: "../../examples/ads/select/select.yaml"
+  - summary: Seller confirms and returns the quote
+    api: on_select
+    description: Seller confirms and returns the quote
+    reference: if any
+    example:
+      $ref: "../../examples/ads/on_select/on_select.yaml"
+  - summary: Buyer initialises the order and provides billing details
+    api: init
+    description: Buyer initialises the order and provides billing details
+    reference: if any
+    example:
+      $ref: "../../examples/ads/init/init.yaml"
+  - summary: Seller provides the final quotation and creates the draft contract
+    api: on_init
+    description: Seller provides the final quotation and creates the draft contract
+    reference: if any
+    example:
+      $ref: "../../examples/ads/on_init/on_init.yaml"
