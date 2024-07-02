@@ -77,13 +77,14 @@ In the API documentation, tags are defined within ENUMS
 ** - target_audience.age_range should be standardized range, and can be comma-separated, like 0-13,13-18,19-59,60+ as we're using in others
 
 
+Policies should go under BPP Terms in /on_init instead
+** No need to define categories that are already in the taxonomy
 
 /on_search
 * providers.tags has category listed as SRV11-*, it should be ADS10
-Policies should go under BPP Terms in /on_init instead
 There is no parent_item_id PI1 defined, please remove the key
-** item.price.value and item.price.offered_value should be the same to avoid confusion. You can instead define the maximum price.
-**What does quantity.count and quantity.measure.value describe exactly?
+* item.price.value and item.price.offered_value should be the same to avoid confusion. You can instead define the maximum price.
+*What does quantity.count and quantity.measure.value describe exactly?
 item.tags.description is null, please remove they key
 ** No need to define categories that are already in the taxonomy
 There should be no need of provider.fulfillments at this level and should be part of the /select and /on_select call, as we're already describing the location for the ad placement before.
@@ -143,3 +144,60 @@ payments.params.amount is incorrect and does not match quote
               - descriptor:
                   code: long
                   value: ''
+
+Allowed Domains: Enumize it.
+
+
+Retail
+Logistics
+Grocery
+F&B
+Fashion
+Electronics
+Home & Decor
+Pharma
+Health & Wellness
+Pharma
+Autoparts & Components
+Building and construction supplies
+Chemicals
+
+
+
+  [
+        {
+          "code":"bpp_terms",
+          "list":
+          [
+            {
+              "code":"max_liability",
+              "value":"2"
+            },
+            {
+              "code":"max_liability_cap",
+              "value":"10000.00"
+            },
+            {
+              "code":"mandatory_arbitration",
+              "value":"false"
+            },
+            {
+              "code":"court_jurisdiction",
+              "value":"Bengaluru"
+            },
+            {
+              "code":"delay_interest",
+              "value":"7.50"
+            },
+            {
+              "code":"tax_number",
+              "value":"gst_number_of_sellerNP"
+            },
+
+
+
+seleler accepts buyer terms.
+
+selle terms - on_it
+
+seller confirms buyer terms - on_confirm

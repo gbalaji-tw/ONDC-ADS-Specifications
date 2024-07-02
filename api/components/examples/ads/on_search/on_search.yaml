@@ -123,6 +123,10 @@ value:
             value: 18-30
           - code: gender
             value: Male
+        - descriptor:
+            code: allowed_domains
+          list:
+          - value: Retail
         items:
         - id: 'I1'
           descriptor:
@@ -199,14 +203,3 @@ value:
               value: '1000.0'
               offered_value: '1000.0'
               maximum_value: '1000.0'
-        categories:
-         - id: 'ADS-10-01-01'
-           parent_category_id: 'ADS-10-01' 
-         - id: 'ADS-10-01-02'
-           parent_category_id: 'ADS-10-01' 
-         - id: 'ADS-10-01-03'
-           parent_category_id: 'ADS-10-01' 
-         - id: 'ADS-10-01-04'
-           parent_category_id: 'ADS-10-01' 
-         - id: 'ADS-10-01-04'
-           parent_category_id: 'ADS-10-01'

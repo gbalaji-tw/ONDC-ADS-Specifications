@@ -63,8 +63,34 @@ tags:
         description: Other Gender
       - code: Unknown Gender
         description: Unknown Gender
-  acceptance_criteria:
-    allowed_policies:
-     - code: ONDC Seller nodes & seller apps only
-       description: ONDC Seller nodes & seller apps only
-       reference: <PR/Issue/Discussion Links md format text>
+  allowed_domains:
+    - code: Retail
+      description: only retail domain related ads
+    - code: Logistics
+      description: only Logistics  related ads
+    - code: Grocery
+      description: only Grocery related ads
+    - code: F&B
+      description: only F&B related ads
+    - code: Fashion
+      description: only Fashion related ads
+    - code: Electronics
+      description: only Electronics related ads
+    - code: Home & Decor
+      description: only Home & Decor related ads
+    - code: Pharma
+      description: only Pharma related ads
+    - code: Health & Wellness
+      description: only Health & Wellness related ads
+    - code: Chemicals
+      description: only Chemicals related ads
+    - code: Hardware Industrial
+      description: only Hardware Industrial related ads
+    - code: Insurance
+      description: only Insurance related ads
+    - code: Investment
+      description: only Investment related ads
+    - code: Agri Services
+      description: only Agri Services related ads
+    - code: Skilled Services
+      description: only Skilled Services related ads

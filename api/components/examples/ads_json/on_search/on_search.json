@@ -211,6 +211,16 @@
                     "value": "Male"
                   }
                 ]
+              },
+              {
+                "descriptor": {
+                  "code": "allowed_domains"
+                },
+                "list": [
+                  {
+                    "value": "Retail"
+                  }
+                ]
               }
             ],
             "items": [
@@ -344,28 +354,6 @@
                     }
                   }
                 ]
-              }
-            ],
-            "categories": [
-              {
-                "id": "ADS-10-01-01",
-                "parent_category_id": "ADS-10-01"
-              },
-              {
-                "id": "ADS-10-01-02",
-                "parent_category_id": "ADS-10-01"
-              },
-              {
-                "id": "ADS-10-01-03",
-                "parent_category_id": "ADS-10-01"
-              },
-              {
-                "id": "ADS-10-01-04",
-                "parent_category_id": "ADS-10-01"
-              },
-              {
-                "id": "ADS-10-01-04",
-                "parent_category_id": "ADS-10-01"
               }
             ]
           }
