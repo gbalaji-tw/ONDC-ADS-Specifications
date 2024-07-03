@@ -108,34 +108,28 @@ tags:
         description: Primary profession  - business
       - code: Salaried
         description: Primary profession - salaried
+    annual_income:
+      - code: Poor
+        description: income groups <1,25,000 
+      - code: Aspirers
+        description: income groups 1,25,000 to 5,00,000
+      - code: Middle class
+        description: income groups 5,00,000 to 30,00,000
+      - code: Rich
+        description: income groups >30,00,000
+    language:
+      - code: 
+        description: income groups <1,25,000 
   allowed_domains:
     - code: Retail
-      description: only retail domain related ads
+      description: Ads related to fashion, electronics, groceries etc.
     - code: Logistics
-      description: only Logistics  related ads
-    - code: Grocery
+      description: Ads related domestic and international logistics
+    - code: Agriculture
       description: only Grocery related ads
-    - code: F&B
+    - code: Financial Services
       description: only F&B related ads
-    - code: Fashion
-      description: only Fashion related ads
-    - code: Electronics
-      description: only Electronics related ads
-    - code: Home & Decor
-      description: only Home & Decor related ads
-    - code: Pharma
-      description: only Pharma related ads
-    - code: Health & Wellness
-      description: only Health & Wellness related ads
-    - code: Chemicals
-      description: only Chemicals related ads
-    - code: Hardware Industrial
-      description: only Hardware Industrial related ads
-    - code: Insurance
-      description: only Insurance related ads
-    - code: Investment
-      description: only Investment related ads
-    - code: Agri Services
-      description: only Agri Services related ads
-    - code: Skilled Services
-      description: only Skilled Services related ads
+    - code: Services
+      description: Ads related to Subscription services
+    - code: Mobility
+      description: Ads related to ticket and accomodation booking

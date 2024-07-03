@@ -63,11 +63,6 @@ value:
             code: KA
           country:
             code: IND
-        creds:
-        - id: ESG-12345678
-          type: License
-          desc: Export License No. ESG-12345678
-          url: https://abcd.cdn.com/images/license-img
         tags:
         - descriptor:
             code: serviceability
@@ -134,6 +129,9 @@ value:
           - descriptor:
               code: profession
             value: Business
+          - descriptor:
+              code: annual_income
+            value: Rich
         - descriptor:
             code: allowed_domains
           list:
