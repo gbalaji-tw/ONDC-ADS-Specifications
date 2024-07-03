@@ -2677,6 +2677,51 @@ x-enum:
                   description: Other Gender
                 - code: Unknown Gender
                   description: Unknown Gender
+              location:
+                - code: Tier1
+                  description: Tier1 location
+                - code: Tier2
+                  description: Tier2 location
+                - code: Tier3
+                  description: Tier3 location
+              interests:
+                - code: Academic Interests
+                - code: Automotive
+                - code: Books and Literature
+                - code: Business and Finance
+                - code: Careers
+                - code: Education
+                - code: Family and Relationships
+                - code: Fine Art
+                - code: Food & Drink
+                - code: Health and Medical Services
+                - code: Healthy Living
+                - code: Hobbies & Interests
+                - code: Home & Garden
+                - code: Medical Health
+                - code: Movies
+                - code: Music and Audio
+                - code: News and Politics
+                - code: Personal Finance
+                - code: Pets
+                - code: Pharmaceuticals, Conditions, and Symptoms
+                - code: Pop Culture
+                - code: Real Estate
+                - code: Shopping
+                - code: Sports
+                - code: Style & Fashion
+                - code: Technology & Computing
+                - code: Television
+                - code: Travel
+                - code: Video Gaming
+                - code: Agriculture
+                - code: Mobility
+                - code: Sprituality
+              profession:
+                - code: Business
+                  description: Primary profession  - business
+                - code: Salaried
+                  description: Primary profession - salaried
             allowed_domains:
               - code: Retail
                 description: only retail domain related ads
@@ -3180,6 +3225,35 @@ x-flows:
     description: >-
       The following is an illustrative flow to perform a transaction of a nature
       where a buyer would like to order for Ad products
+    details:
+      - description: Sequence Diagram for Ads on Network
+        mermaidGraph: |-
+          sequenceDiagram
+            title Ads on Network
+            participant Ads BAP
+            participant Ads BPP
+
+            note over Ads BAP, Ads BPP: Service Discovery
+            Ads BAP ->> Ads BPP: **/search** - Search intent sent by the buyer 
+            activate Ads BPP
+            Ads BPP ->> Ads BAP: **/on_search** - Seller Returns the catalog specific to<br/> the search intent
+            deactivate Ads BPP
+
+            note over Ads BAP, Ads BPP: Order Placement
+            Ads BAP ->> Ads BPP: **/select** - Buyer adds the Ad product to cart
+            activate Ads BPP
+            Ads BPP ->> Ads BAP: **/on_select** - Seller confirms the Ad product and returns the quote
+            deactivate Ads BPP
+
+            Ads BAP ->> Ads BPP: **/init** - Buyer initialises the order and provides billing details
+            activate Ads BPP
+            Ads BPP ->> Ads BAP: **/on_init** - Seller provides the final quotation and<br/>creates the draft contract
+            deactivate Ads BPP
+
+            Ads BAP ->> Ads BPP: **/confirm** - Buyer makes the payment and creates the order
+            activate Ads BPP
+            Ads BPP ->> Ads BAP: **/on_confirm** - Seller accepts the order
+            deactivate Ads BPP
     reference: if any
     steps:
       - summary: Search based on the category
@@ -3358,10 +3432,21 @@ x-flows:
                             value: '12345678901234'
                       - code: target_audience
                         list:
-                          - code: age_range
+                          - descriptor:
+                              code: age_range
                             value: 18-30
-                          - code: gender
+                          - descriptor:
+                              code: gender
                             value: Male
+                          - descriptor:
+                              code: location
+                            value: Tier1
+                          - descriptor:
+                              code: interests
+                            value: Sports
+                          - descriptor:
+                              code: profession
+                            value: Business
                       - descriptor:
                           code: allowed_domains
                         list:

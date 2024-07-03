@@ -63,6 +63,51 @@ tags:
         description: Other Gender
       - code: Unknown Gender
         description: Unknown Gender
+    location:
+      - code: Tier1 
+        description: Tier1 location
+      - code: Tier2
+        description: Tier2 location
+      - code: Tier3
+        description: Tier3 location
+    interests:
+      - code: Academic Interests
+      - code: Automotive
+      - code: Books and Literature
+      - code: Business and Finance
+      - code: Careers
+      - code: Education
+      - code: Family and Relationships
+      - code: Fine Art
+      - code: Food & Drink
+      - code: Health and Medical Services
+      - code: Healthy Living
+      - code: Hobbies & Interests
+      - code: Home & Garden
+      - code: Medical Health
+      - code: Movies
+      - code: Music and Audio
+      - code: News and Politics
+      - code: Personal Finance
+      - code: Pets
+      - code: Pharmaceuticals, Conditions, and Symptoms
+      - code: Pop Culture
+      - code: Real Estate
+      - code: Shopping
+      - code: Sports
+      - code: Style & Fashion
+      - code: Technology & Computing
+      - code: Television
+      - code: Travel
+      - code: Video Gaming
+      - code: Agriculture
+      - code: Mobility
+      - code: Sprituality
+    profession:
+      - code: Business
+        description: Primary profession  - business
+      - code: Salaried
+        description: Primary profession - salaried
   allowed_domains:
     - code: Retail
       description: only retail domain related ads

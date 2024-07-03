@@ -1,5 +1,37 @@
 summary: Ads on Network
 description: The following is an illustrative flow to perform a transaction of a nature where a buyer would like to order for Ad products
+details:
+  - description: Sequence Diagram for Ads on Network
+    mermaidGraph: >-
+      sequenceDiagram
+        title Ads on Network
+        participant Ads BAP
+        participant Ads BPP
+
+        note over Ads BAP, Ads BPP: Service Discovery
+        Ads BAP ->> Ads BPP: **/search** - Search intent sent by the buyer 
+        activate Ads BPP
+        Ads BPP ->> Ads BAP: **/on_search** - Seller Returns the catalog specific to<br/> the search intent
+        deactivate Ads BPP
+
+        note over Ads BAP, Ads BPP: Order Placement
+        Ads BAP ->> Ads BPP: **/select** - Buyer adds the Ad product to cart
+        activate Ads BPP
+        Ads BPP ->> Ads BAP: **/on_select** - Seller confirms the Ad product and returns the quote
+        deactivate Ads BPP
+
+        Ads BAP ->> Ads BPP: **/init** - Buyer initialises the order and provides billing details
+        activate Ads BPP
+        Ads BPP ->> Ads BAP: **/on_init** - Seller provides the final quotation and<br/>creates the draft contract
+        deactivate Ads BPP
+
+        Ads BAP ->> Ads BPP: **/confirm** - Buyer makes the payment and creates the order
+        activate Ads BPP
+        Ads BPP ->> Ads BAP: **/on_confirm** - Seller accepts the order
+        deactivate Ads BPP
+
+
+
 reference: if any
 steps:
   - summary: Search based on the category

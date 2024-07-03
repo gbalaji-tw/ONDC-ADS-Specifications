@@ -119,10 +119,21 @@ value:
             value: '12345678901234'
         - code: target_audience
           list:
-          - code: age_range
+          - descriptor:
+              code: age_range
             value: 18-30
-          - code: gender
+          - descriptor:
+              code: gender
             value: Male
+          - descriptor:
+              code: location
+            value: Tier1
+          - descriptor:
+              code: interests
+            value: Sports
+          - descriptor:
+              code: profession
+            value: Business
         - descriptor:
             code: allowed_domains
           list:
