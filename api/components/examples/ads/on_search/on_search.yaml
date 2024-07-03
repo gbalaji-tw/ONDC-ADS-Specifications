@@ -184,7 +184,7 @@ value:
               - code: position
                 value: Homepage
             - code: ad_type
-              value: Display-ADS
+              value: Smartphone Banner
             - code: availability
               value: Static
           category_ids:

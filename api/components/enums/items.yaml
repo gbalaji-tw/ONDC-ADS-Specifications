@@ -14,19 +14,30 @@ tags:
     position:
       - code: Homepage
         description: Homepage
-        reference: <PR/Issue/Discussion Links md format text>
-    location:
-      - code: PLP
+      - code: Listing page
         description: Product listing page
-        reference: <PR/Issue/Discussion Links md format text>
+      - code: Product detail page
+        description: Product detail page
+      - code: Cart
+        description: Cart page
+      - code: Checkout
+        description: Checkout page
+      - code: My orders
+        description: My orders page
+      - code: Categories list page
+        description: Categories page
+    location:
+      - code: Tier 1
+        description: Tier 1 city
+      - code: Tier 2
+        description: Tier 2 city
     location_url:
       - code: PDP
         description: Product description page
         reference: <PR/Issue/Discussion Links md format text>
   ad_type:
-      - code: Display-Ads
-        description: Display-Ads
-        reference: <PR/Issue/Discussion Links md format text>
+      - code: Smartphone Banner
+        description: Smartphone Banner
   availability:
       - code: Static
         description: Ad slot is available for fixed window and for 1 ad 

@@ -2731,9 +2731,6 @@ x-enum:
                   description: income groups 5,00,000 to 30,00,000
                 - code: Rich
                   description: income groups >30,00,000
-              language:
-                - code: null
-                  description: income groups <1,25,000
             allowed_domains:
               - code: Retail
                 description: Ads related to fashion, electronics, groceries etc.
@@ -2785,19 +2782,30 @@ x-enum:
                 position:
                   - code: Homepage
                     description: Homepage
-                    reference: <PR/Issue/Discussion Links md format text>
-                location:
-                  - code: PLP
+                  - code: Listing page
                     description: Product listing page
-                    reference: <PR/Issue/Discussion Links md format text>
+                  - code: Product detail page
+                    description: Product detail page
+                  - code: Cart
+                    description: Cart page
+                  - code: Checkout
+                    description: Checkout page
+                  - code: My orders
+                    description: My orders page
+                  - code: Categories list page
+                    description: Categories page
+                location:
+                  - code: Tier 1
+                    description: Tier 1 city
+                  - code: Tier 2
+                    description: Tier 2 city
                 location_url:
                   - code: PDP
                     description: Product description page
                     reference: <PR/Issue/Discussion Links md format text>
               ad_type:
-                - code: Display-Ads
-                  description: Display-Ads
-                  reference: <PR/Issue/Discussion Links md format text>
+                - code: Smartphone Banner
+                  description: Smartphone Banner
               availability:
                 - code: Static
                   description: Ad slot is available for fixed window and for 1 ad
@@ -3491,7 +3499,7 @@ x-flows:
                               - code: position
                                 value: Homepage
                           - code: ad_type
-                            value: Display-ADS
+                            value: Smartphone Banner
                           - code: availability
                             value: Static
                         category_ids:

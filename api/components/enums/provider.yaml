@@ -117,9 +117,6 @@ tags:
         description: income groups 5,00,000 to 30,00,000
       - code: Rich
         description: income groups >30,00,000
-    language:
-      - code: 
-        description: income groups <1,25,000 
   allowed_domains:
     - code: Retail
       description: Ads related to fashion, electronics, groceries etc.
