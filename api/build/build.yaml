@@ -3479,8 +3479,8 @@ x-flows:
                         descriptor:
                           name: Display ads
                           code: Display Ads
-                          short_desc: Smartphone Banner
-                          long_desc: Smartphone Banner
+                          short_desc: Display Ads
+                          long_desc: Display Ads
                           media:
                             - mimetype: video/mp4
                               url: video_url
@@ -3968,11 +3968,9 @@ x-attributes:
         context:
           parent: true
           domain:
-            description: >-
-              updated domain namespace defined
-              [here](https://docs.google.com/document/d/brvcltG_DagZ3kGrZZQk4hG4tze3zvcxmGV4NMTzr8/edit#heading=h.w9zlp87xdha1)
+            description: Ads domains ID
             required: mandatory
-            usage: ONDC:RET12
+            usage: ONDC:ADS10
             reference: if any
           city:
             description: >-
@@ -4014,18 +4012,11 @@ x-attributes:
                 reference: if any
                 required: optional
             category:
-              parent: true
-              description: Category of the search
-              required: optional
-              usage: '-'
-              reference: if any
               id:
-                description: >-
-                  category id will be from this list -
-                  https://docs.google.com/spreadsheets/d/APAvavF_BNbTA89benAlGtv0GuFvpn2b6XXi4lSdTTw/edit#gid=0
-                required: present if category is present
-                usage: Digital
-                reference: L2 Category
+                description: Category id of the Ad product
+                required: mandatory
+                usage: ADS-10-01-01
+                reference: if any
             fulfillment:
               parent: true
               type:
@@ -4040,9 +4031,9 @@ x-attributes:
           domain:
             description: >-
               updated domain namespace defined
-              [here](https://docs.google.com/document/d/brvcltG_DagZ3kGrZZQk4hG4tze3zvcxmGV4NMTzr8/edit#heading=h.w9zlp87xdha1)
+              https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
             required: mandatory
-            usage: ONDC:ADS
+            usage: ONDC:ADS10
             reference: if any
           city:
             description: >-
@@ -4076,28 +4067,8 @@ x-attributes:
                   provider id for same legal entity will cause an ISN being
                   regarded as MSN, thus resulting in tax non-compliance
                 required: mandatory
-                usage: F1
+                usage: P1
                 reference: if any
-              fulfillments:
-                contact:
-                  description: >-
-                    contact details for merchant - if merchant is in multiple
-                    locations, this will be the contact detail for merchant and
-                    contact detail for the storefront (specific location) will
-                    be in fulfillment.start
-                  required: mandatory
-                  usage: '-'
-                  reference: if any
-                contact.phone:
-                  description: valid 10 digit (mobile no) or 11 digit no
-                  required: mandatory
-                  usage: '9886098860'
-                  reference: if any
-                contact.email:
-                  description: email id of merchant or seller NP
-                  required: mandatory
-                  usage: abc@xyz.com
-                  reference: if any
               ttl:
                 description: ISO8601 duration format for validity of provider catalog
                 required: mandatory
@@ -4112,61 +4083,30 @@ x-attributes:
                 id:
                   required: optional
                   description: Human readable id
-                  reference: if any
-                  usage: <<L3>>
+                  reference: >-
+                    refer -
+                    https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
+                  usage: ADS-10-01-01
                 parent_category_id:
                   required: optional
                   description: Human readable id
-                  reference: if any
-                  usage: <<L2>>
-                tags.code:
-                  description: >-
-                    if code is "attr", then it defines variant attributes i.e.
-                    attribute & sequence; multiple variant attributes can be
-                    defined in multiple attr blocks
-                  required: mandatory
-                  usage: '-'
-                  reference: if any
-                tags.list.code:
-                  description: >-
-                    if "code" is "attr", then it is namespaced attribute, above
-                    example means attribute(s) in "quantity.unitized" for an
-                    item
-                  required: mandatory
-                  usage: '-'
-                  reference: if any
-                tags.list.value:
-                  description: >-
-                    if `tags>code` is "attr" and `tags>list>code` is "name",
-                    then it's corresponding `value` means concatenation of
-                    item.quantity.unitized.measure.value and
-                    item.quantity.unitized.measure.unit e.g. "1 kilogram", "2
-                    kilogram", "5 kilogram"
-                  required: mandatory
-                  usage: '-'
-                  reference: if any
+                  reference: >-
+                    refer -
+                    https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
+                  usage: ADS-10-01
               items:
                 id:
                   required: optional
                   description: Human readable id
                   reference: if any
                   usage: Display Ads
-                parent_item_id:
-                  description: >-
-                    if variant grouping defined for provider above, this matches
-                    id for variant_group definition; if not defined or id is
-                    invalid, buyer NPs may choose to display as normal SKU item
-                  required: mandatory
-                  usage: App
-                  reference: if any
                 descriptor.code:
-                  description: >-
-                    unique code for item which will be in this format -
-                    "type:code" where type is 1 - EAN, 2 - ISBN, 3 - GTIN, 4 -
-                    HSN, 5 - others
+                  description: unique code for item - Ad product name
                   required: optional
-                  usage: 2
-                  reference: if any
+                  usage: Display Ads
+                  reference: >-
+                    refer 'tab2 - 01_Hierarchy_Product_Sample values' -
+                    https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
                 quantity.unitized.measure.unit:
                   description: enum - "CPC", "CPM", "CPA"
                   required: mandatory
@@ -4222,6 +4162,81 @@ x-attributes:
                 required: mandatory
                 usage: PRE-FULFILLMENT
                 reference: if any
+      select:
+        parent: true
+        message:
+          parent: true
+          order:
+            parent: true
+            provider:
+              parent: true
+              id:
+                description: id of the provider chosen for the service
+                required: required
+                usage: P1
+                reference: if any
+              locations:
+                description: >-
+                  mandatory only if provider.locations was returned in
+                  /on_search
+                required: optional
+                usage: '-'
+                reference: if any
+            items:
+              parent: true
+              id:
+                description: item id i.e. the id of the selected Ad product
+                required: required
+                usage: I1
+                reference: if any
+              location_ids:
+                description: location id of the selected Ad product
+                required: optional
+                usage: L1
+                reference: if any
+              category_ids:
+                description: L3 category id for the item as per taxonomy
+                required: required for customizations
+                usage: ADS-10-01-01
+                reference: if any
+              quantity:
+                selected:
+                  count:
+                    description: >-
+                      number of items selected e.g. number of sofas to be
+                      cleaned
+                    required: required
+                    usage: '1'
+                    reference: if any
+              add-ons:
+                description: >-
+                  Add-on for items like creative services,Managed campaign as
+                  service
+                required: required for customizations
+                usage: Creative Services
+                reference: >-
+                  Refer '02_Suggested enums and Sample Values' -
+                  https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=818015885#gid=818015885
+            fulfillments:
+              parent: true
+              fulfillemnts:
+                description: contains the fulfillment details
+                required: required
+                usage: '-'
+                reference: if any
+              type:
+                description: type of fulfillment mode selected from the catalog
+                required: required
+                usage: ONLINE
+                reference: if any
+            payments:
+              type:
+                description: >-
+                  selected payment mode by which buyer would like to pay, enum -
+                  'PRE-FULFILLMENT',"ON-FULFILLMENT","POST-FULFILLMENT"
+                required: required
+                usage: PRE-FULFILLMENT
+                reference: if any
       on_select:
         parent: true
         message:
@@ -4270,6 +4285,44 @@ x-attributes:
           parent: true
           order:
             parent: true
+            items:
+              parent: true
+              id:
+                description: item id i.e. the id of the selected Ad product
+                required: required
+                usage: I1
+                reference: if any
+              location_ids:
+                description: location id of the ad product
+                required: optional
+                usage: L1
+                reference: if any
+              category_ids:
+                description: category ids of the selected Ad product
+                required: required
+                usage: ADS-10-01-01
+                reference: if any
+              quantity:
+                selected:
+                  count:
+                    description: number of items selected
+                    required: required
+                    usage: '1'
+                    reference: if any
+              add-ons:
+                description: >-
+                  Add-on for items like creative services,Managed campaign as
+                  service
+                required: required for customizations
+                usage: Creative Services
+                reference: >-
+                  Refer '02_Suggested enums and Sample Values' -
+                  https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=818015885#gid=818015885
+            fulfillment_ids:
+              description: fulfillment id mapped to the id provided in fulfillments array
+              required: required
+              usage: '1'
+              reference: if any
             billing:
               parent: true
               phone:
@@ -4327,45 +4380,40 @@ x-attributes:
             items:
               parent: true
               id:
-                description: item id i.e. the id of the selected service or customization
+                description: item id i.e. the id of the selected Ad product
                 required: required
-                usage: I2
-                reference: if any
-              parent_item_id:
-                description: parent item id of the selected service or customization
-                required: required for customizations
-                usage: PI1
+                usage: I1
                 reference: if any
               location_ids:
                 description: location id of the selected service provider
-                required: required
+                required: optional
                 usage: L1
                 reference: if any
               category_ids:
-                description: category ids of the selected service
+                description: category ids of the Ad product
                 required: required
-                usage: C1
+                usage: ADS-10-01-01
                 reference: if any
               quantity:
                 selected:
                   count:
-                    description: >-
-                      number of items selected e.g. number of sofas to be
-                      cleaned
+                    description: number of items selected
                     required: required
                     usage: '1'
                     reference: if any
-              tags:
-                description: identifier tag for customizations
-                required: required for customizations
-                usage: '-'
-                reference: if any
-              fulfillment_ids:
+              add-ons:
                 description: >-
-                  fulfillment id of the service mapped to the id provided in
-                  fulfillments array
+                  Add-on for items like creative services,Managed campaign as
+                  service
+                required: required for customizations
+                usage: Creative Services
+                reference: >-
+                  Refer '02_Suggested enums and Sample Values' -
+                  https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=818015885#gid=818015885
+              fulfillment_ids:
+                description: fulfillment id mapped to the id provided in fulfillments array
                 required: required
-                usage: F1
+                usage: '1'
                 reference: if any
             billing:
               parent: true

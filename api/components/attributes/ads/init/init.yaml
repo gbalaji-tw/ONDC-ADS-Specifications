@@ -2,6 +2,40 @@ message:
   parent: true
   order:
     parent: true
+    items:
+      parent: true
+      id:
+        description: item id i.e. the id of the selected Ad product
+        required: required
+        usage: "I1"
+        reference: if any
+      location_ids:
+        description: location id of the ad product
+        required: optional
+        usage: "L1"
+        reference: if any
+      category_ids:
+        description: category ids of the selected Ad product
+        required: required
+        usage: "ADS-10-01-01"
+        reference: if any
+      quantity:
+        selected:
+          count:
+            description: number of items selected
+            required: required
+            usage: "1"
+            reference: if any
+      add-ons:      
+        description: Add-on for items like creative services,Managed campaign as service
+        required: required for customizations
+        usage: "Creative Services"
+        reference: Refer '02_Suggested enums and Sample Values' - https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=818015885#gid=818015885
+    fulfillment_ids:
+        description: fulfillment id mapped to the id provided in fulfillments array
+        required: required
+        usage: "1"
+        reference: if any
     billing:
       parent: true
       phone:
@@ -47,5 +81,4 @@ message:
         description: provider ttl
         required: mandatory
         usage: P1D
-        reference: if any     
-
+        reference: if any

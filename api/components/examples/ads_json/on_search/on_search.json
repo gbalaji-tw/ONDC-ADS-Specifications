@@ -1,380 +1,380 @@
 {
-  "summary": "Return the catalog",
-  "description": "Return the catalog",
-  "value": {
-    "context": {
-      "domain": "ONDC:ADS10",
-      "location": {
-        "city": {
-          "code": "std:080"
+    "summary": "Return the catalog",
+    "description": "Return the catalog",
+    "value": {
+      "context": {
+        "domain": "ONDC:ADS10",
+        "location": {
+          "city": {
+            "code": "std:080"
+          },
+          "country": {
+            "code": "IND"
+          }
         },
-        "country": {
-          "code": "IND"
-        }
+        "action": "on_search",
+        "version": "2.0.0",
+        "bap_id": "buyerapp.com",
+        "bap_uri": "https://buyerapp.com/grocery",
+        "bpp_id": "sellerapp.com",
+        "bpp_uri": "https://sellerapp.com/grocery",
+        "transaction_id": "9568beb3-265a-4730-be4e-c00ba2e5e30a",
+        "message_id": "86fb6231-ea67-42d1-b1ef-e43f1719a44f",
+        "timestamp": "2023-01-08T22:00:30.000Z",
+        "ttl": "PT30S"
       },
-      "action": "on_search",
-      "version": "2.0.0",
-      "bap_id": "buyerapp.com",
-      "bap_uri": "https://buyerapp.com/grocery",
-      "bpp_id": "sellerapp.com",
-      "bpp_uri": "https://sellerapp.com/grocery",
-      "transaction_id": "9568beb3-265a-4730-be4e-c00ba2e5e30a",
-      "message_id": "86fb6231-ea67-42d1-b1ef-e43f1719a44f",
-      "timestamp": "2023-01-08T22:00:30.000Z",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "catalog": {
-        "fulfillments": [
-          {
-            "id": "1",
-            "type": "ONLINE"
-          },
-          {
-            "id": "2",
-            "type": "OFFLINE"
-          }
-        ],
-        "payments": [
-          {
-            "id": "1",
-            "type": "PRE-FULFILLMENT"
-          },
-          {
-            "id": "2",
-            "type": "ON-FULFILLMENT"
-          },
-          {
-            "id": "3",
-            "type": "POST-FULFILLMENT"
-          }
-        ],
-        "descriptor": {
-          "name": "ABC app",
-          "short_desc": "Online eCommerce app",
-          "long_desc": "Online eCommerce app",
-          "images": [
+      "message": {
+        "catalog": {
+          "fulfillments": [
             {
-              "url": "https://abc.com/images/1-shop-img"
-            }
-          ]
-        },
-        "providers": [
-          {
-            "id": "P1",
-            "descriptor": {
-              "name": "ABC.com",
-              "code": "P001",
-              "short_desc": "<<desc>>",
-              "long_desc": "<<desc>>",
-              "additional_desc": {
-                "url": "chat link",
-                "content_type": "text/html"
-              },
-              "images": [
-                {
-                  "url": "https://abc.com/images/1-shop-img"
-                }
-              ]
+              "id": "1",
+              "type": "ONLINE"
             },
-            "rating": "4.4",
-            "ttl": "P1D",
-            "locations": [
+            {
+              "id": "2",
+              "type": "OFFLINE"
+            }
+          ],
+          "payments": [
+            {
+              "id": "1",
+              "type": "PRE-FULFILLMENT"
+            },
+            {
+              "id": "2",
+              "type": "ON-FULFILLMENT"
+            },
+            {
+              "id": "3",
+              "type": "POST-FULFILLMENT"
+            }
+          ],
+          "descriptor": {
+            "name": "ABC app",
+            "short_desc": "Online eCommerce app",
+            "long_desc": "Online eCommerce app",
+            "images": [
               {
-                "id": "L1",
-                "gps": "12.967555,77.749666",
-                "address": "Jayanagar 4th Block",
-                "city": {
-                  "code": "std:080",
-                  "name": "Bengaluru"
+                "url": "https://abc.com/images/1-shop-img"
+              }
+            ]
+          },
+          "providers": [
+            {
+              "id": "P1",
+              "descriptor": {
+                "name": "ABC.com",
+                "code": "P001",
+                "short_desc": "<<desc>>",
+                "long_desc": "<<desc>>",
+                "additional_desc": {
+                  "url": "chat link",
+                  "content_type": "text/html"
                 },
-                "state": {
-                  "code": "KA"
-                },
-                "country": {
-                  "code": "IND"
+                "images": [
+                  {
+                    "url": "https://abc.com/images/1-shop-img"
+                  }
+                ]
+              },
+              "rating": "4.4",
+              "ttl": "P1D",
+              "locations": [
+                {
+                  "id": "L1",
+                  "gps": "12.967555,77.749666",
+                  "address": "Jayanagar 4th Block",
+                  "city": {
+                    "code": "std:080",
+                    "name": "Bengaluru"
+                  },
+                  "state": {
+                    "code": "KA"
+                  },
+                  "country": {
+                    "code": "IND"
+                  }
                 }
-              }
-            ],
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "serviceability"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "location"
-                    },
-                    "value": "L1"
+              ],
+              "tags": [
+                {
+                  "descriptor": {
+                    "code": "serviceability"
                   },
-                  {
-                    "descriptor": {
-                      "code": "category"
-                    },
-                    "value": "ADS10"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "val"
-                    },
-                    "value": "{\"type\": \"FeatureCollection\", \"features\": [{\"type\": \"Feature\", \"properties\": {}, \"geometry\": {\"coordinates\": [[[77.175571, 28.675927], [77.128737, 28.600972], [77.446934, 28.545325], [77.175571, 28.675927]]], \"type\": \"Polygon\"}}]}"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "unit"
-                    },
-                    "value": "geojson"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "type"
-                    },
-                    "value": 12
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "seller_terms"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "gst_credit_invoice"
-                    },
-                    "value": "Y"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "seller_details"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "seller_id_code"
-                    },
-                    "value": "gst"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "seller_id_no"
-                    },
-                    "value": "xxxxxxxxxxxxxxx"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "FSSAI_LICENSE_NO"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "BRAND_OWNER"
-                    },
-                    "value": "12345678901234"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "OTHER"
-                    },
-                    "value": "12345678901234"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "IMPORTER"
-                    },
-                    "value": "12345678901234"
-                  }
-                ]
-              },
-              {
-                "code": "target_audience",
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "age_range"
-                    },
-                    "value": "18-30"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "gender"
-                    },
-                    "value": "Male"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "location"
-                    },
-                    "value": "Tier1"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "interests"
-                    },
-                    "value": "Sports"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "profession"
-                    },
-                    "value": "Business"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "annual_income"
-                    },
-                    "value": "Rich"
-                  }
-                ]
-              },
-              {
-                "descriptor": {
-                  "code": "allowed_domains"
-                },
-                "list": [
-                  {
-                    "value": "Retail"
-                  }
-                ]
-              }
-            ],
-            "items": [
-              {
-                "id": "I1",
-                "descriptor": {
-                  "name": "Display ads",
-                  "code": "Display Ads",
-                  "short_desc": "Smartphone Banner",
-                  "long_desc": "Smartphone Banner",
-                  "media": [
+                  "list": [
                     {
-                      "mimetype": "video/mp4",
-                      "url": "video_url"
+                      "descriptor": {
+                        "code": "location"
+                      },
+                      "value": "L1"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "category"
+                      },
+                      "value": "ADS10"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "val"
+                      },
+                      "value": "{\"type\": \"FeatureCollection\", \"features\": [{\"type\": \"Feature\", \"properties\": {}, \"geometry\": {\"coordinates\": [[[77.175571, 28.675927], [77.128737, 28.600972], [77.446934, 28.545325], [77.175571, 28.675927]]], \"type\": \"Polygon\"}}]}"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "unit"
+                      },
+                      "value": "geojson"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "type"
+                      },
+                      "value": 12
                     }
                   ]
                 },
-                "price": {
-                  "currency": "INR",
-                  "value": "500.00",
-                  "offered_value": "500.00",
-                  "maximum_value": "500.00"
-                },
-                "quantity": {
-                  "unitized": {
-                    "measure": {
-                      "unit": "CPM",
-                      "value": "1"
-                    }
+                {
+                  "descriptor": {
+                    "code": "seller_terms"
                   },
-                  "available": {
-                    "measure": {
-                      "unit": "CPM",
-                      "value": "10"
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "gst_credit_invoice"
+                      },
+                      "value": "Y"
                     }
-                  }
+                  ]
                 },
-                "time": {
-                  "range": {
-                    "start": "2024-07-01T00:00:00.000Z",
-                    "end": "2024-07-31T00:00:00.000Z"
-                  }
+                {
+                  "descriptor": {
+                    "code": "seller_details"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "seller_id_code"
+                      },
+                      "value": "gst"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "seller_id_no"
+                      },
+                      "value": "xxxxxxxxxxxxxxx"
+                    }
+                  ]
                 },
-                "tags": [
-                  {
-                    "code": "ad_specifications",
-                    "list": [
-                      {
-                        "code": "size",
-                        "value": "970x250"
+                {
+                  "descriptor": {
+                    "code": "FSSAI_LICENSE_NO"
+                  },
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "BRAND_OWNER"
                       },
-                      {
-                        "code": "max_k_weight",
-                        "value": 250
+                      "value": "12345678901234"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "OTHER"
                       },
-                      {
-                        "code": "sub_load",
-                        "value": 200
+                      "value": "12345678901234"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "IMPORTER"
                       },
-                      {
-                        "code": "file_size_unit",
-                        "value": "KB"
+                      "value": "12345678901234"
+                    }
+                  ]
+                },
+                {
+                  "code": "target_audience",
+                  "list": [
+                    {
+                      "descriptor": {
+                        "code": "age_range"
                       },
+                      "value": "18-30"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "gender"
+                      },
+                      "value": "Male"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "location"
+                      },
+                      "value": "Tier1"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "interests"
+                      },
+                      "value": "Sports"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "profession"
+                      },
+                      "value": "Business"
+                    },
+                    {
+                      "descriptor": {
+                        "code": "annual_income"
+                      },
+                      "value": "Rich"
+                    }
+                  ]
+                },
+                {
+                  "descriptor": {
+                    "code": "allowed_domains"
+                  },
+                  "list": [
+                    {
+                      "value": "Retail"
+                    }
+                  ]
+                }
+              ],
+              "items": [
+                {
+                  "id": "I1",
+                  "descriptor": {
+                    "name": "Display ads",
+                    "code": "Display Ads",
+                    "short_desc": "Display Ads",
+                    "long_desc": "Display Ads",
+                    "media": [
                       {
-                        "code": "format",
-                        "list": [
-                          {
-                            "code": "mimetype",
-                            "value": "image/jpeg"
-                          }
-                        ]
+                        "mimetype": "video/mp4",
+                        "url": "video_url"
                       }
                     ]
                   },
-                  {
-                    "code": "ad_placement",
-                    "list": [
-                      {
-                        "code": "position",
-                        "value": "Homepage"
+                  "price": {
+                    "currency": "INR",
+                    "value": "500.00",
+                    "offered_value": "500.00",
+                    "maximum_value": "500.00"
+                  },
+                  "quantity": {
+                    "unitized": {
+                      "measure": {
+                        "unit": "CPM",
+                        "value": "1"
                       }
-                    ]
+                    },
+                    "available": {
+                      "measure": {
+                        "unit": "CPM",
+                        "value": "10"
+                      }
+                    }
                   },
-                  {
-                    "code": "ad_type",
-                    "value": "Smartphone Banner"
+                  "time": {
+                    "range": {
+                      "start": "2024-07-01T00:00:00.000Z",
+                      "end": "2024-07-31T00:00:00.000Z"
+                    }
                   },
-                  {
-                    "code": "availability",
-                    "value": "Static"
-                  },
-                  {
-                    "code": "product_group",
-                    "value": "App"
-                  }
-                ],
-                "category_ids": [
-                  "ADS-10-01-01"
-                ],
-                "fulfillment_ids": [
-                  "1"
-                ],
-                "location_ids": [
-                  "L1"
-                ],
-                "payment_ids": [
-                  "2"
-                ],
-                "add-ons": [
-                  {
-                    "id": "ADDON01",
-                    "descriptor": {
-                      "name": "Creative Services",
-                      "short_desc": "image generation",
-                      "long_desc": "Campaign Image generation",
-                      "images": [
+                  "tags": [
+                    {
+                      "code": "ad_specifications",
+                      "list": [
                         {
-                          "url": "https://abc.com/images/208.png"
+                          "code": "size",
+                          "value": "970x250"
+                        },
+                        {
+                          "code": "max_k_weight",
+                          "value": 250
+                        },
+                        {
+                          "code": "sub_load",
+                          "value": 200
+                        },
+                        {
+                          "code": "file_size_unit",
+                          "value": "KB"
+                        },
+                        {
+                          "code": "format",
+                          "list": [
+                            {
+                              "code": "mimetype",
+                              "value": "image/jpeg"
+                            }
+                          ]
                         }
                       ]
                     },
-                    "price": {
-                      "currency": "INR",
-                      "value": "1000.0",
-                      "offered_value": "1000.0",
-                      "maximum_value": "1000.0"
+                    {
+                      "code": "ad_placement",
+                      "list": [
+                        {
+                          "code": "position",
+                          "value": "Homepage"
+                        }
+                      ]
+                    },
+                    {
+                      "code": "ad_type",
+                      "value": "Smartphone Banner"
+                    },
+                    {
+                      "code": "availability",
+                      "value": "Static"
+                    },
+                    {
+                      "code": "product_group",
+                      "value": "App"
                     }
-                  }
-                ]
-              }
-            ]
-          }
-        ]
+                  ],
+                  "category_ids": [
+                    "ADS-10-01-01"
+                  ],
+                  "fulfillment_ids": [
+                    "1"
+                  ],
+                  "location_ids": [
+                    "L1"
+                  ],
+                  "payment_ids": [
+                    "2"
+                  ],
+                  "add-ons": [
+                    {
+                      "id": "ADDON01",
+                      "descriptor": {
+                        "name": "Creative Services",
+                        "short_desc": "image generation",
+                        "long_desc": "Campaign Image generation",
+                        "images": [
+                          {
+                            "url": "https://abc.com/images/208.png"
+                          }
+                        ]
+                      },
+                      "price": {
+                        "currency": "INR",
+                        "value": "1000.0",
+                        "offered_value": "1000.0",
+                        "maximum_value": "1000.0"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   }
-}

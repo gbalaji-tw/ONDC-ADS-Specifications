@@ -196,8 +196,8 @@ Chemicals
 
 
 
-1. Update Target audience
-2. Update Flow UI
+1. Update Target audience - done
+2. Update Flow UI - done.
 3. Update BPP Terms
 4. Checking to ONDC repo.
 

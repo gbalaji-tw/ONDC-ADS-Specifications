@@ -141,8 +141,8 @@ value:
           descriptor:
             name: Display ads
             code: 'Display Ads'
-            short_desc: Smartphone Banner
-            long_desc: Smartphone Banner
+            short_desc: 'Display Ads'
+            long_desc: 'Display Ads'
             media:
             - mimetype: video/mp4
               url: video_url

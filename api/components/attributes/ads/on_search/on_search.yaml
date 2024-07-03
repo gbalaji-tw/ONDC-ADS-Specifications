@@ -1,9 +1,9 @@
 context:
   parent: true
   domain:
-    description: updated domain namespace defined [here](https://docs.google.com/document/d/brvcltG_DagZ3kGrZZQk4hG4tze3zvcxmGV4NMTzr8/edit#heading=h.w9zlp87xdha1)
+    description: updated domain namespace defined https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
     required: mandatory
-    usage: "ONDC:ADS"
+    usage: "ONDC:ADS10"
     reference: if any
   city:
     description: city code for search that identifies the cities where sellers have stores. List of city codes, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=1474472733
@@ -29,24 +29,8 @@ message:
       id:
         description: unique id for provider, must be same as bpp_id for ISN seller apps. Use of same provider id for distinct legal entities will cause an MSN being regarded as ISN and use of different provider id for same legal entity will cause an ISN being regarded as MSN, thus resulting in tax non-compliance
         required: mandatory
-        usage: F1
+        usage: P1
         reference: if any
-      fulfillments:
-        contact:
-          description: contact details for merchant - if merchant is in multiple locations, this will be the contact detail for merchant and contact detail for the storefront (specific location) will be in fulfillment.start
-          required: mandatory
-          usage: "-"
-          reference: if any
-        contact.phone:
-          description: valid 10 digit (mobile no) or 11 digit no
-          required: mandatory
-          usage: "9886098860"
-          reference: if any
-        contact.email:
-          description: email id of merchant or seller NP
-          required: mandatory
-          usage: abc@xyz.com
-          reference: if any
       ttl:
         description: ISO8601 duration format for validity of provider catalog
         required: mandatory
@@ -61,44 +45,24 @@ message:
           id:
             required: optional
             description: Human readable id
-            reference: if any
-            usage: <<L3>>
+            reference: refer - https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
+            usage: ADS-10-01-01
           parent_category_id:
             required: optional
             description: Human readable id
-            reference: if any
-            usage: <<L2>>
-          tags.code:
-            description: if code is "attr", then it defines variant attributes i.e. attribute & sequence; multiple variant attributes can be defined in multiple attr blocks
-            required: mandatory
-            usage: "-"
-            reference: if any
-          tags.list.code:
-              description: if "code" is "attr", then it is namespaced attribute, above example means attribute(s) in "quantity.unitized" for an item
-              required: mandatory
-              usage: "-"
-              reference: if any
-          tags.list.value:
-              description: if `tags>code` is "attr" and `tags>list>code` is "name", then it's corresponding `value` means concatenation of item.quantity.unitized.measure.value and item.quantity.unitized.measure.unit e.g. "1 kilogram", "2 kilogram", "5 kilogram"
-              required: mandatory
-              usage: "-"
-              reference: if any
+            reference: refer - https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
+            usage: ADS-10-01
       items:
         id:
           required: optional
           description: Human readable id
           reference: if any
           usage: Display Ads
-        parent_item_id:
-          description: if variant grouping defined for provider above, this matches id for variant_group definition; if not defined or id is invalid, buyer NPs may choose to display as normal SKU item
-          required: mandatory
-          usage: App
-          reference: if any
         descriptor.code:
-            description: unique code for item which will be in this format - "type:code" where type is 1 - EAN, 2 - ISBN, 3 - GTIN, 4 - HSN, 5 - others
+            description: unique code for item - Ad product name
             required: optional
-            usage: 2
-            reference: if any
+            usage: 'Display Ads'
+            reference: refer 'tab2 - 01_Hierarchy_Product_Sample values' - https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=567404723#gid=567404723
         quantity.unitized.measure.unit:
           description: enum - "CPC", "CPM", "CPA"
           required: mandatory

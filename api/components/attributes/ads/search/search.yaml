@@ -1,9 +1,9 @@
 context:
   parent: true
   domain:
-    description: updated domain namespace defined [here](https://docs.google.com/document/d/brvcltG_DagZ3kGrZZQk4hG4tze3zvcxmGV4NMTzr8/edit#heading=h.w9zlp87xdha1)
+    description: Ads domains ID
     required: mandatory
-    usage: "ONDC:RET12"
+    usage: "ONDC:ADS10"
     reference: if any
   city:
     description: city code for search that identifies the cities where sellers have stores. List of city codes, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=1474472733
@@ -42,16 +42,11 @@ message:
         reference: if any
         required: optional
     category:
-      parent: true
-      description: Category of the search
-      required: optional
-      usage: "-"
-      reference: if any
       id:
-        description: category id will be from this list - https://docs.google.com/spreadsheets/d/APAvavF_BNbTA89benAlGtv0GuFvpn2b6XXi4lSdTTw/edit#gid=0
-        required: present if category is present
-        usage: "Digital"
-        reference: L2 Category
+        description: Category id of the Ad product
+        required: mandatory
+        usage: "ADS-10-01-01"
+        reference: if any
     fulfillment:
       parent: true
       type:
