@@ -28,7 +28,7 @@ message:
         reference: if any
       category_ids:
         description: L3 category id for the item as per taxonomy
-        required: required for customizations
+        required: optional
         usage: "ADS-10-01-01"
         reference: if any
       quantity:
@@ -40,7 +40,7 @@ message:
             reference: if any
       add-ons:      
         description: Add-on for items like creative services,Managed campaign as service
-        required: required for customizations
+        required: optional
         usage: "Creative Services"
         reference: Refer '02_Suggested enums and Sample Values' - https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=818015885#gid=818015885
     fulfillments:
