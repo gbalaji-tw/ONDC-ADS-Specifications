@@ -3278,7 +3278,7 @@ x-flows:
             message:
               intent:
                 category:
-                  id: Digital
+                  id: Commerce
                 tags:
                   - descriptor:
                       code: bap_terms
@@ -3490,10 +3490,6 @@ x-flows:
                             list:
                               - code: position
                                 value: Homepage
-                              - code: location
-                                value: <<city |area>>
-                              - code: location_url
-                                value: <<location url>>
                           - code: ad_type
                             value: Display-ADS
                           - code: availability

@@ -19,7 +19,7 @@ value:
   message:
     intent:
       category:
-        id: 'Digital'
+        id: 'Commerce'
       tags:
       - descriptor:
           code: bap_terms

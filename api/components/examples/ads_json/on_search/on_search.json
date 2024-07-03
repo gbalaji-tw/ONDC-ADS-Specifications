@@ -321,14 +321,6 @@
                       {
                         "code": "position",
                         "value": "Homepage"
-                      },
-                      {
-                        "code": "location",
-                        "value": "<<city |area>>"
-                      },
-                      {
-                        "code": "location_url",
-                        "value": "<<location url>>"
                       }
                     ]
                   },
