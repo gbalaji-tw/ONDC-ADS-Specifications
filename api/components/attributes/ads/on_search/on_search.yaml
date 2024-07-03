@@ -6,7 +6,7 @@ context:
     usage: "ONDC:ADS10"
     reference: if any
   city:
-    description: city code for search that identifies the cities where sellers have stores. List of city codes, with pincode mapping, are here - https://docs.google.com/spreadsheets/d/12A_B-nDtvxyFh_FWDfp85ss2qpb65kZ7/edit#gid=1474472733
+    description: city code for search
     required: mandatory
     usage: std:080
     reference: if any
@@ -57,7 +57,7 @@ message:
           required: optional
           description: Human readable id
           reference: if any
-          usage: Display Ads
+          usage: 'I1'
         descriptor.code:
             description: unique code for item - Ad product name
             required: optional
@@ -88,9 +88,14 @@ message:
           required: mandatory
           usage: "yyyy-mm-ddTHH:MM:SS"
           reference: if any
+      add-ons:      
+        description: Add-on for items like creative services,Managed campaign as service
+        required: optional
+        usage: "Creative Services"
+        reference: Refer '02_Suggested enums and Sample Values' - https://docs.google.com/spreadsheets/d/1ot66hRrRXcxgaCy63ZRcUJlRWNGYUeoeD6z17U2CcHo/edit?gid=818015885#gid=818015885
       offers:
         description: offer definition as per the template defined above
-        required: mandatory
+        required: optional
         usage: "-"
         reference: if any
     fulfillments:
