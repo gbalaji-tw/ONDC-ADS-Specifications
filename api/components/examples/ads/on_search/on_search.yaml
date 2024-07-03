@@ -191,7 +191,7 @@ value:
             - ADS-10-01-01
           fulfillment_ids:    
             - '1'
-          location_ids:    
+          location_ids:
             - L1
           payment_ids:
             - '2' 

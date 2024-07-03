@@ -2723,7 +2723,7 @@ x-enum:
                 - code: Salaried
                   description: Primary profession - salaried
               annual_income:
-                - code: Poor
+                - code: Low income
                   description: income groups <1,25,000
                 - code: Aspirers
                   description: income groups 1,25,000 to 5,00,000
