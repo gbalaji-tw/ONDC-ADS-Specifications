@@ -59,7 +59,7 @@ value:
               value: '500'
             item:
               id: I1
-          - title: 'creative generation'
+          - title: 'Creative Services'
             id: 'ADDON01'
             price:
               currency: INR

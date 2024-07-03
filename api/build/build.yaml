@@ -3525,6 +3525,8 @@ x-flows:
                             value: Smartphone Banner
                           - code: availability
                             value: Static
+                          - code: product_group
+                            value: App
                         category_ids:
                           - ADS-10-01-01
                         fulfillment_ids:
@@ -3536,7 +3538,7 @@ x-flows:
                         add-ons:
                           - id: ADDON01
                             descriptor:
-                              name: creative generation
+                              name: Creative Services
                               short_desc: image generation
                               long_desc: Campaign Image generation
                               images:
@@ -3666,7 +3668,7 @@ x-flows:
                         value: '500'
                       item:
                         id: I1
-                    - title: creative generation
+                    - title: Creative Services
                       id: ADDON01
                       price:
                         currency: INR
@@ -3836,7 +3838,7 @@ x-flows:
                         value: '500'
                       item:
                         id: I1
-                    - title: creative generation
+                    - title: Creative Services
                       id: ADDON01
                       price:
                         currency: INR

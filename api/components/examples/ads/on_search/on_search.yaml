@@ -187,6 +187,8 @@ value:
               value: Smartphone Banner
             - code: availability
               value: Static
+            - code: product_group
+              value: App
           category_ids:
             - ADS-10-01-01
           fulfillment_ids:    
@@ -198,7 +200,7 @@ value:
           add-ons:
           - id: 'ADDON01'
             descriptor:
-              name: creative generation
+              name: Creative Services
               short_desc: image generation
               long_desc: Campaign Image generation
               images:

@@ -331,6 +331,10 @@
                   {
                     "code": "availability",
                     "value": "Static"
+                  },
+                  {
+                    "code": "product_group",
+                    "value": "App"
                   }
                 ],
                 "category_ids": [
@@ -349,7 +353,7 @@
                   {
                     "id": "ADDON01",
                     "descriptor": {
-                      "name": "creative generation",
+                      "name": "Creative Services",
                       "short_desc": "image generation",
                       "long_desc": "Campaign Image generation",
                       "images": [

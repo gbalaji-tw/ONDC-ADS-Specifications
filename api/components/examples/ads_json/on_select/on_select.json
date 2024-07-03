@@ -1,107 +1,107 @@
 {
-  "summary": "Send quote and breakup",
-  "description": "Send quote and breakup for items selected in select call.",
-  "value": {
-    "context": {
-      "domain": "ONDC:ADS10",
-      "location": {
-        "city": {
-          "code": "std:080"
-        },
-        "country": {
-          "code": "IND"
-        }
-      },
-      "action": "on_select",
-      "version": "2.0.0",
-      "bap_id": "buyerapp.com",
-      "bap_uri": "https://buyerapp.com/grocery",
-      "bpp_id": "sellerapp.com",
-      "bpp_uri": "https://sellerapp.com/grocery",
-      "transaction_id": "T1",
-      "message_id": "M1",
-      "timestamp": "2023-01-08T22:00:30.000Z",
-      "ttl": "PT30S"
-    },
-    "message": {
-      "order": {
-        "provider": {
-          "id": "P1"
-        },
-        "items": [
-          {
-            "id": "I1",
-            "fulfillment_ids": [
-              "F1"
-            ],
-            "location_ids": [
-              "L1"
-            ],
-            "quantity": {
-              "selected": {
-                "count": 10
-              }
-            },
-            "add-ons": [
-              {
-                "id": "ADDON01"
-              }
-            ]
-          }
-        ],
-        "fulfillments": [
-          {
-            "id": "F1",
-            "type": "ONLINE"
-          }
-        ],
-        "quote": {
-          "price": {
-            "currency": "INR",
-            "value": "6500"
+    "summary": "Send quote and breakup",
+    "description": "Send quote and breakup for items selected in select call.",
+    "value": {
+      "context": {
+        "domain": "ONDC:ADS10",
+        "location": {
+          "city": {
+            "code": "std:080"
           },
-          "breakup": [
+          "country": {
+            "code": "IND"
+          }
+        },
+        "action": "on_select",
+        "version": "2.0.0",
+        "bap_id": "buyerapp.com",
+        "bap_uri": "https://buyerapp.com/grocery",
+        "bpp_id": "sellerapp.com",
+        "bpp_uri": "https://sellerapp.com/grocery",
+        "transaction_id": "T1",
+        "message_id": "M1",
+        "timestamp": "2023-01-08T22:00:30.000Z",
+        "ttl": "PT30S"
+      },
+      "message": {
+        "order": {
+          "provider": {
+            "id": "P1"
+          },
+          "items": [
             {
-              "title": "Display ads",
-              "price": {
-                "currency": "INR",
-                "value": "5000"
+              "id": "I1",
+              "fulfillment_ids": [
+                "F1"
+              ],
+              "location_ids": [
+                "L1"
+              ],
+              "quantity": {
+                "selected": {
+                  "count": 10
+                }
               },
-              "item": {
-                "id": "I1",
-                "quantity": {
-                  "selected": {
-                    "count": "10"
-                  }
+              "add-ons": [
+                {
+                  "id": "ADDON01"
+                }
+              ]
+            }
+          ],
+          "fulfillments": [
+            {
+              "id": "F1",
+              "type": "ONLINE"
+            }
+          ],
+          "quote": {
+            "price": {
+              "currency": "INR",
+              "value": "6500"
+            },
+            "breakup": [
+              {
+                "title": "Display ads",
+                "price": {
+                  "currency": "INR",
+                  "value": "5000"
                 },
+                "item": {
+                  "id": "I1",
+                  "quantity": {
+                    "selected": {
+                      "count": "10"
+                    }
+                  },
+                  "price": {
+                    "currency": "INR",
+                    "value": "500"
+                  }
+                }
+              },
+              {
+                "title": "tax",
                 "price": {
                   "currency": "INR",
                   "value": "500"
+                },
+                "item": {
+                  "id": "I1"
+                }
+              },
+              {
+                "title": "Creative Services",
+                "id": "ADDON01",
+                "price": {
+                  "currency": "INR",
+                  "value": "1000"
                 }
               }
-            },
-            {
-              "title": "tax",
-              "price": {
-                "currency": "INR",
-                "value": "500"
-              },
-              "item": {
-                "id": "I1"
-              }
-            },
-            {
-              "title": "creative generation",
-              "id": "ADDON01",
-              "price": {
-                "currency": "INR",
-                "value": "1000"
-              }
-            }
-          ],
-          "ttl": "P1D"
+            ],
+            "ttl": "P1D"
+          }
         }
       }
     }
   }
-}
