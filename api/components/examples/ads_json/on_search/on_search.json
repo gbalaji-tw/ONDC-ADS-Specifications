@@ -249,8 +249,8 @@
                 "descriptor": {
                   "name": "Display ads",
                   "code": "Display Ads",
-                  "short_desc": "Home page banner",
-                  "long_desc": "Home page banner",
+                  "short_desc": "Smartphone Banner",
+                  "long_desc": "Smartphone Banner",
                   "media": [
                     {
                       "mimetype": "video/mp4",

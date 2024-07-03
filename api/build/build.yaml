@@ -2804,13 +2804,36 @@ x-enum:
                     description: Product description page
                     reference: <PR/Issue/Discussion Links md format text>
               ad_type:
+                - code: Billboard
+                  description: Billboard ads
                 - code: Smartphone Banner
                   description: Smartphone Banner
+                - code: Leaderboard
+                  description: Leaderboard ads
+                - code: Super Leaderboard
+                  description: Smartphone Banner
+                - code: Portrait
+                  description: Portrait
+                - code: Medium Rectangle
+                  description: Smartphone Banner
+                - code: Button
+                  description: Smartphone Banner
+                - code: Custom
+                  description: Custom
               availability:
                 - code: Static
                   description: Ad slot is available for fixed window and for 1 ad
                 - code: Dynamic
                   description: Ad slot is available for fixed window and for multiple ads.
+              product_group:
+                - code: App
+                - code: Website
+                - code: Kiosk
+                - code: OTT
+                - code: Streaming audio platform
+                - code: Gaming
+                - code: Influencer
+                - code: Social Platform
             price:
               quantity:
                 unitized:
@@ -3456,8 +3479,8 @@ x-flows:
                         descriptor:
                           name: Display ads
                           code: Display Ads
-                          short_desc: Home page banner
-                          long_desc: Home page banner
+                          short_desc: Smartphone Banner
+                          long_desc: Smartphone Banner
                           media:
                             - mimetype: video/mp4
                               url: video_url
