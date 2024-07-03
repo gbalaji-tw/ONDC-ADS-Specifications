@@ -47,7 +47,6 @@ function loadDropdown4() {
   data.forEach(function (item) {
     var option = document.createElement('option');
     option.text = item["code"];
-    console.log("iten added", item.code)
     dropdown4.add(option);
   });
   displayTable()
