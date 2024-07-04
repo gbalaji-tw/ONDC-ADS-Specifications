@@ -2717,11 +2717,12 @@ x-enum:
                 - code: Agriculture
                 - code: Mobility
                 - code: Sprituality
-              profession:
-                - code: Business
-                  description: Primary profession  - business
+              employment_status:
+                - code: Self-employed
                 - code: Salaried
-                  description: Primary profession - salaried
+                - code: Student
+                - code: Retired
+                - code: Unemployed
               annual_income:
                 - code: Low income
                   description: income groups <1,25,000
@@ -3465,8 +3466,8 @@ x-flows:
                               code: interests
                             value: Sports
                           - descriptor:
-                              code: profession
-                            value: Business
+                              code: employment_status
+                            value: Self-employed
                           - descriptor:
                               code: annual_income
                             value: Rich

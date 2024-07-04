@@ -127,8 +127,8 @@ value:
               code: interests
             value: Sports
           - descriptor:
-              code: profession
-            value: Business
+              code: employment_status
+            value: Self-employed
           - descriptor:
               code: annual_income
             value: Rich
