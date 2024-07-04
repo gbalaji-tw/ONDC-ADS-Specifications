@@ -19,7 +19,7 @@ value:
   message:
     intent:
       category:
-        id: 'Commerce'
+        id: 'ADS-10-01-01'
       tags:
       - descriptor:
           code: bap_terms

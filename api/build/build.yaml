@@ -3309,7 +3309,7 @@ x-flows:
             message:
               intent:
                 category:
-                  id: Commerce
+                  id: ADS-10-01-01
                 tags:
                   - descriptor:
                       code: bap_terms
@@ -4004,6 +4004,12 @@ x-attributes:
           parent: true
           intent:
             parent: true
+            category:
+              id:
+                description: Category id of the Ad product
+                required: mandatory
+                usage: ADS-10-01-01
+                reference: if any
             payment:
               parent: true
               type:
@@ -4011,12 +4017,6 @@ x-attributes:
                 usage: ON-FULFILLMENT
                 reference: if any
                 required: optional
-            category:
-              id:
-                description: Category id of the Ad product
-                required: mandatory
-                usage: ADS-10-01-01
-                reference: if any
             fulfillment:
               parent: true
               type:

@@ -34,6 +34,12 @@ message:
   parent: true
   intent:
     parent: true
+    category:
+      id:
+        description: Category id of the Ad product
+        required: mandatory
+        usage: "ADS-10-01-01"
+        reference: if any
     payment:
       parent: true
       type:
@@ -41,12 +47,6 @@ message:
         usage: "ON-FULFILLMENT"
         reference: if any
         required: optional
-    category:
-      id:
-        description: Category id of the Ad product
-        required: mandatory
-        usage: "ADS-10-01-01"
-        reference: if any
     fulfillment:
       parent: true
       type:
