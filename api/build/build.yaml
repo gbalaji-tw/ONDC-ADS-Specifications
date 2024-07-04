@@ -3715,13 +3715,6 @@ x-flows:
                         count: 10
                     add-ons:
                       - id: ADDON01
-                    tags:
-                      - descriptor:
-                          code: BUYER_TERMS
-                        list:
-                          - descriptor:
-                              code: ITEM_REQ
-                            value: free text on Item Customization
                 billing:
                   name: ONDC buyer
                   address: >-
@@ -3758,7 +3751,7 @@ x-flows:
           description: Respond to RFQ
           value:
             context:
-              domain: ONDC:RET10
+              domain: ONDC:ADS10
               location:
                 city:
                   code: std:080
@@ -3789,16 +3782,6 @@ x-flows:
                         count: 10
                     add-ons:
                       - id: ADDON01
-                    tags:
-                      - descriptor:
-                          code: BUYER_TERMS
-                        list:
-                          - descriptor:
-                              code: ITEM_REQ
-                            value: free text on Item Customization
-                          - descriptor:
-                              code: PACKAGING_REQ
-                            value: free text on packaging Customization
                 billing:
                   name: ONDC buyer
                   address: >-
@@ -3924,26 +3907,26 @@ x-examples:
                 timestamp: '2023-01-08T22:00:00.000Z'
                 ttl: PT30S
               message:
-                intent: null
-                tags:
-                  - descriptor:
-                      code: bap_terms
-                    list:
-                      - descriptor:
-                          code: finder_fee_type
-                        value: percent
-                      - descriptor:
-                          code: finder_fee_amount
-                        value: '10'
-                  - descriptor:
-                      code: buyer_details
-                    list:
-                      - descriptor:
-                          code: buyer_id_code
-                        value: gst
-                      - descriptor:
-                          code: buyer_id_no
-                        value: xxxxxxxxxxxxxxx
+                intent:
+                  tags:
+                    - descriptor:
+                        code: bap_terms
+                      list:
+                        - descriptor:
+                            code: finder_fee_type
+                          value: percent
+                        - descriptor:
+                            code: finder_fee_amount
+                          value: '10'
+                    - descriptor:
+                        code: buyer_details
+                      list:
+                        - descriptor:
+                            code: buyer_id_code
+                          value: gst
+                        - descriptor:
+                            code: buyer_id_no
+                          value: xxxxxxxxxxxxxxx
           - *ref_6
       on_search:
         examples:

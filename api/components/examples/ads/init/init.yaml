@@ -34,13 +34,6 @@ value:
             count: 10
         add-ons:
         - id: 'ADDON01'
-        tags:
-        - descriptor:
-            code: BUYER_TERMS
-          list:
-          - descriptor:
-              code: ITEM_REQ
-            value: free text on Item Customization
       billing:
         name: ONDC buyer
         address: 22, Mahatma Gandhi Rd, Craig Park Layout, Ashok Nagar, Bengaluru, Karnataka 560001

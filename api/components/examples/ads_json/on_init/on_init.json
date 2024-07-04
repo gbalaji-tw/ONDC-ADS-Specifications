@@ -3,7 +3,7 @@
   "description": "Respond to RFQ",
   "value": {
     "context": {
-      "domain": "ONDC:RET10",
+      "domain": "ONDC:ADS10",
       "location": {
         "city": {
           "code": "std:080"
@@ -45,27 +45,6 @@
             "add-ons": [
               {
                 "id": "ADDON01"
-              }
-            ],
-            "tags": [
-              {
-                "descriptor": {
-                  "code": "BUYER_TERMS"
-                },
-                "list": [
-                  {
-                    "descriptor": {
-                      "code": "ITEM_REQ"
-                    },
-                    "value": "free text on Item Customization"
-                  },
-                  {
-                    "descriptor": {
-                      "code": "PACKAGING_REQ"
-                    },
-                    "value": "free text on packaging Customization"
-                  }
-                ]
               }
             ]
           }

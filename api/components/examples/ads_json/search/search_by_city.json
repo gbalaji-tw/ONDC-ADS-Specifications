@@ -22,47 +22,48 @@
       "ttl": "PT30S"
     },
     "message": {
-      "intent": null,
-      "tags": [
-        {
-          "descriptor": {
-            "code": "bap_terms"
-          },
-          "list": [
-            {
-              "descriptor": {
-                "code": "finder_fee_type"
-              },
-              "value": "percent"
+      "intent": {
+        "tags": [
+          {
+            "descriptor": {
+              "code": "bap_terms"
             },
-            {
-              "descriptor": {
-                "code": "finder_fee_amount"
+            "list": [
+              {
+                "descriptor": {
+                  "code": "finder_fee_type"
+                },
+                "value": "percent"
               },
-              "value": "10"
-            }
-          ]
-        },
-        {
-          "descriptor": {
-            "code": "buyer_details"
+              {
+                "descriptor": {
+                  "code": "finder_fee_amount"
+                },
+                "value": "10"
+              }
+            ]
           },
-          "list": [
-            {
-              "descriptor": {
-                "code": "buyer_id_code"
-              },
-              "value": "gst"
+          {
+            "descriptor": {
+              "code": "buyer_details"
             },
-            {
-              "descriptor": {
-                "code": "buyer_id_no"
+            "list": [
+              {
+                "descriptor": {
+                  "code": "buyer_id_code"
+                },
+                "value": "gst"
               },
-              "value": "xxxxxxxxxxxxxxx"
-            }
-          ]
-        }
-      ]
+              {
+                "descriptor": {
+                  "code": "buyer_id_no"
+                },
+                "value": "xxxxxxxxxxxxxxx"
+              }
+            ]
+          }
+        ]
+      }
     }
   }
 }
